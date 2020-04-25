@@ -182,35 +182,36 @@
                 Software Security </a></li>
             <li><a href="https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-858-computer-systems-security-fall-2014/lecture-notes/">MIT
                 Open Coursework (OCW) 6.858, Lecture Notes </a> </li>
-            <li><a href="https://www.mooc-list.com/course/penetration-testing-and-ethical-hacking-cybrary">MOOC, Penetration Testing and Ethical Hacking
-              (Cybrary) </li>
+            <li><a href="https://www.mooc-list.com/course/penetration-testing-and-ethical-hacking-cybrary">MOOC,
+                Penetration Testing and Ethical Hacking (Cybrary) </a></li>
+            
           </ol>
-          <h2 id="textbooks"> Textbooks </h2>
-          <ol>
-            <li>Merkow,&nbsp;M.&nbsp;S.,&nbsp;Raghavan,&nbsp;L.&nbsp;(2010).&nbsp;Secure
-              and Resilient Software Development.&nbsp;United States:&nbsp;CRC
-              Press.</li>
-            <li>Misra,&nbsp;A.,&nbsp;Ransome,&nbsp;J.&nbsp;(2013).&nbsp;Core
+
+            <h2 id="textbooks"> Textbooks </h2>
+            <ol>
+              <li>Merkow,&nbsp;M.&nbsp;S.,&nbsp;Raghavan,&nbsp;L.&nbsp;(2010).&nbsp;Secure
+                and Resilient Software Development.&nbsp;United States:&nbsp;CRC
+                Press.</li>
+              <li>Misra,&nbsp;A.,&nbsp;Ransome,&nbsp;J.&nbsp;(2013).&nbsp;Core
+                Software Security: Security at the Source.&nbsp;United
+                States:&nbsp;Taylor &amp; Francis. </li>
+              <li>McGraw,&nbsp;G.&nbsp;(2006).&nbsp;Software Security: Building
+                Security in.&nbsp;Germany:&nbsp;Addison-Wesley.</li>
+              <li>Barnum,&nbsp;S.,&nbsp;McGraw,&nbsp;G.,&nbsp;Allen,&nbsp;J.&nbsp;H.,&nbsp;Ellison,&nbsp;R.&nbsp;J.,&nbsp;Mead,&nbsp;N.&nbsp;R.&nbsp;(2004).&nbsp;Software
+                Security Engineering: A Guide for Project Managers.&nbsp;United
+                States:&nbsp;Pearson Education.</li>
+              <li>Conklin,&nbsp;W.&nbsp;A.,&nbsp;Shoemaker,&nbsp;D.&nbsp;P.&nbsp;(2019).&nbsp;CSSLP
+                Certification All-in-One Exam Guide, Second Edition.&nbsp;United
+                States:&nbsp;McGraw-Hill Education.</li>
+            </ol>
+            <h2 id="ref">References</h2>
+            <p id="1"> [1] G. McGraw, "Software security," in IEEE Security
+              &amp; Privacy, vol. 2, no. 2, pp. 80-83, March-April 2004. </p>
+            <p id="2"> [2]
+              Misra,&nbsp;A.,&nbsp;Ransome,&nbsp;J.&nbsp;(2013).&nbsp;Core
               Software Security: Security at the Source.&nbsp;United
-              States:&nbsp;Taylor &amp; Francis. </li>
-            <li>McGraw,&nbsp;G.&nbsp;(2006).&nbsp;Software Security: Building
-              Security in.&nbsp;Germany:&nbsp;Addison-Wesley.</li>
-            <li>Barnum,&nbsp;S.,&nbsp;McGraw,&nbsp;G.,&nbsp;Allen,&nbsp;J.&nbsp;H.,&nbsp;Ellison,&nbsp;R.&nbsp;J.,&nbsp;Mead,&nbsp;N.&nbsp;R.&nbsp;(2004).&nbsp;Software
-              Security Engineering: A Guide for Project Managers.&nbsp;United
-              States:&nbsp;Pearson Education.</li>
-            <li>Conklin,&nbsp;W.&nbsp;A.,&nbsp;Shoemaker,&nbsp;D.&nbsp;P.&nbsp;(2019).&nbsp;CSSLP
-              Certification All-in-One Exam Guide, Second Edition.&nbsp;United
-              States:&nbsp;McGraw-Hill Education.</li>
-          </ol>
-          <h2 id="ref">References</h2>
-          <p id="1"> [1] G. McGraw, "Software security," in IEEE Security &amp;
-            Privacy, vol. 2, no. 2, pp. 80-83, March-April 2004. </p>
-          <p id="2"> [2]
-            Misra,&nbsp;A.,&nbsp;Ransome,&nbsp;J.&nbsp;(2013).&nbsp;Core
-            Software Security: Security at the Source.&nbsp;United
-            States:&nbsp;Taylor &amp; Francis. </p>
-          <p id="11"> [11] <a href="https://www.mooc-list.com/course/penetration-testing-and-ethical-hacking-cybrary">MOOC
-              List, Penetration Testing and Ethical hacking </a> </p>
+              States:&nbsp;Taylor &amp; Francis. </p>
+          </a>
           <div class="lavenderBox">
             <div class="header">Panel title</div>
             <div class="subtitle linklist"><a href="#">Lorem</a> <a href="#">Ipsum</a>
