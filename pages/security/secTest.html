@@ -1,0 +1,2808 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Wikipedia Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="secTest.html"><img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="secTest.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px"><a href="../memory/main.html">
+                Memory/Malware Forensics</a></li>
+            <li class="auto-style1"><a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1"><a href="../network/main.html">Network
+                Forensics</a></li>
+            <li class="auto-style1"><a href="../social/main.html">Social
+                Engineering</a></li>
+          
+            <li class="auto-style1"><a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+
+            <li class="auto-style1"><a href="../threat/main.html">Content/Threat
+                Analysis</a></li>
+        
+            <li class="auto-style1"><a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+         
+          </ul>
+        
+            <h3>Interaction</h3>
+      
+          <ul>
+            <li class="auto-style1"><a href="secTest.html">Security Test</a></li>
+			  <li class="auto-style1"><a href="tools.html">Security Tools</a></li>
+			  <li class="auto-style1"><a href="../handson/main.html">Hands-on Experience</a></li>
+			  <li class="auto-style1"><a href="../course/main.html">Other Course Modules</a></li>
+			  <li class="auto-style1"><a href="../attacks/main.html">Attacks</a></li>
+                
+                
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="https://github.com/asiamina/WikiSET">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Security Testing</h1>
+          <p class="siteSub">&nbsp;</p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+            <ul>
+              <li class="level1"><div class="li"><a href="#the_art_of_software_security_testing">The Art Of Software Security Testing</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#case_your_own_jointa_paradigm_shift_from_traditional_software_testing">Case your own Joint: A Paradigm Shift from Traditional Software Testing</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#outlines">Outlines</a></div></li>
+<li class="level3"><div class="li"><a href="#introduction">Introduction</a></div></li>
+<li class="level3"><div class="li"><a href="#example">Example</a></div></li>
+<li class="level3"><div class="li"><a href="#vulnerability">Vulnerability</a></div></li>
+<li class="level3"><div class="li"><a href="#security_testing_versus_traditional_software_testing">Security Testing Versus Traditional Software Testing</a></div></li>
+<li class="level3"><div class="li"><a href="#example1">Example</a></div></li>
+<li class="level3"><div class="li"><a href="#boundaries_requirement">boundaries requirement</a></div></li>
+<li class="level3"><div class="li"><a href="#sql_injection_attack_pattern">SQL Injection Attack Pattern</a></div></li>
+<li class="level3"><div class="li"><a href="#high-level_security_testing_strategies">High-Level Security Testing Strategies</a></div></li>
+<li class="level3"><div class="li"><a href="#attack_pattern_strategy">Attack Pattern Strategy</a></div></li>
+<li class="level3"><div class="li"><a href="#attack_surface">Attack Surface</a></div></li>
+<li class="level3"><div class="li"><a href="#prioritizing_your_work">Prioritizing Your Work</a></div></li>
+<li class="level3"><div class="li"><a href="#the_basic_process_of_security_testing_boils_down_to_these_steps">The basic process of security testing boils down to these steps:</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#how_vulnerabilities_get_into_all_software">How Vulnerabilities Get into All software</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#outlines1">Outlines</a></div></li>
+<li class="level3"><div class="li"><a href="#introduction1">Introduction</a></div></li>
+<li class="level3"><div class="li"><a href="#design_versus_implementation_vulnerabilities">Design Versus Implementation Vulnerabilities</a></div></li>
+<li class="level3"><div class="li"><a href="#design_vulnerability">Design Vulnerability</a></div></li>
+<li class="level3"><div class="li"><a href="#implementation_vulnerability">Implementation Vulnerability</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#common_secure_design_issues">Common Secure Design Issues</a></div></li>
+<li class="level2"><div class="li"><a href="#programming_language_implementation_issues">Programming Language Implementation Issues</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#section"></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#the_secure_software_development_lifecycle">The Secure Software 
+Development Lifecycle</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#introduction2">Introduction</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#secure_software_development_lifecycle_ssdl">Secure Software Development Lifecycle (SSDL)</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#risk-based_security_testingprioritizing_security_testing_with_threat_modeling">Risk-Based Security Testing: 
+Prioritizing Security Testing 
+with Threat Modeling</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#outlines2">Outlines</a></div></li>
+<li class="level2"><div class="li"><a href="#introduction3">Introduction</a></div></li>
+<li class="level2"><div class="li"><a href="#threat_modeling_vs_risk-based_testing">threat modeling vs Risk-based testing</a></div></li>
+<li class="level2"><div class="li"><a href="#information_gathering">Information Gathering</a></div></li>
+<li class="level2"><div class="li"><a href="#meeting_with_the_architects">Meeting with the Architects</a></div></li>
+<li class="level2"><div class="li"><a href="#runtime_inspection">Runtime Inspection</a></div></li>
+<li class="level2"><div class="li"><a href="#windows_platform">Windows Platform</a></div></li>
+<li class="level2"><div class="li"><a href="#unix_footprinting">UNIX Footprinting</a></div></li>
+<li class="level2"><div class="li"><a href="#the_modeling_process">The Modeling Process</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#shades_of_analysiswhite_gray_and_black_box_testing">Shades of Analysis: White, 
+Gray, and Black Box Testing</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#outlines3">OUTLINES</a></div></li>
+<li class="level2"><div class="li"><a href="#white_box_testing">White Box Testing</a></div></li>
+<li class="level2"><div class="li"><a href="#black_box_testing">Black Box Testing</a></div></li>
+<li class="level2"><div class="li"><a href="#gray_box_testing">Gray Box Testing</a></div></li>
+<li class="level2"><div class="li"><a href="#setting_up_a_lab_for_testing">Setting Up a Lab for Testing</a></div></li>
+<li class="level2"><div class="li"><a href="#staging_application_attacks">Staging Application Attacks</a></div></li>
+<li class="level2"><div class="li"><a href="#network_attacks">Network Attacks</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#generic_network_fault_injection">Generic Network Fault 
+	Injection</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#outlines4">OUTLINES</a></div></li>
+<li class="level2"><div class="li"><a href="#networks">Networks</a></div></li>
+<li class="level2"><div class="li"><a href="#port_discovery">Port Discovery</a></div></li>
+<li class="level2"><div class="li"><a href="#ways_to_check_for_open_port">Ways to check for open port</a></div></li>
+<li class="level2"><div class="li"><a href="#starting_nmap_v_300_wwwinsecureorg_nmap_strange_error_from_connect_22invalid_argument">Starting nmap V. 3.00  (www.insecure.org/nmap/) Strange error from connect (22): Invalid argument</a></div></li>
+<li class="level2"><div class="li"><a href="#proxies">Proxies</a></div></li>
+<li class="level2"><div class="li"><a href="#the_simplest_proxyrandom_tcpiudp_fault_injector">The Simplest Proxy: Random TCPIUDP Fault Injector</a></div></li>
+<li class="level2"><div class="li"><a href="#attack_patternbuilding_the_fault_injection_data_set">Attack Pattern: Building the Fault Injection Data Set</a></div></li>
+<li class="level2"><div class="li"><a href="#building_the_fault_injection_data_set">Building the Fault Injection Data Set</a></div></li>
+<li class="level2"><div class="li"><a href="#man-in-the-middle_proxies">Man-in-the-Middle Proxies</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#web_applicationssession_attacks">Web Applications: 
+Session Attacks</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#outlines5">OUTLINES</a></div></li>
+<li class="level3"><div class="li"><a href="#authentication_versus_authorization">Authentication Versus Authorization</a></div></li>
+<li class="level3"><div class="li"><a href="#brute-forcing_session_and_resource_ids">Brute-Forcing Session and Resource IDs</a></div></li>
+<li class="level3"><div class="li"><a href="#cookie_gathering">Cookie Gathering</a></div></li>
+<li class="level3"><div class="li"><a href="#determining_sid_strengthphase_space_analysis">Determining SID Strength: Phase Space Analysis</a></div></li>
+<li class="level3"><div class="li"><a href="#cross-site_scripting1">Cross-Site Scripting</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#web_applicationscommon_issues">Web Applications: 
+Common Issues</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#outlines6">OUTLINES</a></div></li>
+<li class="level2"><div class="li"><a href="#bypassing_authorization">Bypassing Authorization</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#how_to_bypass_authorization">How to Bypass Authorization</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#sql_injection">SQL Injection</a></div></li>
+<li class="level2"><div class="li"><a href="#database_schema_discovery">Database Schema Discovery</a></div></li>
+<li class="level2"><div class="li"><a href="#executing_commands_on_the_sql_server">Executing Commands on the SQL Server</a></div></li>
+<li class="level2"><div class="li"><a href="#uploading_executable_content_asp_php_bat">Uploading Executable Content (ASP/PHP/bat)</a></div></li>
+<li class="level2"><div class="li"><a href="#file_enumeration">File Enumeration</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#how_to_get_information_from_files">How to get Information from files</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#source_code_disclosure_vulnerabilities">Source Code Disclosure Vulnerabilities</a></div></li>
+<li class="level2"><div class="li"><a href="#hidden_fields_in_hup">Hidden Fields in HUP</a></div></li>
+</ul>
+</li>
+</ul></div>          
+<h2 class="sectionedit1" id="the_art_of_software_security_testing">The Art Of Software Security Testing</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;The Art Of Software Security Testing&quot;,&quot;hid&quot;:&quot;the_art_of_software_security_testing&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:1,&quot;range&quot;:&quot;29-79&quot;} -->
+<h2 class="sectionedit2" id="case_your_own_jointa_paradigm_shift_from_traditional_software_testing">Case your own Joint: A Paradigm Shift from Traditional Software Testing</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Case your own Joint: A Paradigm Shift from Traditional Software Testing&quot;,&quot;hid&quot;:&quot;case_your_own_jointa_paradigm_shift_from_traditional_software_testing&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:2,&quot;range&quot;:&quot;80-165&quot;} -->
+<h3 class="sectionedit3" id="outlines">Outlines</h3>
+
+<ul>
+<li class="level1"><div class="li"> Introduction</div>
+</li>
+<li class="level1 node"><div class="li"> Security Testing Versus Traditional Software Testing </div>
+<ul>
+<li class="level4"><div class="li"> Boundaries requirement</div>
+</li>
+<li class="level4"><div class="li"> SQL Injection Attack Pattern</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> The Paradigm Shift of Security Testing </div>
+</li>
+<li class="level1"><div class="li"> High-Level Security Testing Strategies</div>
+</li>
+<li class="level1"><div class="li"> Attack Pattern Strategy </div>
+</li>
+<li class="level1"><div class="li"> attack surface</div>
+</li>
+<li class="level1"><div class="li"> The basic process of security testing boils down to these steps
+</div>
+</li>
+</ul>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Outlines&quot;,&quot;hid&quot;:&quot;outlines&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:3,&quot;range&quot;:&quot;166-535&quot;} -->
+<h3 class="sectionedit4" id="introduction">Introduction</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Every complex software program will have costly security vulnerabilities unless considerable effort is made to eliminate them.</div>
+</li>
+<li class="level1"><div class="li"> The traditional software development and testing process has been far from perfect.</div>
+</li>
+<li class="level1"><div class="li"> American companies spend $84 billion annually on failed software projects.</div>
+</li>
+<li class="level1"><div class="li"> $138 billion is spent on projects that significantly exceed time and budget estimates or that have reduced functionality. </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Introduction&quot;,&quot;hid&quot;:&quot;introduction&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:4,&quot;range&quot;:&quot;536-983&quot;} -->
+<h3 class="sectionedit5" id="example">Example</h3>
+<div class="level3">
+<ul>
+<li class="level1 node"><div class="li"> In June 2005, more than 40 million debit and credit cards were exposed to criminals when Card Systems was the victim of a cyber break-in. </div>
+<ul>
+<li class="level3"><div class="li"> Reason: Its software was making extra copies of the credit card data and storing it unencrypted.</div>
+</li>
+<li class="level3"><div class="li"> Result: customers reevaluate their relationship with CardSystems, and four months later the company was sold. </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Example&quot;,&quot;hid&quot;:&quot;example&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:5,&quot;range&quot;:&quot;984-1368&quot;} -->
+<h3 class="sectionedit6" id="vulnerability">Vulnerability</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> A flaw or weakness in a system&#039;s design, implementation, or operation and management that could be exploited to violate the system&#039;s security policy.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Vulnerability&quot;,&quot;hid&quot;:&quot;vulnerability&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:6,&quot;range&quot;:&quot;1369-1547&quot;} -->
+<h3 class="sectionedit7" id="security_testing_versus_traditional_software_testing">Security Testing Versus Traditional Software Testing</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Traditional software testing focuses mainly on verifying functional requirements.</div>
+</li>
+<li class="level1"><div class="li"> On a secondary level, traditional testing also focuses on specified operational requirements, such as performance, stress, backup, and recoverability.</div>
+</li>
+<li class="level1"><div class="li"> On a secondary level, traditional testing also focuses on specified operational requirements, such as performance, stress, backup, and recoverability.</div>
+</li>
+<li class="level1"><div class="li"> Security requirements in traditional testing environments are often scarcely stated or completely omitted.</div>
+</li>
+<li class="level1"><div class="li"> In a traditional testing environment, software testers build test cases and scenarios based on the application&#039;s requirements.</div>
+</li>
+<li class="level1"><div class="li"> Various testing techniques and strategies are used to methodically exercise each function of the application to ensure that it is working properly.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Security Testing Versus Traditional Software Testing&quot;,&quot;hid&quot;:&quot;security_testing_versus_traditional_software_testing&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:7,&quot;range&quot;:&quot;1548-2401&quot;} -->
+<h3 class="sectionedit8" id="example1">Example</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> A financial application should accept a bank account number and display an account balance.</div>
+</li>
+<li class="level1 node"><div class="li"> Testing scenarios:</div>
+<ul>
+<li class="level4"><div class="li"> test scenarios that exercise the function the way a regular user would, (valid inputs result in expected outputs, invalid inputs will display error messages, server doesn&#039;t crash )</div>
+</li>
+<li class="level4"><div class="li"> test scenarios that focus on the variations and permutations of input boundaries of the 
+	'bank account number' fields that could 
+	"break" the system. </div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<a href="../../img/bank.png" class="media" title="bank.png"><img src="../../img/bank.png" class="media" alt="" width="200" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Example&quot;,&quot;hid&quot;:&quot;example1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:8,&quot;range&quot;:&quot;2402-2914&quot;} -->
+<h3 class="sectionedit9" id="boundaries_requirement">Boundaries Requirement</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Account number must contain exactly 12 numeric characters.</div>
+</li>
+<li class="level1 node"><div class="li"> A simplified testing example would look like this: </div>
+<ul>
+<li class="level4"><div class="li"> The positive boundary is as follows:  Enter exactly 12 numeric characters into the Account Number field, press Enter, and evaluate the system behavior.</div>
+</li>
+<li class="level4"><div class="li"> The negative boundary is as follows: 
+   Enter 11 (max -1) numeric characters into the Account   </div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+      Number field, and evaluate the system behavior. (the  system should display error message)
+</p>
+<ul>
+<li class="level1"><div class="li"> Try to enter 13 (max+1) numeric characters into the Account Number field. The system shouldn&#039;t allow the user to enter more than 12 numeric characters.</div>
+</li>
+<li class="level2"><div class="li"> Traditional way of testing addresses most of the application requirements and verifies that the use case scenarios have been implemented.</div>
+</li>
+<li class="level2"><div class="li"> It often doesn&#039;t test the scenarios and actions that an application is not supposed to allow.(ex: doesn't allow user to enter single quote (') into input field)</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;boundaries requirement&quot;,&quot;hid&quot;:&quot;boundaries_requirement&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:9,&quot;range&quot;:&quot;2915-3906&quot;} -->
+<h3 class="sectionedit10" id="sql_injection_attack_pattern">SQL Injection Attack Pattern</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Enter 12 characters into the Bank Account number field. Use a single-quote character followed by 11 numeric characters. </div>
+</li>
+<li class="level1"><div class="li"> Use a Web proxy to input the data .The Web proxy bypasses input validation.</div>
+</li>
+<li class="level1"><div class="li"> Observe the error the application returns.</div>
+</li>
+<li class="level1"><div class="li"> If the error contains output that looks like it is originating from a database server or database driver, such as the following:  Microsoft OLE DB Provider for ODBC Drivers error &#039;80040e07'</div>
+</li>
+<li class="level1"><div class="li"> It is likely that the system is not properly protecting against SQL injection attacks.</div>
+</li>
+<li class="level1"><div class="li"> Traditional Testing implements all its â€œshould, shallâ€ the functional and operational requirements.</div>
+</li>
+<li class="level1"><div class="li"> Security Testing deals with "shouldn&#039;t, shall not or don&#039;t allows". It handles security requirements.</div>
+</li>
+<li class="level1"><div class="li"> The tester needs to think of himself not only as a verifier but also as an attacker.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;SQL Injection Attack Pattern&quot;,&quot;hid&quot;:&quot;sql_injection_attack_pattern&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:10,&quot;range&quot;:&quot;3907-4789&quot;} -->
+<h3 class="sectionedit11" id="high-level_security_testing_strategies">High-Level Security Testing Strategies</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> The Fault Injection Model of Testing: Testers as Detectives:</div>
+</li>
+<li class="level1"><div class="li"> Attackers don&#039;t validate that features work; they think up ways to try to make the program misbehave and/or to take control of the program. </div>
+</li>
+<li class="level1"><div class="li"> The simplest attack testing, which is generally also part of boundary/negative functional testing, is to input a variation of invalid account numbers and check to see that the program returns an error message. </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;High-Level Security Testing Strategies&quot;,&quot;hid&quot;:&quot;high-level_security_testing_strategies&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:11,&quot;range&quot;:&quot;4790-5263&quot;} -->
+<h3 class="sectionedit12" id="attack_pattern_strategy">Attack Pattern Strategy</h3>
+<div class="level3">
+<ol>
+<li class="level1"><div class="li"> Insist on attack use cases and understand the attack patterns.</div>
+</li>
+<li class="level1"><div class="li"> Understand secure design and implementation standards). </div>
+</li>
+<li class="level1"><div class="li"> Follow the Secure Software Development life cycle(SSDL). </div>
+</li>
+<li class="level1"><div class="li"> Use the information and outcome of threat modeling (Risk-Based Security Testing: Prioritizing Security Testing with Threat Modeling). </div>
+</li>
+<li class="level1"><div class="li"> The items that are listed as the greatest risks as part of the threat modeling evaluation should be the focus of security tests. </div>
+</li>
+<li class="level1"><div class="li"> If illegal input is permitted, the tester should craft the input in an attempt to cause a fault in the program and cause the application to enter an unanticipated state). If the program produces erroneous results, the security tester should manipulate the data in an effort to control how the program fails. If the tester can exert control over  the program and perform actions she shouldn&#039;t be able to, her detective work will result in uncovering a security vulnerability. </div>
+</li>
+<li class="level1"><div class="li"> Evaluate the vulnerability, report the vulnerability, wait for the fix, and then retest. </div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Attack Pattern Strategy&quot;,&quot;hid&quot;:&quot;attack_pattern_strategy&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:12,&quot;range&quot;:&quot;5264-6337&quot;} -->
+<h3 class="sectionedit13" id="attack_surface">Attack Surface</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Attack surface: program&#039;s inputs that could be network sockets, APIs, open files, pipes, shared memory, and more. </div>
+</li>
+<li class="level1"><div class="li"> A good attacker will enumerate them all.</div>
+</li>
+<li class="level1"><div class="li"> The larger the attack surface, the easier a program is to attack, and the more difficult it is to find all variations of vulnerabilities.</div>
+</li>
+<li class="level1"><div class="li"> Every part of the attack surface must be protected for a program to be secure.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Attack Surface&quot;,&quot;hid&quot;:&quot;attack_surface&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:13,&quot;range&quot;:&quot;6338-6751&quot;} -->
+<h3 class="sectionedit14" id="prioritizing_your_work">Prioritizing Your Work</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> With all testing efforts for any moderately complex program, it is generally not feasible to test all combinations and variations.</div>
+</li>
+<li class="level1"><div class="li"> A Web application that is made up of 10 forms with 10 form fields each. Each form field can take an input of 100 alphanumeric characters (a total of 62 possibilities for uppercase and lowercase letters plus the numbers. The total number of input possibilities for this program is 10 x 10 x 62,	100 possible inputs.</div>
+</li>
+<li class="level1"><div class="li"> Security testers can then focus their testing 
+on the areas where the ease of attack is least and the impact is highest.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Prioritizing Your Work&quot;,&quot;hid&quot;:&quot;prioritizing_your_work&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:14,&quot;range&quot;:&quot;6752-7362&quot;} -->
+<h3 class="sectionedit15" id="the_basic_process_of_security_testing_boils_down_to_these_steps">The basic process of security testing boils down to these steps:</h3>
+<ol>
+<li class="level1 node"><div class="li"> Enumerate the application's input or attack surface. Use all the resources you have available.</div>
+<ul>
+<li class="level3"><div class="li"> System debugging tools can list the files, network ports, and other system resources a program is using</div>
+</li>
+<li class="level3"><div class="li"> Search source code for the use of system input/output APIs. </div>
+</li>
+<li class="level3"><div class="li"> Design documentation and developer interviews.</div>
+</li>
+<li class="level3"><div class="li"> Use detective work and develop an attacker&#039;s mind-set.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Threat-model to prioritize program components from highest-risk to lowest-risk. Highest-risk components typically are areas where anonymous or low-privileged remote users can access or manipulate sensitive data within the application or execute arbitrary code.</div>
+</li>
+<li class="level1 node"><div class="li"> Use common attack patterns to attack the application&#039;s attack surface through fault injection. Start with a program&#039;s highest-risk areas. Use a combination of </div>
+<ul>
+<li class="level3"><div class="li"> Manual input</div>
+</li>
+<li class="level3"><div class="li"> Input generated by off-the-shelf or custom fuzzer tools</div>
+</li>
+<li class="level3"><div class="li"> Input manipulated by proxies.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Inspect the system for common security design errors: </div>
+<ul>
+<li class="level3"><div class="li"> Inspect the privacy of network traffic and protocols used.</div>
+</li>
+<li class="level3"><div class="li"> Inspect the privacy of data in storage and memory and ACLs on  <abbr title="Operating System">OS</abbr> objects.</div>
+</li>
+<li class="level3"><div class="li"> Inspect the strength of the authentication mechanism such as passwords.</div>
+</li>
+<li class="level3"><div class="li"> Inspect random numbers.</div>
+</li>
+</ul>
+</li>
+</ol>
+
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;The basic process of security testing boils down to these steps:&quot;,&quot;hid&quot;:&quot;the_basic_process_of_security_testing_boils_down_to_these_steps&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:15,&quot;range&quot;:&quot;7363-8712&quot;} -->
+<h2 class="sectionedit16" id="how_vulnerabilities_get_into_all_software">How Vulnerabilities Get into All software</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;How Vulnerabilities Get into All software&quot;,&quot;hid&quot;:&quot;how_vulnerabilities_get_into_all_software&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:16,&quot;range&quot;:&quot;8713-8769&quot;} -->
+<h3 class="sectionedit17" id="outlines1">Outlines</h3>
+<div class="level3">
+<ul>
+<li class="level1 node"><div class="li"> Design Vulnerabilities:</div>
+<ul>
+<li class="level4"><div class="li"> Poor use of cryptography.</div>
+</li>
+<li class="level4"><div class="li"> Tracking users and their permission.</div>
+</li>
+<li class="level4"><div class="li"> Flawed input validation.</div>
+</li>
+<li class="level4"><div class="li"> Weak structural security.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Programming language Implementation Issues:</div>
+<ul>
+<li class="level4"><div class="li"> Compiled Language: C/C++</div>
+</li>
+<li class="level4"><div class="li"> Interpreted Languages: Shell Scripting and PHP</div>
+</li>
+<li class="level4"><div class="li"> Virtual Machine Language: Java and C#</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Platform Implementation Issues:</div>
+<ul>
+<li class="level4"><div class="li"> Symbolic Linking </div>
+</li>
+<li class="level4"><div class="li"> Directory Traversal</div>
+</li>
+<li class="level4"><div class="li"> Character Conversion</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Generic Application Security Implementation Issues:</div>
+<ul>
+<li class="level4"><div class="li"> SQL Injection</div>
+</li>
+<li class="level4"><div class="li"> Cross-Site Scripting </div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> Problems During the Development Process</div>
+<ul>
+<li class="level4"><div class="li"> Poorly Documented Security Requirements and Assumptions</div>
+</li>
+<li class="level4"><div class="li"> Poor Communication and Documentation </div>
+</li>
+<li class="level4"><div class="li"> Lack of Security Processes During the Development Process</div>
+</li>
+<li class="level4"><div class="li"> Weak Deployment</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Outlines&quot;,&quot;hid&quot;:&quot;outlines1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:17,&quot;range&quot;:&quot;8770-9647&quot;} -->
+<h3 class="sectionedit18" id="introduction1">Introduction</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Expert software security testers know that all software has latent vulnerabilities. Given enough time, there isn&#039;t a nontrivial program in which they couldn&#039;t find security bugs. Yet most software developers are highly skeptical that there are any security problems in their software.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Introduction&quot;,&quot;hid&quot;:&quot;introduction1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:18,&quot;range&quot;:&quot;9648-9959&quot;} -->
+<h3 class="sectionedit19" id="design_versus_implementation_vulnerabilities">Design Versus Implementation Vulnerabilities</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Software design dictates how different components of a program will interact with each other to perform the tasks needed to meet software requirements.</div>
+</li>
+<li class="level1"><div class="li"> The design must specify the security model&#039;s structure. If a program has features that require security mechanisms, the design specifies how they work.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Design Versus Implementation Vulnerabilities&quot;,&quot;hid&quot;:&quot;design_versus_implementation_vulnerabilities&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:19,&quot;range&quot;:&quot;9960-10328&quot;} -->
+<h3 class="sectionedit20" id="design_vulnerability">Design Vulnerability</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> A design vulnerability is a mistake in the design that precludes the program from operating securely, no matter how perfectly it is implemented by the coders.</div>
+</li>
+<li class="level1"><div class="li"> Design vulnerabilities are often found in the software&#039;s security features.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Design Vulnerability&quot;,&quot;hid&quot;:&quot;design_vulnerability&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:20,&quot;range&quot;:&quot;10329-10603&quot;} -->
+<h3 class="sectionedit21" id="implementation_vulnerability">Implementation Vulnerability</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Implementation vulnerabilities are caused by security bugs in the actual coding 
+of the software. They are like tiny cracks or flaws in a precision cast in a part of a 
+complex jet engine. These tiny cracks, given particular stresses under the right environmental conditions, can cause a jet engine to fail, no matter how well it is designed.</div>
+</li>
+<li class="level1"><div class="li"> Good secure software designers use techniques such as compartmentalization, least privilege, attack surface reduction, and cryptography to minimize the severity or impact of implementation flaws. Compartmentalization is the use of strong abstractions and interface validations to ensure the proper use of a module.</div>
+</li>
+<li class="level1"><div class="li"> Attack surface reduction eliminates interfaces to software unless they are absolutely necessary for it to complete its work. Low-priority features can be eliminated if that makes it possible to have less attack surface.</div>
+</li>
+<li class="level1"><div class="li"> If your software is not designed with security in mind, it will be difficult or nearly impossible to make it secure later. On the other hand, secure design cannot protect against or mitigate all implementation flaws.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Implementation Vulnerability&quot;,&quot;hid&quot;:&quot;implementation_vulnerability&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:21,&quot;range&quot;:&quot;10604-11753&quot;} -->
+<h2 class="sectionedit22" id="common_secure_design_issues">Common Secure Design Issues</h2>
+<div class="level2">
+<ul>
+<li class="level1 node"><div class="li"> <b>Poor Use of Cryptography:</b></div>
+<ul>
+<li class="level4 node"><div class="li"> Cryptography is an essential technique for creating secure systems. When two parties communicate over an insecure channel such as the Internet and eavesdropping is a threat, cryptography can be used to mitigate that threat. Five common pitfalls:</div>
+<ol>
+<li class="level6"><div class="li"> Creating Your Own Cryptography</div>
+</li>
+<li class="level6 node"><div class="li"> Choosing the Wrong Cryptography: In general, using FIPS-approved algorithms is a good idea. The two major types of cryptography are symmetric and public key. Within symmetric are block ciphers and stream ciphers. Block ciphers require you to select a mode of operation. Public key cryptography allows both the sender and receiver to have their own key.</div>
+<ul>
+<li class="level8"><div class="li"> Cryptographic hash functions and message authentication codes are better suited for security mechanisms to detect tampering or to sign a message.</div>
+</li>
+</ul>
+</li>
+<li class="level6"><div class="li"> Relying on Security by Obscurity: Security by obscurity is a tempting thing for programmers to rely on. It works only if no one tries hard enough to break through the security. The problem is that the length of time is under the attacker&#039;s control.</div>
+</li>
+<li class="level6 node"><div class="li"> Hard-Coded Secrets: </div>
+<ul>
+<li class="level8"><div class="li"> One of the fundamental tenants of cryptography is that secrets must remain secret, or the crypto system fails to work. What  good is a password if you write it down and post it on the outside of your laptop?</div>
+</li>
+<li class="level8"><div class="li"> Many programs have a requirement that data must be stored securely on disk or in a database.</div>
+</li>
+<li class="level8"><div class="li"> Building crypto-systems is difficult. Key management is the process of installing and moving around the secret keys that make the crypto-system work. Programmers often miss this critical factor or just don&#039;t have enough time to do it right. A good rule of thumb is that if you have a hard-coded secret key in your application, you need to treat the entire application as a secret. A type of cryptography called public key cryptography uses public keys that can be widely distributed.</div>
+</li>
+</ul>
+</li>
+<li class="level6 node"><div class="li"> Mishandling Private Information: </div>
+<ul>
+<li class="level8"><div class="li">  Private information is data that the application should not disclose to anyone but users authorized to access it. Secrets such as passwords, password hashes, crypto keys, account names, credit card numbers, and account balances, often is very important to keep private. You should review the value of the system&#039;s data assets and design the system such that other valuable information is not disclosed.</div>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Tracking Users and Their Permissions:  Many networked applications need to track which user is associated with a transaction so that the application can perform an authorization step before the transaction will complete.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>Weak Structural Security:</strong></div>
+</li>
+</ul>
+<ol>
+<li class="level11"><div class="li"> Large Attack Surface: The attack surface is the boundary of an application that an attacker can potentially interact with. An application listening to the network on two ports is typical less secure than an application listening on one.</div>
+</li>
+<li class="level11"><div class="li"> Running a Process at a too High Privilege Level: When a vulnerability is exploited, the attacker&#039;s actions, whether executing arbitrary code or manipulating the system&#039;s file system, are performed with the privileges of the running process. Running at the lowest possible privilege level to accomplish what the software needs limits the damage caused if a vulnerability is exploited.</div>
+</li>
+<li class="level11"><div class="li"> No Defense in Depth: A fundamental tenant of secure design is to not rely on one mechanism to achieve security because that mechanism may fail. Multiple independent security mechanisms should be employed. A real-world example of defense in depth is a bank&#039;s physical security. When designing mitigations against threats to an application, designers should use multiple mechanisms to counter the threat. </div>
+</li>
+<li class="level11"><div class="li"> Not Failing Securely: A major source of unintended functionality is error handling code. It is often inadequately designed and tested. Often error messages contain stack traces, directory information, and version information for software components and services the software connects to.</div>
+</li>
+</ol>
+<ul>
+<li class="level11"><div class="li"> <strong>Other Design Flaws:</strong></div>
+</li>
+</ul>
+<ol>
+<li class="level11"><div class="li"> Mixing Code and Data: Multi-tier applications often transfer commands and other interpreted code from one process to another. If an attacker can find a way to modify this code, he will have found a way to modify the application's execution. The application design should isolate the data supplied by users from the code that the application transmits to other systems or executes itself.</div>
+</li>
+<li class="level11"><div class="li"> Misplaced Trust in External Systems: Every data input into an application is a potential hazard. It is often obvious to software designers that they need to be worry of the data input by users. The data is useful for logging, but an attacker should not be able to leverage control of an external server to get an application to make a different security decision.</div>
+</li>
+<li class="level11"><div class="li"> Insecure Defaults: An application should always default to a secure operating mode. It should not require a configuration change out of the box to be made secure because this change will often be forgotten or performed improperly. Attackers target insecure default configurations because they know many systems are deployed that way.</div>
+</li>
+<li class="level11"><div class="li"> Missing Audit Logs: Audit logs are an essential component of a secure application. They enable attacks to be detected.</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Common Secure Design Issues&quot;,&quot;hid&quot;:&quot;common_secure_design_issues&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:22,&quot;range&quot;:&quot;11754-17265&quot;} -->
+<h2 class="sectionedit23" id="programming_language_implementation_issues">Programming Language Implementation Issues</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Every programming language has idiosyncrasies that, if not understood and 
+dealt with during the coding process, can lead to security flaws. The programmer must avoid using some elements of a programming language or its programming environment to avoid creating implementation flaws. </div>
+</li>
+</ul>
+
+<p>
+<strong>1. Compiled language: C/C++</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> The C language was designed to be low-level and portable Many applications are written in C and C++ for the increased performance of low-level portable languages on these operating systems where the native interfaces are also written in C.</div>
+</li>
+<li class="level20"><div class="li"> This causes a problem because the C language has historically had the most security-related issues of any programming language. </div>
+</li>
+<li class="level20"><div class="li">One of security problems is that C Language Has No Safe Native String Type and No Safe Easy-to-Use String-Handling Functions.</div>
+</li>
+<li class="level20"><div class="li">In C, strings are arrays of characters with a NULL terminator signifying the end of the string. The following string is represented in memory as shown in the following figure :</div>
+</li>
+</ul>
+
+
+<kbd>char buffer[]  = "small string"; </kbd> <br/>
+<p style="text-align:center"><a href="../../img/memory.png" class="media" title="memory.png"><img src="../../img/memory.png" class="mediacenter" alt="" width="300" /></a></p>
+<ul>
+<li class="level1"><div class="li"> Nowhere is the string&#039;s size actually stored. It is up to the programmer to manage the size. If the programmer gets lazy and doesn&#039;t keep track of the size or makes mistake with the size, this can lead to memory beyond the end of buffer being overwritten when the string is copied. This situation is called a buffer overrun.</div>
+</li>
+<li class="level1"><div class="li"> A class of string-handling function takes no size value as a parameter. These functions include strcpy and strcat. These are called unbounded string function. They copy and concentrate a source buffer to a target buffer one character a time until the terminating NULL is reached. If the source is larger than the target, you get a buffer overrun.</div>
+</li>
+<li class="level1"><div class="li"> Example of problematic usage:</div>
+</li>
+</ul>
+
+<code>
+      int check_login( char  *name) <br/>
+ { <br/>
+int x  =	0;  <br/>
+char small_buffer[10]; <br/>
+
+
+if	(strcmp(name,  "admin")	==	0) <br/>
+x	=	1	;  <br/>
+
+
+strcpy(small_buffer, name); <br/>
+
+
+return x; <br/>
+
+}
+</code>
+<ul>
+<li class="level1"><div class="li"> In this example, the user inputs the variable name. If the programmer allows the user to enter any size of string, the user might enter a value longer than nine characters and end up overflowing the small_buffer variable when the strcpy function is called. When this happens, the memory after the small_buffer is overwritten with the content of name that is longer than nine characters.</div>
+</li>
+<li class="level1"><div class="li"> small_buffer is a local variable to this function, Directly after small_buffer is an integer variable, x This variable gets overwritten when small_buffer is overrun, see the following figure :</div>
+</li>
+</ul>
+
+<p>
+before
+<a href="../../img/memory2.png" class="media" title="memory2.png"><img src="../../img/memory2.png" class="media" alt="" width="300" /></a>
+</p>
+
+</div>
+<div class="level3">
+
+<p>
+after
+<a href="../../img/memory3.png" class="media" title="memory3.png"><img src="../../img/memory3.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Another common way that buffers get overrun in C is with the <strong>sprintf</strong> function. This function takes parameters specifying a target buffer, a format string, and a variable number of source buffers:</div>
+</li>
+</ul>
+
+<code>
+   sprintf (target, format, sourcel, source2,....,sourcen);
+</code>
+
+<ul>
+<li> The format is made up of static text and format specifiers. A %s format specifier is used for a string, and a %d format specifier is used for an integer. A typical format string looks like 
+"Name: %s, count:  %d"
+</li>
+<li><strong>problem: Buffer Overruns Can Overrun Function Return Addresses on the Stack.</strong>
+</li>
+<li> The problem is that The return address that is used to return to the location from where a function is called resides on the stack right after the local variables. The return address is a hidden piece of data that resides on the stack with the rest of the variables passed to a function. Compiled programs place this data on the stack before calling the function.
+</li>
+<li> For example, consider the following C/C++ code:</li>
+</ul>
+
+<p>
+<a href="../../img/code2.png" class="media" title="code2.png"><img src="../../img/code2.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li> This C++ code simply takes the supplied first and last names and puts them together, separated by a space. Of particular importance is the fullName variable. The way it is declared causes it to reside on the stack. The problem is that this variable can easily exceed 1,024 characters whenever firstName or lastName or both values are too long.
+</li>
+<li> The combination of buffer overruns and overwriting the function return address causes C to be one of the most insecure languages of all time. These two issues lead to the most common critical security flaw, in which the attacker can execute arbitrary code of his choosing.</li>
+<li> <strong>Solution</strong>
+</li>
+<li> Preventing buffer overflows consists mainly of checking the length of user-supplied input variables. In the preceding example, limiting the size of the variables, also using the strncpy and strncat functions instead of strcpy and strcat is also advised because strncpy and strncat limit the number of characters copied into the buffer. Preventing buffer overflows is not an insurmountable task. It is simple to avoid the unbounded string operations. </div>
+</li>
+<li> <strong>Problem: printf-Style Formatting Functions</strong>
+</li>
+<li>Remember that the sprintf function takes a target buffer, a format string, and one or more source arguments. The function assumes that the number of format string specifiers in the format string is the same as the number of source arguments.
+</li>
+<li> Recall the preceding example:
+</li>
+</ul>
+
+<p>
+<code>sprintf(target, "Name: %s, count:%d", person, num);</code> <br/>
+The %s matches up with the person variables, and %d matches up with the num variable.
+</p>
+<ul>
+<li > <strong>Problem: Integer Overflows</strong>
+</li>
+<li> In C integers are signed by default, meaning they can be positive or negative. Integer overflows occur when an integer value grows higher than its maximum possible value and rolls around to become a negative number.
+</li>
+<li> If you add 1 to an integer that is 2147483647, it overflows the maximum integer value and becomes -2147483648. If an attacker can manipulate an integer&#039;s size through user input, he may be able to overflow the value. 
+</li>
+<li> Here is an example. Assume that the user can manipulate len:
+</li>
+</ul>
+
+<p>
+<a href="../../img/code1.png" class="media" title="code1.png"><img src="../../img/code1.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> memcp takes an undersigned int as the length character. But before the memcpy, a bounds check is performed using signed integers. If the user can manipulate the program to pass a negative value for len, it will be possible to pass the check at [1], but in the call to memcpy at[2],len will be interpreted as a large unsigned value.</div>
+</li>
+<li class="level1"><div class="li"> Here is another example in which -1 becomes 4294967295.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/code4.png" class="media" title="code4.png"><img src="../../img/code4.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> This type of code is often found in a program receiving data from the network where length information is found at the beginning of the packet. The addition at [1], used to check that the data does not exceed the bounds of the output buffer, can be abused by setting sizel and size2 to values that cause the size variable to wrap around to a negative value.   </div>
+</li>
+</ul>
+
+<p>
+<strong> 2. Interpreted Languages: Shell Scripting and PHP</strong>
+</p>
+<ul>
+<li class="level1"><div class="li">  Scripting languages such as shell scripting for UNIX or PHP for web applications make programming easier by creating rich environment where many operations happen"behind the scenes" by default.</div>
+</li>
+<li class="level3"><div class="li"> Scripting languages are "high-level" languages. The benefit is that many of the buffer overflow   problems that plague C/C++ are nonexistent.</div>
+</li>
+<li class="level3"><div class="li"> Even though the most common source of buffer  overflows is C/C++ code, and scripting languages such as Perl and PHP code are less of a risk.</div>
+</li>
+<li class="level3"><div class="li"> UNIX and Windows shell scripts are often used as quick and easy interfaces between components when building applications.</div>
+</li>
+<li class="level3"><div class="li"> For example, when programmers need to build e-mail functions for a Web application, they often write a small UNIX shell script to call the send-mail program that is included in most UNIXes. This saves the time of writing e-mail functionality from scratch. </div>
+</li>
+<li class="level3"><div class="li"> Most programming environments have functions that call out to the native <abbr title="Operating System">OS</abbr> and pass commands to be interpreted. In C/C++ and Perl, it is the system( ) or exec( ) function. In PHP it is passthru( ). </div>
+</li>
+<li class="level3"><div class="li"> Shell script security problems are often only one function call away from affecting most programs if the programmer uses shell commands and is unaware of <em class="u">common vulnerabilities such as metacharacter and command injection</em>.</div>
+</li>
+<li class="level3"><div class="li"> <strong>Problem1: Metacharacters
+</strong></div>
+</li>
+<li class="level3"><div class="li"> Metacharacters are characters such as  ; or : that have a special meaning to the command interpreter. Other characters such as $ are expanded into a data variable that is read from the <abbr title="Operating System">OS</abbr>.</div>
+</li>
+<li class="level3"><div class="li"> <strong>Problem2: Command Injection</strong></div>
+</li>
+<li class="level3"><div class="li"> Command injection is often the goal of an attacker who slips metacharacters 
+into data that gets processed by a command shell. The command shell is a part 
+of UNIX, Windows, and other operating systems.</div>
+</li>
+<li class="level3"><div class="li"> Consider a Perl script that uses the UNIX sendmail command to send mail. The Perl program creates a command that is sent to the UNIX shell and interpreted. The Perl program looks like this:</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/code5.png" class="media" title="code5.png"><img src="../../img/code5.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> The command that gets executed is as follows:  /usr/lib/sendmail  $to</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> In<strong> PHP</strong>, variables don&#039;t need to be declared. After variables are created, they can be used anywhere in the program. Because of these properties, initializations of variables are rare. But all this automatic functionality can cause security problems.</div>
+</li>
+<li class="level1 node"><div class="li"> <strong>Problem1: Automatically Created Variables</strong></div>
+<ul>
+<li class="level3"><div class="li"> In PHP, variables don&#039;t need to be declared. After variables are created, they can be used anywhere in the program. Because of these    properties, initializations of variables are rare. But all this automatic functionality can cause security problems.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> When the logincheck.php script runs, it starts with the login variable set to 1. </div>
+<ul>
+<li class="level2"><div class="li"> Consider the following script as part of logincheck.php:</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<a href="../../img/phpcode.png" class="media" title="phpcode.png"><img src="../../img/phpcode.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> If the script is executed from the <abbr title="Uniform Resource Locator">URL</abbr> just mentioned, it will cause the slog in == 1 condition to be true and do_important_function () to execute. </div>
+</li>
+<li class="level2"><div class="li"> <strong>Problem2: Remote Files</strong></div>
+</li>
+<li class="level2"><div class="li"> PHP function calls that open or include a file take a filename that also includes a 
+protocol and hostname. PHP then uses <abbr title="File Transfer Protocol">FTP</abbr> or HTTP to retrieve the file remotely 
+and open it or even include it in the program. If an attacker can manipulate the 
+filenames that get passed to fopen ( ), readfile(), include( ), and include_once(), he can get the program to operate on data supplied by the attacker&#039;s remote site.</div>
+</li>
+</ul>
+
+
+
+<h4 id="implementation_issues"><strong>Implementation issues</strong></h4>
+<div class="level4">
+
+<p>
+3. Virtual Machine Languages:
+</p>
+<ul>
+<li class="level1"><div class="li"> Java and C# Languages that compile into bytecode and require a virtual machine to run are typically much safer than languages that compile info native code. Java and C++ are examples of languages that are designed to be compiled into bytecode.</div>
+</li>
+<li class="level1"><div class="li"> <strong>Problem: Lack of Error Handling</strong></div>
+</li>
+<li class="level1"><div class="li"> Java and C# use exception handling to handle errors. This is a great way to add structure to error handling.</div>
+</li>
+<li class="level1"><div class="li"> An attacker can exploit the fact that the program is in a state that the programmer did not anticipate. If the attacker can direct the program to create an exception condition at will, he may be able to get the program to execute in a path of his choosing. </div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="native_code"><strong>Native Code</strong></h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Native code is code that is compiled into machine code and executed directly by 
+the processor.</div>
+</li>
+<li class="level1"><div class="li"> Native code is used in many Java and C# applications. This is mostly because a large base of legacy code is written in native languages such as C, and it is much more productive to reuse the legacy code than to rewrite it all in the managed language being used.</div>
+</li>
+<li class="level1"><div class="li"> If you are testing a program written in managed code, focus on the native cotit components, such as the spell-check library. These are almost always the highest risk areas of the code because of their legacy nature and because they execute out-
+side the virtual machine.</div>
+</li>
+<li class="level1"><div class="li"> If you are testing a program writte in managed code, focus on the native code components, such as the spell-check library. These are almost always the highest risk areas of the code because of their legacy nature and because they execute out-
+side the virtual machine.</div>
+</li>
+</ul>
+
+<p>
+<strong>4. Platform Implementation Issues:</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> The platform is the environment that a program runs inside. It consists mainly of the operating system, but it can also include common components that a program interacts with.</div>
+</li>
+<li class="level1"><div class="li"> Programs rely on the operating system for input and output to the user, the network, and the file system. Programs also rely on the operating system to spawn and communicate with other processes. All these operations are very risky from a security standpoint. </div>
+</li>
+<li class="level1 node"><div class="li"> <strong>Problem1: Symbolic Linking</strong></div>
+<ul>
+<li class="level2"><div class="li"> Symbolic links, or symlinks, are files in a file system that point to other files. Symlinks allow administrator to move  same a file&#039;s physical location to a different device while keeping the same filename. Symlinks are available in UNIX.</div>
+</li>
+<li class="level2"><div class="li"> Another type of file system link is called a hardlink. A hardlink is really just additional directory entry in the fie system for file. Hardlink are available in UNIX and Windows.</div>
+</li>
+<li class="level2"><div class="li"> Symbolic links, or symlinks, are files in a file system that point to other files. Symlinks allow administrator to move  same a file&#039;s physical location to a different device while keeping the same filename. Symlinks are available in UNIX.</div>
+</li>
+<li class="level2"><div class="li"> Another type of file system link is called a hardlink. A hardlink is really just additional directory entry in the fie system for file. Hardlink are available in UNIX and Windows.</div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> <strong>Problem2: Directory Traversal</strong></div>
+<ul>
+<li class="level2"><div class="li"> Many programs are designed to operate only on files beneath a certain point in the directory structure.</div>
+</li>
+<li class="level2 node"><div class="li"> Here is an example with a Web server. The Web server is configured so that the root document directory is at c:\html\. When a Web request comes in that is <a href="http://www.server.com/index.html" class="urlextern" title="http://www.server.com/index.html" rel="ugc nofollow">http://www.server.com/index.html</a>, the Web server does the following:</div>
+<ul>
+<li class="level4"><div class="li">  It parses the <abbr title="Uniform Resource Locator">URL</abbr> to remove the hostname and protocol to get the filename, index.html.</div>
+</li>
+<li class="level4"><div class="li"> It prepends the document directory to the filename to get c:\html\index.html.</div>
+</li>
+<li class="level4"><div class="li"> It opens c:\html\index.html, reads the contents, and sends them to the requester.</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"><strong> Problem3: Character Conversions</strong></div>
+<ul>
+<li class="level2"><div class="li">Character encodings are used to eliminate special characters or to support Unicode character sets, in Web URLs, you often notice %20 used in place of space because spaces are not allowed in URLs. </div>
+</li>
+<li class="level2"><div class="li">The following all represent the character string:</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+       %2f
+</p>
+<kbd> 
+     %255c <br/>
+     %c0%af <br/>
+
+  * Similarly, a period (.)may be represented as follows:<br/>
+
+     %2e<br/>
+
+     %c0%ae<br/>
+
+     %e0%80%ae<br/>
+
+     %f0%80%80%ae<br/>
+
+    * If an application receives input from the user, security requirements typically require that security check ensures that the input string is valid for the application's design.<br/>
+
+    * If / is bad character, the application needs to check al the way / can be represented in order to check for it. Performing the conversion the way the platform will is called canonicalization. It means to represent the characters in their basic form.</pre>
+
+</kbd>
+<strong>5. Generic Application Security Implementation Issues:</strong>
+
+<ul>
+<li class="level1"><div class="li"> <strong>SQL injection</strong> is a technique that attackers can use to execute their own crafted queries on an application connected to a SQL database.</div>
+</li>
+<li class="level3"><div class="li"> Consider the following example from a Java Web application:</div>
+</li>
+</ul>
+
+<p>
+      String status  = request.getParameter("status");
+</p>
+<pre class="code">    String description  = request.getParameter(&quot;description&quot;);
+    String query  = &quot;select  * from results where status  =	+ status + 
+    and description like &#039;%&quot;  + description + &quot;%&#039;&quot; ;
+    String dbURL =
+    &quot;jdbc:mysql://10.1 . 1.1 7/resdb?user=admin&amp;password=apple][e&quot;;
+    DriverManager.registerDriver(new org.gjt.mm.mysql.Driver()); 
+    Connection connection= DriverManager.getConnection(dbURL);
+    Statement statement= connection.createStatement();
+    //	*** User input is directly supplied to this SOL query, allowing SQL
+    //injection  *** 
+    ResultSet result = statement.executeQuery(query);
+    * To prevent SQL injection, all input should be filtered. A regular expression should be used to make sure that the input field contains only the characters you require and never the single-quote character( ).</pre>
+
+<h4 id="cross-site_scripting">Cross-Site Scripting</h4>
+<ul>
+<li> Cross-site scripting takes advantage of the fact that some contexts (or Web sites) on the Internet are more trusted than others. Attackers from a nontrusted context can inject data that will be executed as script within a trusted context.</div>
+</li>
+<li> An example is sending a phony e-mail to a user with a link in it. When she clicks the 
+link, she goes to a Web site that is under the attacker&#039;s control. Here is an example:
+<ol>
+<li> Alice uses the Web site of a financial institution she trusts. The Web site requires her to enter her username and password.
+</li>
+<li>Eve has coded some JavaScript to retrieve the session ID of the logged-in user who runs it.
+</li>
+<li> Eve sends a message to Alice with the JavaScript embedded.
+</li>
+<li> Alice reads Eve&#039;s message. Her session ID is sent to Eve.
+</li>
+<li> Eve session-hijacks Alice by using her session. Eve now has access to the Web site as if she were Alice. 
+</li>
+</ol>
+</li>
+</ul>
+
+
+<h4 id="problems_during_the_development_process">Problems During the Development Process</h4>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li"> <strong>Poorly Documented Security Requirements and Assumptions:</strong></div>
+</li>
+<li class="level1"><div class="li"> â€œFinding vulnerabilities is simple: discover the assumptions a developer made, and then violate those assumptions.â€  â€”Eugene Spafford</div>
+</li>
+<li class="level1"><div class="li"> Programmers cannot implement security requirements they don&#039;t know about; nor can testers test them. </div>
+</li>
+<li class="level1"><div class="li"> platform and <abbr title="Application Programming Interface">API</abbr> documentation provides source code examples of how to use an <abbr title="Application Programming Interface">API</abbr> or platform service correctly Frequently programmers just copy and paste the examples into their program and modify them to suit their needs.</div>
+</li>
+<li class="level1"><div class="li"> Problems arise when the examples don&#039;t follow security best practices. </div>
+</li>
+</ul>
+
+<p>
+ The problem of ignoring security in programming goes beyond platform 
+providers all the way to the education process
+</p>
+
+</div>
+
+<h5 id="poor_communication_and_documentation">Poor Communication and Documentation</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li"> Developing large software programs is arguably one of the most complex 
+engineering endeavors a person can undertake. Because internal documentation is often lacking, developers need to make assumptions about how the procedures they write will be used by other developers. </div>
+</li>
+<li class="level1 node"><div class="li"> One of the biggest issues in creating and testing for secure programs is validating data:</div>
+<ul>
+<li class="level4"><div class="li"> Validating the size of the allowable input data by verifying the boundaries max, max 
+	-i, and max+i and very large inputs.</div>
+</li>
+<li class="level4"><div class="li"> Validating that the data content does not allow unexpected values.</div>
+</li>
+<li class="level4"><div class="li"> Validating that data is converted to its canonical representation before it is used to make a security-related decision.</div>
+</li>
+<li class="level4"><div class="li"> &#039;Validating that allowed inputs that are used in common attack patterns do not cause unexpected behavior in the system.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>lack of Security Processes During the Development Process</strong></div>
+</li>
+<li class="level1"><div class="li"> Many software security experts point to the fact that security is not considered 
+throughout the entire development lifecycle as the key culprit of why so many programs today end up with so many security flaws. This is mostly because security is not taught in college computer science and software engineering programs as part of the traditional way to build software.</div>
+</li>
+<li class="level1"><div class="li"> Ignoring security issues throughout the software development lifecycle has led to 
+	"reactive security". This happens when security issues are fixed only after the product has shipped to customers and a customer or security researcher discovers the problem un the field. The average security patch at Microsoft has hard costs of $100,000.</div>
+</li>
+</ul>
+
+</div>
+
+<h5 id="weak_deployment">Weak Deployment</h5>
+<div class="level5">
+<ul>
+<li class="level1"><div class="li"> Deployment is the process of taking the software and installing and configuring it on a production system.</div>
+</li>
+<li class="level1"><div class="li">  Developers make assumptions during development about how the software 
+will be deployed. They often assume that the files and Registry keys that the software uses will be modified only by the software. File and Registry access control mechanisms need to be set properly to protect configuration files and Registry entries from tampering. </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Programming Language Implementation Issues&quot;,&quot;hid&quot;:&quot;programming_language_implementation_issues&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:23,&quot;range&quot;:&quot;17266-37196&quot;} -->
+<h2 class="sectionedit24" id="the_secure_software_development_lifecycle">The Secure Software 
+Development Lifecycle</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;The Secure Software \u000bDevelopment Lifecycle&quot;,&quot;hid&quot;:&quot;the_secure_software_development_lifecycle&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:24,&quot;range&quot;:&quot;37197-37254&quot;} -->
+<h3 class="sectionedit25" id="introduction2">Introduction</h3>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> In the traditional software development lifecycle (SDLC),security testing is often an afterthought, and security verification and testing efforts are delayed until after the software has been developed.</div>
+</li>
+<li class="level1"><div class="li"> Vulnerabilities are an emergent property of software that appear throughout the design and implementation cycles. Therefore, a before, during, and after approach to software development is required. </div>
+</li>
+<li class="level1"><div class="li"> In many software-development organizations, the security testing phase functions as the final â€œsecurity gateâ€ for an application.</div>
+</li>
+<li class="level1"><div class="li"> The earlier a defect is uncovered, the cheaper it is to fix, as shown in the following table. </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/table3-1.png" class="media" title="table3-1.png"><img src="../../img/table3-1.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Security issues must be incorporated and addressed early in the lifecycle. </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Introduction&quot;,&quot;hid&quot;:&quot;introduction2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:25,&quot;range&quot;:&quot;37255-38033&quot;} -->
+<h3 class="sectionedit26" id="secure_software_development_lifecycle_ssdl">Secure Software Development Lifecycle (SSDL)</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> SSDL represents a structured approach toward implementing and performing secure software 
+development.</div>
+</li>
+<li class="level1"><div class="li"> In SSDL, security issues are evaluated and addressed early in the system&#039;s lifecycle, during business analysis, throughout the requirements phase, and during the design and development of each software build. </div>
+</li>
+<li class="level1 node"><div class="li"> This early involvement allows:</div>
+<ol>
+<li class="level4"><div class="li"> the security team to provide a quality review of the security requirements specification, attack use cases, and software design. </div>
+</li>
+<li class="level4"><div class="li"> The team also will more completely understand business needs and requirements and the risks associated with them. </div>
+</li>
+<li class="level4"><div class="li"> Finally, the team can design and architect the most appropriate system environment using secure development methods.</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Security test strategies should be determined during the functional specification/requirements phase.</div>
+</li>
+<li class="level1"><div class="li"> If you keep system security in mind, the product design and coding standards can provide the proper environment.</div>
+</li>
+<li class="level1 node"><div class="li"> The functional specification. Specifically, the functional specification need to be evaluated, at a minimum, using the following criteria:</div>
+<ul>
+<li>Completeness
+</li>
+<li>Consistency
+</li>
+<li>Feasibility
+</li>
+<li>Testability
+</li>
+<li>Priority
+</li>
+<li>Regulations
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> The SSDL is geared toward ensuring successful implementation of secure software. It has six primary components:</div>
+<ul>
+<li class="level4"><div class="li"> Phase 1: Security guidelines, rules, and regulations.</div>
+</li>
+<li class="level4"><div class="li"> Phase 2: Security requirements: attack use cases.</div>
+</li>
+<li class="level4"><div class="li"> Phase 3: Architectural and design reviews/threat modeling.</div>
+</li>
+<li class="level4"><div class="li"> Phase 4: Secure coding guidelines.</div>
+</li>
+<li class="level4"><div class="li"> Phase 5: Black/gray/white box testing.</div>
+</li>
+<li class="level4"><div class="li"> Phase 6: Determining exploitability.     </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h4 id="ssdl_phase_1security_guidelines_rules_and_regulations">SSDL Phase 1: Security Guidelines, Rules And Regulations</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Security guidelines, rules, and regulations must be considered during the 
+project&#039;s inception phase. </div>
+</li>
+<li class="level1"><div class="li"> A system-wide specification (that defines the security requirements that apply to the system) can be based on specific government regulations.</div>
+</li>
+<li class="level1 node"><div class="li"> Example:</div>
+<ul>
+<li class="level3"><div class="li"> One such company-wide regulation could be the Sarbanes-Oxley Act of 2002, 
+which contains specific security requirements. For example, Section 404 of SOX 
+states, "Various internal controls must be in place to curtail fraud and abuse."</div>
+</li>
+<li class="level3"><div class="li"> This can serve as a baseline for creating a company-wide security policy that covers this requirement.</div>
+</li>
+<li class="level3"><div class="li"> Role-based permission levels, access-level controls, and password standards and controls are just some of the things that need to be implemented and tested for to meet the requirements of this specific SOX section.</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> OWASP lists a few security standards such as the ISO 17799, The International Standard for Information Security Management, a well-adopted and well-understood standard published by the International Organization for Standardization.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="phase_2security_requirementsattack_use_cases">Phase 2: Security Requirements: Attack Use Cases</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Its important that security requirements be described and documented.</div>
+</li>
+<li class="level1"><div class="li"> security requirements aid in software design, implementation, and test case development, and they can help determine technology choices and areas of risk.</div>
+</li>
+<li class="level1 node"><div class="li"> Attack use cases are one way to document security requirements.</div>
+<ol>
+<li class="level3"><div class="li"> They can lead to more thorough secure system  designs and test procedures.</div>
+</li>
+<li class="level3"><div class="li"> helps rationalize fuzzy requirements.</div>
+</li>
+<li class="level3"><div class="li"> show behavioral flows that are not allowed or are unauthorized.</div>
+</li>
+<li class="level3"><div class="li"> They can help you understand and analyze security implications of pre and post conditions.</div>
+</li>
+</ol>
+</li>
+<li class="level1 node"><div class="li"> Sample Security Requirements:</div>
+<ul>
+<li class="level3"><div class="li">  The application stores sensitive user information that must be protected for HIPAA compliance. To that end, strong encryption must be used to protect all sensitive user information wherever it is stored. </div>
+</li>
+<li class="level3"><div class="li"> The application transmits sensitive user information across potentially  untrusted or unsecured networks. To protect the data, communication channels must be encrypted to prevent snooping, and mutual cryptographic authentication must be employed to prevent man-in-the-middle attacks. </div>
+</li>
+<li class="level3"><div class="li"> The application sends private data over the network; therefore, communication encryption is a requirement. </div>
+</li>
+<li class="level3"><div class="li"> The application must remain available to legitimate users. Resource utilization by remote users must be monitored and limited to prevent or mitigate denial-of-service attacks.</div>
+</li>
+<li class="level3"><div class="li"> The application supports multiple users with different levels of privilege. The  application assigns users to multiple privilege levels and defines the actions each privilege level is authorized to perform. The various privilege levels need to be defined and tested. Mitigations for authorization bypass attack need to be defined.</div>
+</li>
+<li class="level3"><div class="li"> The application takes user input and uses SQL. SQL injection mitigations are a requirement.</div>
+</li>
+<li class="level3"><div class="li"> The application manages sessions for a logged-in user, and session hijacking mitigations must be in place.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h4 id="ssdl_phase_3architectural_and_design_reviews_threat_modeling">SSDL Phase 3: Architectural and Design Reviews/Threat Modeling</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Security practitioners need a solid understanding of the product&#039;s architecture and design so that they can devise better and more complete security strategies, plans, designs, procedures, and techniques.</div>
+</li>
+<li class="level1 node"><div class="li"> Early security team involvement benefits:</div>
+<ul>
+<li class="level3"><div class="li"> can prevent insecure architectures and low-security designs.</div>
+</li>
+<li class="level3"><div class="li"> help eliminate confusion about the application&#039;s behavior later in the project lifecycle.</div>
+</li>
+<li class="level3"><div class="li"> allows the security expert to learn which aspects of the application are the most critical and which are the highest-risk elements fro a security perspective.</div>
+</li>
+<li class="level3"><div class="li"> The benefits of threat modeling are that it finds different issues than code reviews and testing, and it can find higher-level design issues versus implementation bugs. </div>
+</li>
+<li class="level3"><div class="li"> Here you can find security problems early, before coding them into product This helps you determine the &#039;highest-risk&#039; parts of applicationâ€”those that nee the most scrutiny throughout the software development efforts.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h4 id="phase_4secure_coding_guidelines">Phase 4: Secure Coding Guidelines</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> A design vulnerability is a flaw in the design that precludes the program from operating securely no matter how perfectly it is implemented by the coders.</div>
+</li>
+<li class="level1"><div class="li"> Implementation vulnerabilities are caused by security bugs in the actual coding of  the software.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="phase_5black_gray_white_box_testing">Phase 5: Black/Gray/White Box Testing</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Black/gray/white box testing is the fifth phase of the SSDL.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="phase_6determining_exploitability">Phase 6: Determining Exploitability</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Determining exploitability is the sixth phase of the SSDL and is described in detail in Part III, 
+	"Analysis" of this book.</div>
+</li>
+<li class="level1 node"><div class="li"> Determining a vulnerability&#039;s exploitability involves weighing five factors: </div>
+<ul>
+<li class="level3"><div class="li"> The access or positioning required by the attacker to attempt exploitation.</div>
+</li>
+<li class="level3"><div class="li"> The level of access or privilege yielded by successful exploitation.</div>
+</li>
+<li class="level3"><div class="li"> The time or work factor required to exploit the vulnerability.</div>
+</li>
+<li class="level3"><div class="li"> The exploit&#039;s potential reliability.</div>
+</li>
+<li class="level3"><div class="li"> The repeatability of exploit attempts.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h4 id="patch_managementmanaging_vulnerabilities">Patch Management: Managing Vulnerabilities</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> Tracking and prioritizing internally and externally identified vulnerabilities, out-of-cycle source code auditing, and penetrating testing when a number of external vulnerabilities are identified in a component are important parts of maintaining a secure application environment. </div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="ssdl_relationship_to_system_development_lifecycle">SSDL Relationship to System Development Lifecycle</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> For maximum test program benefit, the SSDL is integrated with the system. </div>
+</li>
+<li class="level1"><div class="li"> The SSDL relationship to the System Development Lifecycle is depicted in Figure 3-2.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/6m.jpg" class="media" title="6m.jpg"><img src="../../img/6m.jpg" class="media" alt="" width="200" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Secure Software Development Lifecycle (SSDL)&quot;,&quot;hid&quot;:&quot;secure_software_development_lifecycle_ssdl&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:26,&quot;range&quot;:&quot;38034-45649&quot;} -->
+<h2 class="sectionedit27" id="risk-based_security_testingprioritizing_security_testing_with_threat_modeling">Risk-Based Security Testing: 
+Prioritizing Security Testing 
+with Threat Modeling</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Risk-Based Security Testing: \u000bPrioritizing Security Testing \u000bwith Threat Modeling&quot;,&quot;hid&quot;:&quot;risk-based_security_testingprioritizing_security_testing_with_threat_modeling&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:27,&quot;range&quot;:&quot;45650-45746&quot;} -->
+<h2 class="sectionedit28" id="outlines2">Outlines</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Introduction </div>
+</li>
+<li class="level1"><div class="li"> Information Gathering</div>
+</li>
+<li class="level1"><div class="li"> Meeting with the Architects </div>
+</li>
+<li class="level1"><div class="li"> Runtime Inspection </div>
+</li>
+<li class="level1"><div class="li"> windows platform</div>
+</li>
+<li class="level1"><div class="li"> UNIX Footprinting</div>
+</li>
+<li class="level1"><div class="li"> The Modeling Process </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Outlines&quot;,&quot;hid&quot;:&quot;outlines2&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:28,&quot;range&quot;:&quot;45747-45938&quot;} -->
+<h2 class="sectionedit29" id="introduction3">Introduction</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Time and resources are fixed amounts in the software development process. So its very important to prioritize the test to maximize the quantity and severity of the security flaws uncovered.</div>
+</li>
+<li class="level1"><div class="li"> A technique for prioritizing security testing is threat modeling. </div>
+</li>
+<li class="level1"><div class="li"> With threat modeling, potential security threats are hypothesized and evaluated based on an understanding of the application&#039;s design.</div>
+</li>
+<li class="level1"><div class="li"> The threats are then ranked and mitigated according to the ease of attack and the seriousness of the attack&#039;s impact. </div>
+</li>
+<li class="level1"><div class="li"> Security testers can then focus their testing on the areas where the difficulty of attack is least and the impact is highest. </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Introduction&quot;,&quot;hid&quot;:&quot;introduction3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:29,&quot;range&quot;:&quot;45939-46621&quot;} -->
+<h2 class="sectionedit30" id="threat_modeling_vs_risk-based_testing">threat modeling vs Risk-based testing</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Risk-based testing is a well-known approach to functional software testing. </div>
+</li>
+<li class="level1"><div class="li"> The term threat modeling as used by application security experts can be considered another type of risk-based testing related to security.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;threat modeling vs Risk-based testing&quot;,&quot;hid&quot;:&quot;threat_modeling_vs_risk-based_testing&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:30,&quot;range&quot;:&quot;46622-46896&quot;} -->
+<h2 class="sectionedit31" id="information_gathering">Information Gathering</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> To perform threat modeling, you need a solid understanding of the program&#039;s design.</div>
+</li>
+<li class="level1"><div class="li"> You need to know where all the entry points are so that you can understand and diagram the program&#039;s attack surface.</div>
+</li>
+<li class="level1"><div class="li"> Evaluating the attack surface lets you target the areas where an attacker might find an entry point.</div>
+</li>
+<li class="level1"><div class="li"> Understand the valuable functions that the program performs and its assets.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Information Gathering&quot;,&quot;hid&quot;:&quot;information_gathering&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:31,&quot;range&quot;:&quot;46897-47325&quot;} -->
+<h2 class="sectionedit32" id="meeting_with_the_architects">Meeting with the Architects</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> A small application may have just one architect, but a large application usually has several architects or â€œcomponent ownersâ€.</div>
+</li>
+<li class="level1"><div class="li"> As a security tester you need to meet with all component owners in a room, this way you ensure that no major systems get missed and that the interactions and dependencies are all accounted for.</div>
+</li>
+<li class="level1"><div class="li"> have the architect start with a block diagram of the system, sketching the major components and the major data flows between them. Of special importance are any data flows that come from outside the system&#039;s process (or processes) space. </div>
+</li>
+<li class="level1"><div class="li"> Data that comes from outside the program must be considered untrusted.</div>
+</li>
+<li class="level1"><div class="li"> Some external data flows: Network I/O, Remote procedure calls (RPCs), File I/O.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Meeting with the Architects&quot;,&quot;hid&quot;:&quot;meeting_with_the_architects&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:32,&quot;range&quot;:&quot;47326-48099&quot;} -->
+<h2 class="sectionedit33" id="runtime_inspection">Runtime Inspection</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Application footprinting is the process of discovering what system calls and system objects an application uses.</div>
+</li>
+<li class="level1"><div class="li"> Application footprinting let you to know how that application receives input from its environment via operating system calls.</div>
+</li>
+<li class="level1"><div class="li"> Also, it let you find out what <abbr title="Operating System">OS</abbr> objects the application is using, such as  Network ports, Files, Registry keys.</div>
+</li>
+<li class="level1"><div class="li"> You can use the application footprinting process to validate and add to the information gathered by interview and documentation inspection.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Runtime Inspection&quot;,&quot;hid&quot;:&quot;runtime_inspection&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:33,&quot;range&quot;:&quot;48100-48640&quot;} -->
+<h2 class="sectionedit34" id="windows_platform">Windows Platform</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Several excellent free Windows inspection tools are available from Sysinternals 
+(<a href="http://www.sysinternals.com" class="urlextern" title="http://www.sysinternals.com" rel="ugc nofollow">http://www.sysinternals.com</a>)</div>
+</li>
+<li class="level1"><div class="li"> The most important one for your needs is Process Explorer.</div>
+</li>
+<li class="level1"><div class="li"> Process Explorer shows you what DLLs and handles process has open. A handle is created when a process opens an <abbr title="Operating System">OS</abbr> object. </div>
+</li>
+<li class="level1"><div class="li"> Process Explorer is good at discovering the <abbr title="Operating System">OS</abbr> objects that the process uses for long periods of time.</div>
+</li>
+<li class="level1 node"><div class="li"> Process Explorer can view the following handles:</div>
+<ul>
+<li class="level4"><div class="li"> Desktop</div>
+</li>
+<li class="level4"><div class="li"> Event</div>
+</li>
+<li class="level4"><div class="li"> Key</div>
+</li>
+<li class="level4"><div class="li"> File</div>
+</li>
+<li class="level4"><div class="li"> Directory</div>
+</li>
+<li class="level4"><div class="li"> KeyEvent</div>
+</li>
+<li class="level4"><div class="li"> Mutant</div>
+</li>
+<li class="level4"><div class="li"> Porty</div>
+</li>
+<li class="level4"><div class="li"> Process</div>
+</li>
+<li class="level4"><div class="li"> Section</div>
+</li>
+<li class="level4"><div class="li"> Semaphore</div>
+</li>
+<li class="level4"><div class="li"> SymbolicLink</div>
+</li>
+<li class="level4"><div class="li"> Timer</div>
+</li>
+<li class="level4"><div class="li"> Thread</div>
+</li>
+<li class="level4"><div class="li"> Token</div>
+</li>
+<li class="level4"><div class="li"> WindowsStation</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+ * Other useful tools for Windows footprinting are Filemon and Regmon from Sysinternals.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Windows Platform&quot;,&quot;hid&quot;:&quot;windows_platform&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:34,&quot;range&quot;:&quot;48641-49512&quot;} -->
+<h2 class="sectionedit35" id="unix_footprinting">UNIX Footprinting</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Lsof  (list open files) tool for application footprinting a UNIX program. It is similar to ProcessExplorer. For each process, it lists all the file handles open across the entire <abbr title="Operating System">OS</abbr>.</div>
+</li>
+<li class="level1"><div class="li"> strace, ktrace, and truss are debugging tools that print a trace of all the system calls made by an application. strace is available on Linux. ktrace is available on 
+FreeBSD, NetBSD, OpenBSD, and <abbr title="Operating System">OS</abbr> X. truss is available on Solaris. </div>
+</li>
+<li class="level1"><div class="li"> For this example, we logged the system calls, I/O, and nami for the main sshd process (7564) on a system. The command line is:</div>
+</li>
+</ul>
+
+<p>
+    ktrace	-p	7564	-t cin
+</p>
+<ul>
+<li class="level1"><div class="li"> When you are done tracing, you stop the trace with this command: ktrace	-C</div>
+</li>
+<li class="level1"><div class="li"> and then you look at the results with: kdump</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;UNIX Footprinting&quot;,&quot;hid&quot;:&quot;unix_footprinting&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:35,&quot;range&quot;:&quot;49513-50281&quot;} -->
+<h2 class="sectionedit36" id="the_modeling_process">The Modeling Process</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> The Modeling Process is a process optimized for prioritizing testing and discovering areas to test.</div>
+</li>
+<li class="level1"><div class="li"> The goal of new process is to make it easier for people who are not security experts to perform threat modeling. The threat-modeling process has four main steps: </div>
+</li>
+</ul>
+<ol>
+<li class="level1"><div class="li"> Identify threat paths. </div>
+</li>
+<li class="level1"><div class="li"> Identify threats. </div>
+</li>
+<li class="level1"><div class="li"> Identify vulnerabilities. </div>
+</li>
+<li class="level1"><div class="li"> Rank/prioritize the vulnerabilities. </div>
+</li>
+</ol>
+
+<p>
+<strong>1. Identifying Threat Paths</strong>
+</p>
+<ul>
+<li class="level1"><div class="li"> The first stage of the process is to identify the highest-level risks and protection mechanisms for the application you will test.</div>
+</li>
+<li class="level1 node"><div class="li"> Steps: </div>
+<ul>
+<li class="level3"><div class="li"> First, overall security strengths of the application platform and implementation language are noted because these will be relevant throughout the threat-modeling process. </div>
+</li>
+<li class="level3"><div class="li"> Next you need to identify the different user access categories. Every application has at least anonymous access.</div>
+</li>
+<li class="level3"><div class="li"> The next step in identifying the threat paths starts with a data flow diagram. Data is how the user (or, in this case, the attacker) interacts with the application.</div>
+</li>
+<li class="level3"><div class="li"> The following table shows sample user access categories ranked from highest-risk to lowest-risk:</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<a href="../../img/table4-1.png" class="media" title="table4-1.png"><img src="../../img/table4-1.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> A data flow diagram is a block diagram. The squares are the users or other external systems, called entities; the circles are the different software components that do processing, called processes; and the lines between them are the data flows. Figure  4-3 is a simple high-level data low describing an instant messenger (IM) server.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/fig_4-3.jpg" class="media" title="fig_4-3.jpg"><img src="../../img/fig_4-3.jpg" class="media" alt="" width="300" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;The Modeling Process&quot;,&quot;hid&quot;:&quot;the_modeling_process&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:36,&quot;range&quot;:&quot;50282-51883&quot;} -->
+<h2 class="sectionedit37" id="shades_of_analysiswhite_gray_and_black_box_testing">Shades of Analysis: White, 
+Gray, and Black Box Testing</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Shades of Analysis: White, \u000bGray, and Black Box Testing&quot;,&quot;hid&quot;:&quot;shades_of_analysiswhite_gray_and_black_box_testing&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:37,&quot;range&quot;:&quot;51884-51954&quot;} -->
+<h2 class="sectionedit38" id="outlines3">OUTLINES</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> White Box Testing</div>
+</li>
+<li class="level1"><div class="li"> Black Box Testing</div>
+</li>
+<li class="level1"><div class="li"> Gray Box Testing</div>
+</li>
+<li class="level1"><div class="li"> Setting Up a Lab for Testing</div>
+</li>
+<li class="level1"><div class="li"> Staging Application Attacks</div>
+</li>
+<li class="level1"><div class="li"> Network Attacks</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;OUTLINES&quot;,&quot;hid&quot;:&quot;outlines3&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:38,&quot;range&quot;:&quot;51955-52125&quot;} -->
+<h2 class="sectionedit39" id="white_box_testing">White Box Testing</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> White box testing is common in the quality assurance world.</div>
+</li>
+<li class="level1"><div class="li"> All information about the system (source code and design documentation) under test is known to the tester.</div>
+</li>
+<li class="level1"><div class="li"> White box testing is used to discover flaws in functionality that were specified in the design and development.</div>
+</li>
+<li class="level1"><div class="li"> White box testing is the most efficient way to find security vulnerabilities.</div>
+</li>
+<li class="level1"><div class="li"> White Box Testing also gives you an accurate picture of the system&#039;s security because it doesn&#039;t rely on security by obscurity, which is the hope that attackers will never discover information about how a system works. </div>
+</li>
+<li class="level1"><div class="li"> Security by obscurity is not real security.</div>
+</li>
+<li class="level1"><div class="li"> You should always assume that eventually all information about a system will be discovered or leaked.</div>
+</li>
+<li class="level1"><div class="li"> Example: A sample mitigation is the security mechanism put in place to counter the threat of inadequate randomness in a session identifier. After this mitigation is discovered through the threat-modeling process, the security tester can inspect the code that generates the session identifier. This usually is not enough because 
+small mistakes that can be difficult to determine by inspecting the code can cause the randomness to be weak and vulnerable. A white box test would be to automate the process of creating a new session and to record the session identifiers that are generated. These identifiers can then be subjected to a mathematical analysis to see if they are truly random.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;White Box Testing&quot;,&quot;hid&quot;:&quot;white_box_testing&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:39,&quot;range&quot;:&quot;52126-53599&quot;} -->
+<h2 class="sectionedit40" id="black_box_testing">Black Box Testing</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Black box testing involves examining the system as an outsider would, using tools to detect the attack surface and probe the system for internal information.</div>
+</li>
+<li class="level1"><div class="li"> Black boxing techniques can be seen as a complement to white box testing.</div>
+</li>
+<li class="level1"><div class="li"> Black box testing lets the tester probe all of the attack surface and generate test data for functionality that may not be in the design.</div>
+</li>
+<li class="level1 node"><div class="li"> Examples:</div>
+<ul>
+<li class="level6 node"><div class="li"> Common mistakes:</div>
+<ul>
+<li class="level8"><div class="li"> is not removing debug-only commands before production.</div>
+</li>
+<li class="level8"><div class="li"> throw in last-minute functionality that is not properly documented.</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Black box testing can find flaws in these cases that would otherwise go unnoticed by the white box tester.  </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Black Box Testing&quot;,&quot;hid&quot;:&quot;black_box_testing&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:40,&quot;range&quot;:&quot;53600-54333&quot;} -->
+<h2 class="sectionedit41" id="gray_box_testing">Gray Box Testing</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> White box testing is used to discover flaws in functionality that were specified in the design and development. Black box testing is used to discover flaws without having access to these application internals. </div>
+</li>
+<li class="level1"><div class="li"> The combination of white and black box testing is called gray box testing. </div>
+</li>
+<li class="level1"><div class="li"> Gray box testing used to find vulnerabilities in software.</div>
+</li>
+<li class="level1 node"><div class="li"> Example: </div>
+<ul>
+<li class="level6"><div class="li"> Running the software under test in a debugger is the perfect way to meld a running black box test with the source code to give the tester the advantage of the gray box.</div>
+</li>
+<li class="level6"><div class="li"> In the Windows world, Microsoft Developer Studio debugger. It allows the tester to navigate easily through the stack and memory to explore complex variables such as classes and structures.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Gray Box Testing&quot;,&quot;hid&quot;:&quot;gray_box_testing&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:41,&quot;range&quot;:&quot;54334-55139&quot;} -->
+<h2 class="sectionedit42" id="setting_up_a_lab_for_testing">Setting Up a Lab for Testing</h2>
+<div class="level2">
+<ul>
+<li class="level1 node"><div class="li"> A dedicated lab for efficient security testing needs :</div>
+<ul>
+<li class="level3"><div class="li"> Fuzzers (beStorm) </div>
+</li>
+<li class="level3"><div class="li"> Sniffers(Network General Sniffer)</div>
+</li>
+<li class="level3"><div class="li"> Debuggers (Microsoft Developer Studio)</div>
+</li>
+<li class="level3"><div class="li"> Hardware (Intel x86, PowerPC, or SPARC systems )</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Commercial testing tools to test carrier&#039; class telecom equipment and the implementation of the network protocols they use. An example is the Hammer products from Empirix for testing integrated services digital network (ISDN).</div>
+</li>
+<li class="level1"><div class="li"> network hardware to perform network-based attacks and monitoring.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Setting Up a Lab for Testing&quot;,&quot;hid&quot;:&quot;setting_up_a_lab_for_testing&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:42,&quot;range&quot;:&quot;55140-55715&quot;} -->
+<h2 class="sectionedit43" id="staging_application_attacks">Staging Application Attacks</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Lab Environment: The application should be set up in a lab environment so that every aspect of an attack can be controlled including the network.</div>
+</li>
+<li class="level1"><div class="li"> Network Setup: It is important to be able to generate any arbitrary network traffic.</div>
+</li>
+<li class="level1"><div class="li"> Default Installation: The application should be installed on the most popular user platform with its default setting.</div>
+</li>
+<li class="level1"><div class="li"> Instrumenting the Application : Common debugging and <abbr title="Operating System">OS</abbr> monitoring tools should be installed on the machines running the software under test.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/figure.jpg" class="media" title="figure.jpg"><img src="../../img/figure.jpg" class="media" alt="" width="200" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Staging Application Attacks&quot;,&quot;hid&quot;:&quot;staging_application_attacks&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:43,&quot;range&quot;:&quot;55716-56293&quot;} -->
+<h2 class="sectionedit44" id="network_attacks">Network Attacks</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Network attacks are relevant to applications that use the network for any communications, whether client to server, server to client, or peer to peer.</div>
+</li>
+<li class="level1 node"><div class="li"> There are two main ways to attack an application through the network.</div>
+<ol>
+<li class="level3"><div class="li"> The first and easier is to use a debug proxy to manipulate the network traffic between the client and the server software under test.</div>
+</li>
+<li class="level3"><div class="li"> The second method is to develop a custom client or custom server that can communicate with the client and server application under test. </div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> A debug proxy sits between two programs communicating with the network and allows network data to be intercepted, modified, and sent to the intend. </div>
+</li>
+<li class="level1"><div class="li"> A debug proxy is designed specifically for the network protocol that the application uses to communicate over the network.</div>
+</li>
+<li class="level1 node"><div class="li"> common classes of vulnerabilities you will want to test for with a Web debug proxy: </div>
+<ul>
+<li class="level5"><div class="li"> Buffer overflows </div>
+</li>
+<li class="level5"><div class="li"> Format strings vulnerabilities </div>
+</li>
+<li class="level5"><div class="li"> SQL injection </div>
+</li>
+<li class="level5"><div class="li"> Command injection</div>
+</li>
+<li class="level5"><div class="li"> Broken access control</div>
+</li>
+<li class="level5"><div class="li"> Weak Cryptography</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Custom Clients : Some applications use their own custom network protocol or another network protocol in which no off-the-shelf debug proxy is available to manipulate the network data. In these cases you need to write some code to test the network interface.</div>
+</li>
+<li class="level1"><div class="li"> If you must build a custom client from scratch to test your network application, you might want to start with a fault injection toolkit such as SPIKE&#039; from Immunity. SPIKE is a free open-source program that allows you to quickly build your own custom protocol tester.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Network Attacks&quot;,&quot;hid&quot;:&quot;network_attacks&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:44,&quot;range&quot;:&quot;56294-57946&quot;} -->
+<h2 class="sectionedit45" id="generic_network_fault_injection">Generic Network Fault 
+	Injection</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Generic Network Fault \u000b\tInjection&quot;,&quot;hid&quot;:&quot;generic_network_fault_injection&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:45,&quot;range&quot;:&quot;57947-57995&quot;} -->
+<h2 class="sectionedit46" id="outlines4">OUTLINES</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Networks</div>
+</li>
+<li class="level1"><div class="li"> Port Discovery</div>
+</li>
+<li class="level1"><div class="li"> Ways to check for open port</div>
+</li>
+<li class="level1"><div class="li"> Proxies</div>
+</li>
+<li class="level1"><div class="li"> The Simplest Proxy: Random TCPIUDP Fault Injector </div>
+</li>
+<li class="level1"><div class="li"> Attack Pattern: Building the Fault Injection Data Set</div>
+</li>
+<li class="level1"><div class="li"> Building the Fault Injection Data Set </div>
+</li>
+<li class="level1"><div class="li"> Man-in-the-Middle Proxies</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;OUTLINES&quot;,&quot;hid&quot;:&quot;outlines4&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:46,&quot;range&quot;:&quot;57996-58278&quot;} -->
+<h2 class="sectionedit47" id="networks">Networks</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> A port is a listening socket on a system to which a client program may connect to send data to the server.(TCP/IP port ).</div>
+</li>
+<li class="level1"><div class="li"> When attacking an application via the network, the first step is to find the ports the application is listening on and are open for connection.</div>
+</li>
+<li class="level1"><div class="li"> There are two methods of doing this: </div>
+</li>
+</ul>
+
+<p>
+   The first one may be performed with local access to the machine the application is running on, and the second can be executed remotely.
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Networks&quot;,&quot;hid&quot;:&quot;networks&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:47,&quot;range&quot;:&quot;58279-58754&quot;} -->
+<h2 class="sectionedit48" id="port_discovery">Port Discovery</h2>
+<div class="level2">
+<ul>
+<li class="level1 node"><div class="li"> Attack Pattern: Local Port Discovery Using Local Tools:</div>
+<ul>
+<li class="level3"><div class="li"> To identify open ports on a local machine, use a tool such as TCPMon (Windows) or lsof (UNIX). </div>
+</li>
+<li class="level3"><div class="li"> Monitor ports during all relevant operations in case a port is only opened for a brief period of time. </div>
+</li>
+<li class="level3"><div class="li"> After a port and a process ID (PID) are found, it is trivial to track down the program that is listening on that port.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Port Discovery&quot;,&quot;hid&quot;:&quot;port_discovery&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:48,&quot;range&quot;:&quot;58755-59188&quot;} -->
+<h2 class="sectionedit49" id="ways_to_check_for_open_port">Ways to check for open port</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> netstat command. This exists on both Windows and UNIX.</div>
+</li>
+<li class="level1 node"><div class="li"> port scanner. Another way to identify open ports is by using a port scanner such as nmap (which can be used in both UNIX and Windows).</div>
+<ul>
+<li class="level4"><div class="li"> nmap is generally considered the Rolls Royce of scanners. This method can be done to either the local machine or a remote machine. Therefore, it often is easier to port-scan a machine than to use netstat. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> netstat command example:</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/example6.jpg" class="media" title="example6.jpg"><img src="../../img/example6.jpg" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> This shows that 13 sockets are open on this machine, but 12 of them are bound to localhost only. (This means that a remote computer cannot access these open ports because they can be reached only from the local machine by routing to the localhost or 127.0.0.1 IP address)</div>
+</li>
+<li class="level1"><div class="li"> This shows that 13 sockets are open on this machine, but 12 of them are bound to localhost only. (This means that a remote computer cannot access these open ports because they can be reached only from the local machine by routing to the localhost or 127.0.0.1 IP address)</div>
+</li>
+<li class="level1"><div class="li"> Here&#039;s a sample nmap scan of the same machine that netstat was run on:</div>
+</li>
+</ul>
+
+<p>
+    (artimage@nuyen) 	11:20pm&#8594; nmap -p	1-65535    10.112.1206
+</p>
+<ul>
+<li class="level1"><div class="li"> Starting nmap V. 3.00  (www.insecure.org/nmap/) Strange error from connect (22): Invalid argument.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Ways to check for open port&quot;,&quot;hid&quot;:&quot;ways_to_check_for_open_port&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:49,&quot;range&quot;:&quot;59189-60496&quot;} -->
+<h2 class="sectionedit50" id="starting_nmap_v_300_wwwinsecureorg_nmap_strange_error_from_connect_22invalid_argument">Starting nmap V. 3.00  (www.insecure.org/nmap/) Strange error from connect (22): Invalid argument</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> A proxy is a program that sits between a client and server and at its simplest acts as a middleman, changing nothing, for the two applications. </div>
+</li>
+<li class="level1"><div class="li"> A common example is Web proxy.</div>
+</li>
+<li class="level1"><div class="li"> Large  Internet Service Provider( ISPs) watch for Web traffic going to popular sites and store local copies of it. Then, when a user tries to access that site, the ISP&#039;s proxy returns a previously stored copy of the page, thus speeding up the transaction. </div>
+</li>
+<li class="level1"><div class="li"> different types of proxies are available that allow you to tweak data that travels between clients and servers.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Starting nmap V. 3.00  (www.insecure.org\/nmap\/) Strange error from connect (22): Invalid argument&quot;,&quot;hid&quot;:&quot;starting_nmap_v_300_wwwinsecureorg_nmap_strange_error_from_connect_22invalid_argument&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:50,&quot;range&quot;:&quot;60497-61167&quot;} -->
+<h2 class="sectionedit51" id="proxies">Proxies</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> A proxy is a program that sits between a client and server and at its simplest acts as a middleman, changing nothing, for the two applications. </div>
+</li>
+<li class="level1"><div class="li"> A common example is Web proxy.</div>
+</li>
+<li class="level1"><div class="li"> Large  Internet Service Provider( ISPs) watch for Web traffic going to popular sites and store local copies of it. Then, when a user tries to access that site, the ISP&#039;s proxy returns a previously stored copy of the page, thus speeding up the transaction. </div>
+</li>
+<li class="level1"><div class="li"> different types of proxies are available that allow you to tweak data that travels between clients and servers.</div>
+</li>
+<li class="level1 node"><div class="li"> Attack Pattern: Proxies </div>
+<ul>
+<li class="level3"><div class="li"> Attack an unknown protocol using a random fault injector. </div>
+</li>
+<li class="level3"><div class="li"> Insert a proxy between the client and server that corrupts random bits in the communication stream. </div>
+</li>
+<li class="level3"><div class="li"> Run the program you are attacking under a debugger to analyze what caused the crash. </div>
+</li>
+<li class="level3"><div class="li"> Run a sniffer on the same network to record the packets the proxy generates. This lets you reproduce the attack for further analysis. </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Proxies&quot;,&quot;hid&quot;:&quot;proxies&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:51,&quot;range&quot;:&quot;61168-62194&quot;} -->
+<h2 class="sectionedit52" id="the_simplest_proxyrandom_tcpiudp_fault_injector">The Simplest Proxy: Random TCPIUDP Fault Injector</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> The most effective way to attack a program is to understand it completely; the more you understand the inner workings of a piece of code, the easier it is to find and exploit faults in it.</div>
+</li>
+<li class="level1"><div class="li"> sometimes you don&#039;t have any information about the inner workings of a program or protocol, but you still need to figure out a way to attack it.</div>
+</li>
+<li class="level1 node"><div class="li"> Protocol discovery methods:</div>
+<ul>
+<li class="level3"><div class="li"> Reverse-engineering (binary protocol)</div>
+</li>
+<li class="level3"><div class="li"> this is slow and difficult process. proxiesâ€”a random-fault injector. you can simply insert a proxy between the client and server that corrupts random bits in the communication stream.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> The code for a random-fault injector may be quite simple; it should listen on a given port and forward all packets to another port (after doing any tweaks)</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> The ARP table is how an operating system maps an IP address to the physical MAC addresses of a machine on the network. </div>
+</li>
+<li class="level1"><div class="li"> To put a static route in the ARP table under both Windows and UNIX, you use arp -s address MAC address. </div>
+</li>
+<li class="level1"><div class="li"> we show how to set a static ARP entry so that now when the client sends a packet to IP address 10.3.8.36, it actually is first sent to the machine running our corrupter, which then forwards it to the real server. Figure 6-6 shows what happens.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/client-server.jpg" class="media" title="client-server.jpg"><img src="../../img/client-server.jpg" class="media" alt="" width="200" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;The Simplest Proxy: Random TCPIUDP Fault Injector&quot;,&quot;hid&quot;:&quot;the_simplest_proxyrandom_tcpiudp_fault_injector&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:52,&quot;range&quot;:&quot;62195-63551&quot;} -->
+<h2 class="sectionedit53" id="attack_patternbuilding_the_fault_injection_data_set">Attack Pattern: Building the Fault Injection Data Set</h2>
+<div class="level2">
+<ul>
+<li class="level1 node"><div class="li"> Insert potentially bad data into a program&#039;s flow, looking for interesting results and trying to attack certain classes of vulnerabilities. Here are some examples:</div>
+<ul>
+<li class="level3"><div class="li"> Random byte changes often find instances where a field is given an explicit length that, if changed, causes the program to overflow a buffer. </div>
+</li>
+<li class="level3"><div class="li"> Another common way to find buffer overflows is to input a long string. of As into an input buffer (1,024 or more characters are routine) to see if the long string overflows an internal buffer.</div>
+</li>
+<li class="level3"><div class="li"> Try SQL injection. Although SQL injection is often linked to Web applications, it can exist in any application that dynamically creates database queries. </div>
+</li>
+<li class="level3"><div class="li"> If the application uses <abbr title="HyperText Markup Language">HTML</abbr> and a browser, try cross-site scripting.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Attack Pattern: Building the Fault Injection Data Set&quot;,&quot;hid&quot;:&quot;attack_patternbuilding_the_fault_injection_data_set&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:53,&quot;range&quot;:&quot;63552-64382&quot;} -->
+<h2 class="sectionedit54" id="building_the_fault_injection_data_set">Building the Fault Injection Data Set</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Fault injection testing is done by inserting potentially bad data into a program&#039;s flow and looking for interesting results.</div>
+</li>
+<li class="level1 node"><div class="li"> Here are common classes of attack: </div>
+<ul>
+<li class="level3"><div class="li"> Buffer overflow </div>
+</li>
+<li class="level3"><div class="li"> Format String</div>
+</li>
+<li class="level3"><div class="li"> meta character</div>
+</li>
+<li class="level3"><div class="li"> Path traversal</div>
+</li>
+<li class="level3"><div class="li"> SQL injection</div>
+</li>
+<li class="level3"><div class="li"> Cross-site scripting </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Choosing which characters to try is often the key. Programs and programming languages use different characters as metacharacters, so often you want to check the entire set to see if you get strange results:</div>
+</li>
+</ul>
+
+<p>
+         Language	Metacharacters
+</p>
+<ul>
+<li class="level1"><div class="li">  Perl        $ % # /00</div>
+</li>
+<li class="level5"><div class="li">  <abbr title="HyperText Markup Language">HTML</abbr>	   &lt;&gt;</div>
+</li>
+<li class="level5"><div class="li"> SQL -; ' "</div>
+</li>
+<li class="level5"><div class="li">  <abbr title="Operating System">OS</abbr>       	 / %00 * I &#039; </div>
+</li>
+<li class="level5"><div class="li"> Web server 	  ../%00</div>
+</li>
+<li class="level5"><div class="li"> C and C++	    %00</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Building the Fault Injection Data Set&quot;,&quot;hid&quot;:&quot;building_the_fault_injection_data_set&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:54,&quot;range&quot;:&quot;64383-65192&quot;} -->
+<h2 class="sectionedit55" id="man-in-the-middle_proxies">Man-in-the-Middle Proxies</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> The idea with this sort of proxy is to allow an attacker to selectively change parts of the communications being sent over the network.</div>
+</li>
+<li class="level1"><div class="li"> This type of proxy works on the transport layer but decodes the data so that you can more easily effect an attack.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Man-in-the-Middle Proxies&quot;,&quot;hid&quot;:&quot;man-in-the-middle_proxies&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:55,&quot;range&quot;:&quot;65193-65490&quot;} -->
+<h2 class="sectionedit56" id="web_applicationssession_attacks">Web Applications: 
+Session Attacks</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Web Applications: \u000bSession Attacks&quot;,&quot;hid&quot;:&quot;web_applicationssession_attacks&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:56,&quot;range&quot;:&quot;65491-65541&quot;} -->
+<h3 class="sectionedit57" id="outlines5">OUTLINES</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Authentication Versus Authorization </div>
+</li>
+<li class="level1"><div class="li"> Brute-Forcing Session and Resource IDs</div>
+</li>
+<li class="level1"><div class="li"> Cookie Gathering</div>
+</li>
+<li class="level1"><div class="li"> Determining SID Strength: Phase Space Analysis </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;OUTLINES&quot;,&quot;hid&quot;:&quot;outlines5&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:57,&quot;range&quot;:&quot;65542-65717&quot;} -->
+<h3 class="sectionedit58" id="authentication_versus_authorization">Authentication Versus Authorization</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Attack Pattern: Authentication </div>
+</li>
+<li class="level1 node"><div class="li"> Test for weak authentication and the viability of bypassing authorization. </div>
+<ol>
+<li class="level2"><div class="li"> Verify the IDs and tokens that represent a logged-in user and discover weak authentication tokens.</div>
+</li>
+<li class="level2"><div class="li"> From there, look at bypassing authorization entirely and adding functionality to a program that wasn&#039;t initially supplied. </div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Authentication and authorization are commonly confused because they are so closely entwined. </div>
+</li>
+<li class="level1"><div class="li"> Authentication is the act of proving you are who or what you say you are, whereas authorization is the check that ensures that a user or process has sufficient privileges to perform a requested action.</div>
+</li>
+<li class="level1"><div class="li"> Example: A simple real-world example is that of a car. Having the keys to a car authenticates you as the person who may drive the car, but this does not give you authorization to drive. Many underage drivers have found the loophole in this system.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Authentication Versus Authorization&quot;,&quot;hid&quot;:&quot;authentication_versus_authorization&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:58,&quot;range&quot;:&quot;65718-66671&quot;} -->
+<h3 class="sectionedit59" id="brute-forcing_session_and_resource_ids">Brute-Forcing Session and Resource IDs</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Attack Pattern: Authentication </div>
+</li>
+<li class="level1"><div class="li"> Brute-Force User IDs and Passwords </div>
+</li>
+</ul>
+<ol>
+<li class="level1"><div class="li"> Verify the IDs and tokens that represent a logged-in user to see how you might discover weak authentication tokens. </div>
+</li>
+<li class="level1 node"><div class="li"> Try to attack login credentials by brute-forcing (guessing). </div>
+<ul>
+<li class="level3"><div class="li"> Are logins the same as an e-mail address?</div>
+</li>
+<li class="level3"><div class="li"> Can you deduce the usernames by knowing the naming convention such as Jsmith)?</div>
+</li>
+<li class="level3"><div class="li"> Can you discover logins in a <abbr title="Uniform Resource Locator">URL</abbr> path? </div>
+</li>
+<li class="level3"><div class="li"> Is the code path for a failed login different when the username is incorrect from when the password is wrong? In other words, is the error returned different? </div>
+</li>
+</ul>
+</li>
+</ol>
+<ul>
+<li class="level1"><div class="li"> Brute-forcing attack is the most basic attack against authorization.</div>
+</li>
+<li class="level1"><div class="li"> Brute-force attack &#8210; guessing either the credentials or the session ID (SID) that represent an authenticated session.</div>
+</li>
+<li class="level1"><div class="li"> Brute-forcing can take a lot of time, and even though it is an extremely effective attack, it must be analyzed to quantify how long it&#039;s expected to take. </div>
+</li>
+</ul>
+<ul>
+<li class="level1 node"><div class="li"> attacking login credentials:</div>
+<ul>
+<li class="level3"><div class="li"> When attempting to guess credentials for an application, the first thing you must do is discover a valid username. There are many possible ways to do this. </div>
+</li>
+<li class="level3"><div class="li"> Knowing logins are the same as an e-mail address, deducing the usernames by knowing the naming convention (such as Jsmith)</div>
+</li>
+<li class="level3"><div class="li"> Use the error messages of the login facility of the application itself to discover valid usernames.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+ * Figures 7-1 through 7-4 show how the error returned is different. Figures 7-1 and 7-2 show a bad username. Figures 7-3 and 7-4 show a bad password. 
+</p>
+
+<p>
+<a href="../../img/7-1.jpg" class="media" title="7-1.jpg"><img src="../../img/7-1.jpg" class="media" alt="" width="200" /></a>
+<a href="../../img/7-2.jpg" class="media" title="7-2.jpg"><img src="../../img/7-2.jpg" class="media" alt="" width="200" /></a>
+<a href="../../img/7-3.jpg" class="media" title="7-3.jpg"><img src="../../img/7-3.jpg" class="media" alt="" width="200" /></a>
+<a href="../../img/7-4.jpg" class="media" title="7-4.jpg"><img src="../../img/7-4.jpg" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> This difference allows an attacker to attempt to log in with a list of names and view errors returned to determine if the name provided was valid. Then, armed with a list of valid usernames, the attacker can launch a brute-force attack against the accounts she has guessed.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Brute-Forcing Session and Resource IDs&quot;,&quot;hid&quot;:&quot;brute-forcing_session_and_resource_ids&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:59,&quot;range&quot;:&quot;66672-68667&quot;} -->
+<h3 class="sectionedit60" id="cookie_gathering">Cookie Gathering</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> A bit of background: The Web is built on the HTTP protocol, which happens to be stateless. This means that a Web server does not keep track of who made what request or the last request that was made by any given client. </div>
+</li>
+<li class="level1"><div class="li"> It means that an application using the 
+HTTP protocol must manage its own state on top of it; this is typically done using 
+cookies, small files containing name-value pairs of variables.</div>
+</li>
+<li class="level1"><div class="li"> After a user has logged in to a Web application, the cookie that will act as token for that user.</div>
+</li>
+<li class="level1"><div class="li"> This token :</div>
+</li>
+</ul>
+<ol>
+<li class="level1"><div class="li"> Is a reference ID for the application server.</div>
+</li>
+<li class="level1"><div class="li"> It allows the server to keep track of the requests made by the client and to authenticate that the client is legitimate.</div>
+</li>
+</ol>
+<ul>
+<li class="level1"><div class="li"> The control flow would look like this (see Figure 7-5): </div>
+</li>
+</ul>
+<ol>
+<li class="level1"><div class="li"> The user requests the login page. </div>
+</li>
+<li class="level1"><div class="li"> The user submits a username and password to the server via the login page. </div>
+</li>
+<li class="level1"><div class="li"> The server authenticates the user and, assuming that the login credentials are good, replies with a login success page that also sets a cookie with a unique SID. </div>
+</li>
+</ol>
+
+<p>
+<a href="../../img/fig7-5.jpg" class="media" title="fig7-5.jpg"><img src="../../img/fig7-5.jpg" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Now that the client has a SID, it presents this SID along with every request. </div>
+</li>
+<li class="level1"><div class="li"> This allows the server to keep track of what the client is doing, as well as authenticate the client with every request.</div>
+</li>
+<li class="level1"><div class="li"> What this means to an attacker is that if she can guess the SID, she can hijack a session that has already been authenticated. </div>
+</li>
+<li class="level1"><div class="li"> Example: The InsecureBank.com Web site uses the user&#039;s name concatenated with the date as the user&#039;s SID. This means that if an attacker knows that a user is on the Web site, he can hijack the session by changing his SID to the user&#039;s name concatenated with the date. He does not have to authenticate himself to the system; after he has guessed the SID, he has all the rights that the legitimate user has in the application, such as withdrawing money. </div>
+</li>
+<li class="level1"><div class="li"> For an application to protect against this sort of attack, it is necessary to make guessing a SID at least as hard as guessing a password.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Cookie Gathering&quot;,&quot;hid&quot;:&quot;cookie_gathering&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:60,&quot;range&quot;:&quot;68668-70721&quot;} -->
+<h3 class="sectionedit61" id="determining_sid_strengthphase_space_analysis">Determining SID Strength: Phase Space Analysis</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Often, SIDs look random to a human, but they really are not. See the following sample based on a Python script shown thereafter.  </div>
+</li>
+</ul>
+
+<p>
+(artimage@nuyen) 11 : 18am -/work/book/phase_space&gt; python
+generate_sids.py
+</p>
+
+<p>
+0.0525080446471
+</p>
+
+<p>
+1   35522986141
+</p>
+
+<p>
+1   05763599391
+</p>
+
+<p>
+3.51026515253 
+</p>
+
+<p>
+4.33462007072 
+</p>
+
+<p>
+2.3371260771 
+</p>
+
+<p>
+5.26246208976 
+</p>
+
+<p>
+9.26498812968 
+</p>
+
+<p>
+0.0174109667899 
+</p>
+
+<p>
+* Although this sequence looks random, it was generated by this code: 
+</p>
+
+<p>
+<a href="../../img/gen_num_.jpg" class="media" title="gen_num_.jpg"><img src="../../img/gen_num_.jpg" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1 node"><div class="li"> As you can see, the SIDs that were created are based solely on the time.</div>
+<ul>
+<li class="level3"><div class="li"> time .time ( ) returns the system time in seconds since the epoch, and </div>
+</li>
+<li class="level3"><div class="li"> time . clock () returns the number of seconds the process has been running. </div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<a href="../../img/code7-1.png" class="media" title="code7-1.png"><img src="../../img/code7-1.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1 node"><div class="li"> We show how to analyze a series of SIDs to see if patterns are hidden in the sequence. We take the differences between successive numbers in the sequence and use those as coordinates on a three-dimensional coordinate plane (a plane with an x-, y-, and z-axis). </div>
+<ul>
+<li class="level2"><div class="li"> If the sequence of numbers is  A 10, B 5, C 12, 13 8, â€¦., The first point at the plot is (A-B, B-C, C-D): (10-5, 5-12, 12-8) ==(5, -7, 4) </div>
+</li>
+<li class="level2"><div class="li"> You would then shift down one number and do this again (B-C, C-D, D-E). The Python code to perform this is as follows: </div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+       <a href="../../img/code_7-2.png" class="media" title="code_7-2.png"><img src="../../img/code_7-2.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Phase space analysis is one way of looking at data that is supposed to be random to see if hidden patterns might exist. </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/fig_7-2.png" class="media" title="fig_7-2.png"><img src="../../img/fig_7-2.png" class="media" alt="" width="200" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Determining SID Strength: Phase Space Analysis&quot;,&quot;hid&quot;:&quot;determining_sid_strengthphase_space_analysis&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:61,&quot;range&quot;:&quot;70722-72252&quot;} -->
+<h3 class="sectionedit62" id="cross-site_scripting1">Cross-Site Scripting</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Attack Pattern: Cross-Site Scripting</div>
+</li>
+</ul>
+<ol>
+<li class="level1"><div class="li"> To test for cross-site scripting, enter special <abbr title="HyperText Markup Language">HTML</abbr> characters such as &lt; and &gt; into an input field of a Web application and observe whether they are returned. Or insert your attack string and view the raw <abbr title="HyperText Markup Language">HTML</abbr> source of he response page that echoes the input. </div>
+</li>
+<li class="level1"><div class="li"> If the result displayed shows the special characters unencoded, the input field may be vulnerable to cross-site scripting. That is, you may see if input is transformed in any way or what else you must type to properly â€œframeâ€ your attack string so that the Web browser accepts it.</div>
+</li>
+<li class="level1"><div class="li"> Depending on what is returned, try to get the user&#039;s cookies for the Web site to be displayed, possibly revealing the user&#039;s SID.</div>
+</li>
+<li class="level1"><div class="li"> To steal the cookie, craft a request to another server, usually an image source, which uses the cookie as part of the filename. This allows you to send the cookie to some other server under your control. </div>
+</li>
+<li class="level1"><div class="li"> To be complete, you must test every input field of a Web site because often programmers forget to validate input on some fields and not others.</div>
+</li>
+</ol>
+<ul>
+<li class="level1"><div class="li"> Cross-site scripting attacks exploit the fact that a browser runs code, such as JavaScript or <abbr title="HyperText Markup Language">HTML</abbr> &lt;OBJECT&gt; or &lt;APPLET&gt;, from an <abbr title="HyperText Markup Language">HTML</abbr> page in a trust context based on the Web site&#039;s <abbr title="Domain Name System">DNS</abbr> domain. </div>
+</li>
+<li class="level1"><div class="li"> Because of this, any script on a page has access to the cookies for the domain that the page came from. </div>
+</li>
+<li class="level1"><div class="li"> Web application vulnerabilities, however, may allow an attacker to insert crafted JavaScript into the page being returned by the Web server. </div>
+</li>
+<li class="level1"><div class="li"> This gives the clever attacker a way to steal user cookies, which might let him hijack the user&#039;s session. </div>
+</li>
+<li class="level1"><div class="li"> This attack is possible whenever a Web application does not properly validate user input and redisplays it to the user or other users.</div>
+</li>
+<li class="level1"><div class="li"> Testing for cross-site scripting is easy. To test for this attack, you simply enter an <abbr title="HyperText Markup Language">HTML</abbr> JavaScript block into an input field of a Web application and observe whether the code was executed.</div>
+</li>
+<li class="level1"><div class="li"> This example uses a very basic cross-site scripting string as a test: &lt;script&gt;alert(â€œXSSâ€);&lt;/script.</div>
+</li>
+<li class="level1"><div class="li"> This simple simple JavaScript command opens an alert box that contains the string â€¢XSSâ€. </div>
+</li>
+<li class="level1"><div class="li"> If the alert box shown in the following figure appears, the input field is vulnerable to cross-site scripting.</div>
+</li>
+</ul>
+
+<p>
+  <a href="../../img/fig_7.7.png" class="media" title="fig_7.7.png"><img src="../../img/fig_7.7.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> By changing the attack string to the following: &lt;script&gt;alert(document.cookie);&lt;/script&gt; you can get the user&#039;s cookies for the Web site to be displayedâ€”in this case revealing the user&#039;s SID (see the following figure).</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/fig_7.8.png" class="media" title="fig_7.8.png"><img src="../../img/fig_7.8.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> To steal the cookie, an attacker would craft a request to another server, usually an image source, which used the cookie as part of the file name.</div>
+</li>
+<li class="level1"><div class="li"> To prevent such attacks, developers must do input validation checks to ensure that no <abbr title="HyperText Markup Language">HTML</abbr> tags or JavaScript code are allowed as input. These validation routines must be performed on the server because checks on the client can be bypassed by using a proxy.</div>
+</li>
+<li class="level1"><div class="li"> Phishing Attacks : Phishing is an attack utilizing social engineering and vulnerabilities such as  cross-site to steal users&#039; identities. By sending an email with a cleverly crafted link to a site that a vulnerable to cross-site scripting, it might be possible for the attacker to steal the victims session identifier and then log in as that user.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Cross-Site Scripting&quot;,&quot;hid&quot;:&quot;cross-site_scripting1&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:62,&quot;range&quot;:&quot;72253-75635&quot;} -->
+<h2 class="sectionedit63" id="web_applicationscommon_issues">Web Applications: 
+Common Issues</h2>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Web Applications: \u000bCommon Issues&quot;,&quot;hid&quot;:&quot;web_applicationscommon_issues&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:63,&quot;range&quot;:&quot;75636-75681&quot;} -->
+<h2 class="sectionedit64" id="outlines6">OUTLINES</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Bypassing Authorization.</div>
+</li>
+<li class="level1"><div class="li"> SQL Injection</div>
+</li>
+<li class="level1"><div class="li"> DataBase Schema Discovery</div>
+</li>
+<li class="level1"><div class="li"> Executing Commands on the SQL Server.</div>
+</li>
+<li class="level1"><div class="li"> Uploading Executable Content (ASP/PHP/bat).</div>
+</li>
+<li class="level1"><div class="li"> File Enumeration.</div>
+</li>
+<li class="level1"><div class="li"> Source Code Disclosure Vulnerabilities.</div>
+</li>
+<li class="level1"><div class="li"> Hidden Fields in HUP </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;OUTLINES&quot;,&quot;hid&quot;:&quot;outlines6&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:64,&quot;range&quot;:&quot;75682-75961&quot;} -->
+<h2 class="sectionedit65" id="bypassing_authorization">Bypassing Authorization</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> When an attacker brute-forces username and password combinations or cookies, he is attacking the authentication portion of an application.</div>
+</li>
+<li class="level1"><div class="li"> Privilege escalation happens when a legitimate user can force the system into performing Commands or services that the user is not authorized to perform. </div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Bypassing Authorization&quot;,&quot;hid&quot;:&quot;bypassing_authorization&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:65,&quot;range&quot;:&quot;75962-76300&quot;} -->
+<h3 class="sectionedit66" id="how_to_bypass_authorization">How to Bypass Authorization</h3>
+<div class="level3">
+<ul>
+<li class="level1 node"><div class="li"> Attack Pattern: Escalation of Privilege Bypassing Authorization </div>
+<ol>
+<li class="level3 node"><div class="li"> <strong>Test for escalation of privilege in a system using an easily guessable 
+	</strong> <abbr title="Uniform Resource Locator"><strong>URL</strong></abbr><strong> structure.</strong></div>
+<ul>
+<li class="level5"><div class="li"> Using a regular account and an admin account, log into both accounts. Note the 
+ functionality that is present for the admin but is missing from the regular account.</div>
+</li>
+<li class="level5"><div class="li"> Try to perform those administrative functions from the regular account by simply cutting and pasting the <abbr title="Uniform Resource Locator">URL</abbr> from the admin function. </div>
+</li>
+<li class="level5 node"><div class="li"> Here are some other examples: </div>
+<ul>
+<li class="level7"><div class="li"> Check for userids (whether in the <abbr title="Uniform Resource Locator">URL</abbr>, in a hidden variable, or in the cookie). </div>
+</li>
+<li class="level7"><div class="li"> Check to see if you can modify the userid (try a variety of userid modifications). </div>
+</li>
+<li class="level7"><div class="li"> After modifying the userid, check to see whether you can actually see another user&#039;s information. </div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+
+<li class="level1 node"><div class="li"> <strong>Test for whether the program simply does not.</strong></div>
+<ul>
+<li class="level7"><div class="li"> Verify that authorization cannot be bypassed by simply recording administrator traffic and replaying it using a regular user.</div>
+</li>
+<li class="level7"><div class="li"> Example 1: An example of bypassing authorization occurred in the restricted shell account, that ISPs used to give out to users. When users logged in, they were presented with menu of commands they could execute. Often this menu was quite restrictive and didn&#039;t allow users to perform actions such as connecting to another machine. But soon clever users discovered a loophole in such systems. One of the menu command often offered was vi (the visual editor). Once inside vi, the user could drop to a shell prompt by typing /bin /sh in vi&#039;s command mode. In this way, the user could break out of the restrictive menu offered by the ISP and perform other commands system, such as connecting to remote machines via telnet.</div>
+</li>
+<li class="level7"><div class="li"> Example 2: Often home page creator sets up a restricted portion of his site that requires a username and password to access. After the user enters the proper credentials, she is redirected to another set of pages, such as a photo gallery. A common error is that the only portion of the site that is actually protected by the login page is the redirection. Thus, if the user can guess the photo gallery&#039;s <abbr title="Uniform Resource Locator">URL</abbr>, she can view the page, bypassing the login process.</div>
+</li>
+</ul>
+</li>
+</ol>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;How to Bypass Authorization&quot;,&quot;hid&quot;:&quot;how_to_bypass_authorization&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:66,&quot;range&quot;:&quot;76301-78598&quot;} -->
+<h2 class="sectionedit67" id="sql_injection">SQL Injection</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> An attacker may perform actions on a database that he is not authorized to do by manipulating the SQL commands sent to the database engine. </div>
+</li>
+<li class="level1"><div class="li"> Using a SQL injection vulnerability, an attacker can insert commands into application that the database then executes. In the common three-tier Web architecture (see the following figure), applications separate their business logic from data storage and presentation layers.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/8-1.png" class="media" title="8-1.png"><img src="../../img/8-1.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Example: To execute a SQL injection attack, the first step is to find an input field that accepts text input and test to see if this input is being used as part of a dynamic SQL statement.</div>
+</li>
+<li class="level1"><div class="li"> Example:  the login page to most Web sites (see the following figure).</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/fig_8.2.png" class="media" title="fig_8.2.png"><img src="../../img/fig_8.2.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> an Example of a dynamic SELECT statement from an ASP login script: </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/code_8.1.png" class="media" title="code_8.1.png"><img src="../../img/code_8.1.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1 node"><div class="li"> If this code were called with susername set to admin and sPassword set to secret, the resulting query would look like this: </div>
+<ul>
+<li class="level6"><div class="li"> SELECT *  FROM tblUsers WHERE username=&#039;admin&#039; and password=&#039;secret&#039; </div>
+</li>
+</ul>
+</li>
+<li class="level1 node"><div class="li"> If you input &#039; as the username, the resulting query would look like this:</div>
+<ul>
+<li class="level6"><div class="li"> SELECT *  FROM tblUsers WHERE username=''&#039; AND password= &#039; &#039;</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> In our sample application, this causes the error shown in the following figure:</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/fig_8.4.png" class="media" title="fig_8.4.png"><img src="../../img/fig_8.4.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> This error tells you that your username input is being treated as code and thus is causing the AND password = to be seen as part of a string in the SQL query. </div>
+</li>
+<li class="level1"><div class="li"> To exploit this error, you need a way to get the SQL interpreter to ignore the part of the query following your input. </div>
+</li>
+<li class="level1"><div class="li"> To do this, you can simply insert a comment 
+string. In Microsoft SQL Server, the dash string (- -) tells the server to ignore the rest of the statement. You also want to choose a user so that you can log in as someone else. In this case you will try the admin user. </div>
+</li>
+<li class="level1 node"><div class="li"> If you insert the username admin&#039; - - (see Figure 8-4), the resulting query is as follows: </div>
+<ul>
+<li class="level7"><div class="li"> SELECT	* FROM tblusers WHERE 
+	username='admin' AND password= secret</div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+<a href="../../img/fig_8.5.png" class="media" title="fig_8.5.png"><img src="../../img/fig_8.5.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> The server then executes the string only up to the - -, thus returning the data for the admin user (see the following fig).</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/8.5.png" class="media" title="f8.5.png"><img src="../../img/f8.5.png"  class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> If you don&#039;t know any valid usernames, a variation on this attack is possible. You insert the string &#039; or	1=1- into the input field, as shown in the following figure. The SQL statement would be: SELECT * FROM tblusers WHERE username="or 
+	1=1 &ndash; AND password=&#039;secret&#039;</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/fig8.6.png" class="media" title="fig8.6.png"><img src="../../img/fig8.6.png" class="media" alt="" width="200" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;SQL Injection&quot;,&quot;hid&quot;:&quot;sql_injection&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:67,&quot;range&quot;:&quot;78599-81183&quot;} -->
+<h2 class="sectionedit68" id="database_schema_discovery">Database Schema Discovery</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> You probably noticed in the preceding example that the error message produced by putting a single quote into the input field returns a valid column name: password. An attacker may use this information to work out the entire table using a set of SQL commands.</div>
+</li>
+<li class="level1"><div class="li"> Because you know the column name, use that to create a request whose error gives you the table name: test&#039; GROUP BY (password);-</div>
+</li>
+<li class="level1"><div class="li"> This asks the database to group the results by the password column, but because the other columns are not specified, an error is returned(see the following figure).</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/figure_7.8.png" class="media" title="figure_7.8.png"><img src="../../img/figure_7.8.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Now you know the name of another column 
+	&ndash; lastloggedin</div>
+</li>
+<li class="level1"><div class="li"> To continue this process, send the 
+	following: test' GROUP BY (lastloggedin);-</div>
+</li>
+<li class="level1"><div class="li"> This results in the error is shown in following figure:</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/lastloggedin.png" class="media" title="lastloggedin.png"><img src="../../img/lastloggedin.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> So you are back to the needing the username. Thus, you can guess that this table has three columns. It is possible to confirm this by using a UNION SELECT.</div>
+</li>
+<li class="level1"><div class="li"> An incorrect number of parameters returns one error, and the correct number returns another error or the correct page.</div>
+</li>
+<li class="level1"><div class="li"> The following is incorrect: test' UNION 
+	SELECT name,password from tblUsers;-</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/figure_8.10.png" class="media" title="figure_8.10.png"><img src="../../img/figure_8.10.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> The following is correct (see the following fig) : test&#039; UNION SELECT name,password,lastloggedin from tblUsers;-</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/fig_8.11.png" class="media" title="fig_8.11.png"><img src="../../img/fig_8.11.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> To discover a column&#039;s type, you use another SQL function&ndash; COMPUTE SUM: test&#039; COMPUTE SUM	(name);-</div>
+</li>
+<li class="level1"><div class="li"> The following Figure shows that the name is nvarchar</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/figure_8.12.png" class="media" title="figure_8.12.png"><img src="../../img/figure_8.12.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> You can repeat this for each column to find all their types.</div>
+</li>
+<li class="level1"><div class="li"> Given this information, you can now add data to the users table: </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/code8.2.png" class="media" title="code8.2.png"><img src="../../img/code8.2.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Note that you end the first statement with a; and begin a new statement with insert. this create a new user named attacker  with the password secret in the database.</div>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Database Schema Discovery&quot;,&quot;hid&quot;:&quot;database_schema_discovery&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:68,&quot;range&quot;:&quot;81184-83133&quot;} -->
+<h2 class="sectionedit69" id="executing_commands_on_the_sql_server">Executing Commands on the SQL Server</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Depending on the SQL server being used, it may be possible to execute commands directly on the server hosting the database application.</div>
+</li>
+<li class="level1"><div class="li"> Attacker attempt to create a new user on the database server.</div>
+</li>
+<li class="level1"><div class="li"> An attacker might use this ability to run commands to have the server connect through the firewall to download programs. </div>
+</li>
+<li class="level1"><div class="li"> The attacker could even create a tunnel that he could use to get an interactive connection directly to the server.</div>
+</li>
+<li class="level1"><div class="li"> Under Microsoft SQL Server this is performed via extended  stored procedures.</div>
+</li>
+<li class="level1"><div class="li"> The purpose of this feature is to allow the database application to use the underlying operating system to perform some service.</div>
+</li>
+<li class="level1"><div class="li">  master..xp_cmdshell is an example of the extended stored procedures in Microsoft SQL Server that allows SQL server to pass commands to a Windows shell.</div>
+</li>
+<li class="level1"><div class="li"> Example: Enter '; exec master..xp_cmdshell 'net user luck secret /add';- into the user field(see Figure 8-14). This would result in the following query: SELECT	* FROM tblusers WHERE username=' 
+	'; exec master..xp_cmdshell 'net user luck secert /add' &ndash; AND password=&#039;secret&#039;</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/code8.14.png" class="media" title="code8.14.png"><img src="../../img/code8.14.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> This returns an error though the command executed successfully, and shown in the following figure:</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/fig_8.15.png" class="media" title="fig_8.15.png"><img src="../../img/fig_8.15.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> You can now list the users on the server to see if your attempt was successful, as shown in the following figure:</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/fig_8.16.png" class="media" title="fig_8.16.png"><img src="/~../../img/fig_8.16.png" class="media" alt="" width="200" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Executing Commands on the SQL Server&quot;,&quot;hid&quot;:&quot;executing_commands_on_the_sql_server&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:69,&quot;range&quot;:&quot;83134-84609&quot;} -->
+<h2 class="sectionedit70" id="uploading_executable_content_asp_php_bat">Uploading Executable Content (ASP/PHP/bat)</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Sometimes the functionality an attacker wants doesn&#039;t exist in the application that is being attacked, so he must add the functionality himself. He can do this easily in Web applications by adding code of his own in the same language as that of the application.</div>
+</li>
+<li class="level1"><div class="li"> The simplest method of exploitation is to upload a piece of code that will execute any other commands you pass to it. The code is written in JSP and allows you to pass commands via a Web browser by using execute.jsp</div>
+</li>
+<li class="level1"><div class="li"> Attack Pattern: Escalation of Privilege Uploading Executable Content </div>
+</li>
+</ul>
+<ol>
+<li class="level1"><div class="li">  Test whether you can upload executable code (ASP/PHP/bat)</div>
+</li>
+</ol>
+<ul>
+<li class="level1"><div class="li"> Check to see if you can control which directory is being written to. </div>
+</li>
+<li class="level1"><div class="li"> Craft code to be run, and put it in a directory that the application 
+searches.  </div>
+</li>
+<li class="level1"><div class="li"> Example:</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/example8.1.png" class="media" title="example8.1.png"><img src="../../img/example8.1.png" class="media" alt="" width="300" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Uploading Executable Content (ASP\/PHP\/bat)&quot;,&quot;hid&quot;:&quot;uploading_executable_content_asp_php_bat&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:70,&quot;range&quot;:&quot;84610-85493&quot;} -->
+<h2 class="sectionedit71" id="file_enumeration">File Enumeration</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> When an attacker connects to a Web server, he gains access to a subset of the files on the server, but he doesn&#039;t necessarily have a list of all the files he has access to. </div>
+</li>
+<li class="level1"><div class="li"> Even if an administrator has correctly turned off directory listings on the Web server, and an attacker is not able to get a directory listing,  there still could be files and programs that an attacker can use to his 
+advantage. </div>
+</li>
+<li class="level1 node"><div class="li"> Examples:</div>
+<ul>
+<li class="level7"><div class="li"> Log files often contain sensitive information such as usernames and passwords.</div>
+</li>
+<li class="level7"><div class="li"> A core file is created when a program crashes, it is a snapshot of the program&#039;s memory at the point in time when it crashed.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;File Enumeration&quot;,&quot;hid&quot;:&quot;file_enumeration&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:71,&quot;range&quot;:&quot;85494-86185&quot;} -->
+<h3 class="sectionedit72" id="how_to_get_information_from_files">How to get Information from files</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Attack Pattern: Bypassing Authorization File Enumeration </div>
+</li>
+</ul>
+<ol>
+<li class="level1 node"><div class="li"> Check for types of files that you might be able to guess that could give you more information about a system. Here are some file types to look for: </div>
+<ul>
+<li class="level3"><div class="li"> .back</div>
+</li>
+<li class="level3"><div class="li"> .backup</div>
+</li>
+<li class="level3"><div class="li"> ~</div>
+</li>
+<li class="level3"><div class="li"> .orig</div>
+</li>
+<li class="level3"><div class="li"> .tmp</div>
+</li>
+<li class="level3"><div class="li"> .temp</div>
+</li>
+<li class="level3"><div class="li"> .log</div>
+</li>
+<li class="level3"><div class="li"> core&#039;</div>
+</li>
+<li class="level3"><div class="li"> .old</div>
+</li>
+<li class="level3"><div class="li"> #filename#</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Check whether you can get information from files by appending a null 
+byte to the filename. </div>
+</li>
+<li class="level1"><div class="li"> Check whether the file contains sensitive data. </div>
+</li>
+<li class="level1"><div class="li"> Check whether the file can be modified to be used for an attack</div>
+</li>
+</ol>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;How to get Information from files&quot;,&quot;hid&quot;:&quot;how_to_get_information_from_files&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:72,&quot;range&quot;:&quot;86186-86802&quot;} -->
+<h2 class="sectionedit73" id="source_code_disclosure_vulnerabilities">Source Code Disclosure Vulnerabilities</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> "Show codes" is the name given to a class of vulnerabilities that exist mostly Web application servers. They allow you to get the program to show the code that the server is running. </div>
+</li>
+<li class="level1"><div class="li"> This type of vulnerability has cropped up in almost every CGI environment, from Microsoft ASP to IBM&#039;s WebSphere.</div>
+</li>
+<li class="level1"><div class="li"> This behavior results in a security vulnerability on many Web servers running on MacOS X when data is served from HFS+ file systems. Requesting a file&#039;s resource fork may reveal sensitive information (such as credentials, file system path), especially when the Web server denies direct access to the file.</div>
+</li>
+<li class="level1"><div class="li"> the following figure shows a sample PHP application that is running on an <abbr title="Operating System">OS</abbr> X 
+machine that has not had the patch from Apple applied to it. By changing the <abbr title="Uniform Resource Locator">URL</abbr> to <a href="http://localhost/fortune.php/..namedfork/data" class="urlextern" title="http://localhost/fortune.php/..namedfork/data" rel="ugc nofollow">http://localhost/fortune.php/..namedfork/data</a>, you can retrieve the source code for this sample program</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/example8_19.png" class="media" title="example8.19.png"><img src="../../img/example8_19.png" class="media" alt="" width="200" /></a>
+</p>
+
+</div>
+<!-- EDIT{&quot;target&quot;:&quot;section&quot;,&quot;name&quot;:&quot;Source Code Disclosure Vulnerabilities&quot;,&quot;hid&quot;:&quot;source_code_disclosure_vulnerabilities&quot;,&quot;codeblockOffset&quot;:0,&quot;secid&quot;:73,&quot;range&quot;:&quot;86803-87775&quot;} -->
+<h2 class="sectionedit74" id="hidden_fields_in_hup">Hidden Fields in HUP</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Similar to the practice of passing customer data in cookie headers is using hidden variables to store and send state information.</div>
+</li>
+<li class="level1"><div class="li"> In the following figures, a hidden variable is used to store the price of the widgets being sold. </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/8.21.png" class="media" title="8.21.png"><img src="../../img/8.21.png" class="media" alt="" width="200" /></a>
+</p>
+
+<p>
+<a href="../../img/8.22.png" class="media" title="8.22.png"><img src="../../img/8.22.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1 node"><div class="li"> Attack Pattern: Bypassing Authorization 
+Hidden Fields in HTTP</div>
+<ul>
+<li class="level4"><div class="li"> Check for hidden fields in HTTP.</div>
+</li>
+<li class="level4"><div class="li"> Check for hidden variables to store and send state information.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Example: It is common security researchers to use proxies to capture and view Web sessions so that they can easily manipulate any field, including a hidden one, the is sent to the server. The following figure shows WebScarab&#039; in action. </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/8.23.png" class="media" title="8.23.png"><img src="../../img/8.23.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> To edit the price value, you can set up the WebScarab to allow you to edit hidden variable.</div>
+</li>
+<li class="level1"><div class="li"> The following Figure shows that you have changed the hidden price value from 10.0 to 1.00</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/fig_8.24.png" class="media" title="fig_8.24.png"><img src="../../img/fig_8.24.png" class="media" alt="" width="200" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> The following Figure shows the result. You changed the amount you are being charged from $20 to $2 &ndash; quite a significant change. </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/fig_8.25.png" class="media" title="fig_8.25.png"><img src="../../img/fig_8.25.png" class="media" alt="" width="200" /></a>
+</p>
+
+        <div class="lavenderBox">
+            <div class="header">Panel title</div>
+            <div class="subtitle linklist"><a href="#">Lorem</a> <a href="#">Ipsum</a>
+              <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="https://info.flagcounter.com/WApn"><img
+                src="https://s11.flagcounter.com/count2/WApn/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+                alt="Flag Counter"
+                border="0"></a>
+          </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>
