@@ -22,11 +22,11 @@
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
     <div class="wrapAll clearfix">
       <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
-        <div class="logo"> <a href="tools.html"><img src="../../img/logo.png" alt="logo"></a>
+        <div class="logo"> <a href="urlscan.html"><img src="../../img/logo.png" alt="logo"></a>
         </div>
         <div class="navigation">
           <ul>
-            <li><a href="tools.html">Main page</a></li>
+            <li><a href="urlscan.html">Main page</a></li>
             <li><a href="#">Contents</a></li>
             <li><a href="#">Featured content</a></li>
           </ul>
@@ -56,7 +56,7 @@
       
           <ul>
             <li class="auto-style1"><a href="secTest.html">Security Test</a></li>
-			  <li class="auto-style1"><a href="tools.html">Security Tools</a></li>
+			  <li class="auto-style1"><a href="urlscan.html">Security Tools</a></li>
 			  <li class="auto-style1"><a href="../handson/main.html">Hands-on Experience</a></li>
 			  <li class="auto-style1"><a href="../course/main.html">Other Course Modules</a></li>
 			  <li class="auto-style1"><a href="../attacks/main.html">Attacks</a></li>
@@ -88,21 +88,77 @@
           </div>
         </div>
         <div class="article">
-          <h1>Security Tools</h1>
-          The following are examples of some of the tools used for security testing: 
-          <div style="margin-left: 20px">
-          <ul style="list-style-type: square">
-          	<li><a href="urlscan.html" target="_self">URLScan Security Tool</a></li>
-          	<li><a href="attack.html" target="_self">Attack Surface Analyzer</a></li>
-			<li><a href="antixss.html" target="_self">Anti Cross-Site Scripting Library</a></li>
-			<li><a href="" target="_self">Microsoft Safety scanner</a></li>
-			<li><a href="" target="_self">BackTrack Penetration Testing</a></li>
-			<li><a href="" target="_self">WebScarab</a></li>
-			<li><a href="" target="_self">W3af</a></li>
-          </ul>
+          <h1>URLScan Security Tool</h1>
+          <p class="siteSub">&nbsp;</p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+            <ul>
+              <li> <span>1</span><a href="#urlscan">URLScan Security Tool</a>
+                <ul>
+                  <li><span>1.1</span><a href="#resources">Helpful Resouces</a> </li>
+                </ul>
+              </li>
+              <li><span>2</span><a href="#references">References</a></li>
+            </ul>
           </div>
-        
-            <div class="lavenderBox">
+          <h2 id="urlscan">URLScan Security Tool</h2>
+          <ul style="list-style-type:disc">
+          <li> Attackers often use websites to conduct phishing attacks or distribute malware.
+			</li>
+			<li >According to the Microsoft Security Intelligence Report Volume 13, there were 4.4 phishing sites per 1,000 Internet hosts worldwide in the second quarter of 2012 (2Q12) alone.  
+			</li>
+			<li > Malicious websites typically appear to be completely legitimate and often provide no outward indicators of their malicious nature, even to experienced computer users. In many cases, these sites are legitimate websites that have been compromised by malware, SQL injection, or other techniques in an effort by attackers to take advantage of the trust users have in them.			</li>
+			<li>   URLScan is a security tool that restricts the types of HTTP requests that IIS will process. It scans incoming <abbr title="Uniform Resource Locator">URL</abbr> requests and associated data. It uses a series of rules to determine whether the information in each request is potentially dangerous, or contains information not normally expected.
+			</li>
+			<li> To help you diagnose any potential problems and any attempts to upset your server, URLScan can also log requests—including the offending request data. 
+			</li>
+			<li> By blocking specific HTTP requests, the URLScan security tool helps to prevent potentially harmful requests from reaching applications on the server. 
+			</li>
+			<li> While URLScan technologies (such as built in Request Filtering Module) are built in to IIS 7 or newer versions of IIS, it is still a valuable tool for systems that are running IIS 6.0 and below. 
+			</li>
+			<li> For reference, below is a list of the operating systems and their default IIS version:
+			
+			<a href="../../img/iis.png" class="media" title="iis.png"><img src="../../img/iis.png" class="media" alt="" width="400" /></a>
+			<ul style="list-style-type:disc">
+				<li>The filters in URLScan are based upon rules that the administrator configures. Administrators may configure URLScan to reject HTTP requests based on the following criteria:
+				</li>
+			
+				<div style="margin-left:40px">
+				<ul style="list-style-type:circle">
+					<li>The HTTP request method or verb
+				</li>
+					<li>The file name extension of the requested resource
+				</li>
+					<li>Suspicious <abbr title="Uniform Resource Locator">URL</abbr> encoding
+					</li>
+					<li>Presence of non-<abbr title="American Standard Code for Information Interchange">ASCII</abbr> characters in the 
+					<abbr title="Uniform Resource Locator">URL</abbr> </li>
+					<li>Presence of specified character sequences in the 
+					<abbr title="Uniform Resource Locator">URL</abbr> </li>
+					<li>Presence of specified headers in the request
+				</li>
+				</ul>
+				</div>
+			<li>URLScan can act as a buffer, so you don’t have to modify your existing code. Therefore, if a request is identified as being a potential risk,
+			 the script can immediately return an HTTP 404 message to the client, without the information ever reaching the script. This help to protect the script, your Web site and your server.</li>
+			</ul>			
+			
+
+          <h2 id="resources">Helpful Resources</h2>
+          <ul style="list-style-type:square">
+			<li> <a href="http://www.iis.net/learn/extensions/working-with-urlscan/urlscan-3-reference" class="urlextern" title="http://www.iis.net/learn/extensions/working-with-urlscan/urlscan-3-reference"> URLScan Security Tool Download</a>
+			</li>
+			<li> <a href="http://forums.iis.net/" class="urlextern" title="http://forums.iis.net/"> URLScan Security Tool Forums</a>			<li> <a href="http://www.iis.net/learn/extensions/working-with-urlscan/urlscan-faq" class="urlextern" title="http://www.iis.net/learn/extensions/working-with-urlscan/urlscan-faq"> URLScan Security Tool FAQ</a>
+			</li>
+		  </ul>
+			
+		<h2 id="references"> References</h2>
+		<ul style="list-style-type:square">
+		<li> <a href="http://blogs.technet.com/b/security/archive/2013/01/22/microsoft-s-free-security-tools-urlscan-security-tool.aspx" title="http://blogs.technet.com/b/security/archive/2013/01/22/microsoft-s-free-security-tools-urlscan-security-tool.aspx">http://blogs.technet.com/b/security/archive/2013/01/22/microsoft-s-free-security-tools-urlscan-security-tool.aspx</a></li>
+		</ul>
+		<br/>
+          <div class="lavenderBox">
+            <div class="header">Panel title</div>
             <div class="subtitle linklist"><a href="#">Lorem</a> <a href="#">Ipsum</a>
               <a href="#">Dolorestitas</a> </div>
             <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum

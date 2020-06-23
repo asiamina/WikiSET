@@ -1,0 +1,217 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Wikipedia Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="antixss.html"><img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="antixss.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px"><a href="../memory/main.html">
+                Memory/Malware Forensics</a></li>
+            <li class="auto-style1"><a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1"><a href="../network/main.html">Network
+                Forensics</a></li>
+            <li class="auto-style1"><a href="../social/main.html">Social
+                Engineering</a></li>
+          
+            <li class="auto-style1"><a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+
+            <li class="auto-style1"><a href="../threat/main.html">Content/Threat
+                Analysis</a></li>
+        
+            <li class="auto-style1"><a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+         
+          </ul>
+        
+            <h3>Interaction</h3>
+      
+          <ul>
+            <li class="auto-style1"><a href="secTest.html">Security Test</a></li>
+			  <li class="auto-style1"><a href="antixss.html">Security Tools</a></li>
+			  <li class="auto-style1"><a href="../handson/main.html">Hands-on Experience</a></li>
+			  <li class="auto-style1"><a href="../course/main.html">Other Course Modules</a></li>
+			  <li class="auto-style1"><a href="../attacks/main.html">Attacks</a></li>
+                
+                
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="https://github.com/asiamina/WikiSET">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Anti Cross Site Scripting Library</h1>
+		  
+			<div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+            <ul>
+              <li> <span>1</span><a href="#intro">Introduction</a> </li>
+              <li> <span>2</span><a href="#types">Different Types of XSS Attacks</a> </li>
+              <li> <span>3</span><a href="#resources">Helpful Resources</a> </li>
+              <li><span>4</span><a href="#references">References</a></li>
+            </ul>
+          </div>
+
+           
+           <h2 id="intro">Introduction</h2>
+           
+			<ul style="list-style-type:disc">
+			
+			<li class="level1"><div class="li"> Cross-site scripting (XSS) is an attack technique in which an attacker inserts malicious <abbr title="HyperText Markup Language">HTML</abbr> and JavaScript into a vulnerable webpage, often in an effort to distribute malware or to steal sensitive information from the website or its visitors. </div>
+			</li>
+			<li class="level1"><div class="li"> According to the Microsoft Security Intelligence Report Volume 13, there has been a significant increase in reported XSS cases over the past two years, to the point where XSS vulnerabilities have started to displace other types of reported vulnerabilities by percentage.</div>
+			</li>
+			<li class="level1"><div class="li">  An analysis of the vulnerabilities reported in the first half of 2012 revealed that 37% of all verified vulnerabilities involved XSS techniques that the Internet Explorer XSS Filter can mitigate.  </div>
+								
+			<a href="../../img/xss.jpg" class="media" title="xss.jpg"><img src="../../img/xss.jpg" class="media" alt="" width="200" /></a>
+			</li>
+			<li>XSS vulnerabilities occur whenever an application takes data that originated from a user and sends it to a web browser without first properly validating or encoding it.</li>
+			<li>XSS attacks can be used to hijack user sessions, deface websites, conduct port scans on victims’ internal networks, conduct phishing attacks and/or take over users’ web browsers.</li>
+			</ul>
+			
+           <h2 id="types">Different Types of XSS Attacks</h2>
+           <ul style="list-style-type:disc">
+			<li class="level1"><div class="li"> In a <strong>typical XSS attack</strong>, an attacker causes a malicious script to execute in a prospective victim’s browser when visiting a legitimate website.</div>
+			</li>
+			<li class="level1"><div class="li">  In a <strong>reflected attack</strong>, the attacker tricks the victim into submitting the malicious script to the vulnerable site (for example, by visiting a specially crafted <abbr title="Uniform Resource Locator">URL</abbr> with the script embedded in the query string). </div>
+			</li>
+			<li class="level1"><div class="li"> In a <strong>stored attack</strong>, the attacker uploads the malicious script to a vulnerable website in such a way that the script will be exposed to subsequent visitors and execute in their browsers. </div>
+			</li>
+			<li class="level1"><div class="li"> The following figure illustrates how a basic stored XSS attack can be used to steal cookie files from a victim’s computer.</div>
+			</li>
+			<li><a href="../../img/steal_cookie.jpg" class="media" title="steal_cookie.jpg"><img src="../../img/steal_cookie.jpg" class="media" alt="" width="200" /></a>
+			</li>
+			</ul>
+
+
+            
+           <h2 id="mitigation">XSS Mitigations</h2>
+           <ul style="list-style:disc">
+				<li> Microsoft integrates anti-cross-site scripting measures into its products to help protect against these types of attacks.  For example, recent versions of Internet Explorer have included a number of XSS mitigations, such as:
+				<ul style="list-style:circle;margin-left:40px">
+				<li> <strong>HttpOnly cookies</strong>. Introduced in Windows Internet Explorer 6 Service Pack 1 in 2002, HttpOnly is a flag that a website can set when sending a browser cookie to a client. If the HttpOnly flag is set for a cookie, it cannot be accessed by client-side scripts in a browser that supports the flag. The HttpOnly flag is supported by recent versions of most major desktop and mobile browsers. For more information, see the "Mitigating Cross-site Scripting with Http-only Cookies."
+				</li>
+				<li> <strong>XSS Filter</strong>. Introduced in Windows Internet Explorer 8, the XSS Filter is a component of Windows Internet Explorer that identifies and neutralizes likely XSS attacks. For more information, see the entry "IE8 Security Part IV: The XSS Filter” (July 2, 2008) at the Internet Explorer Engineering Team blog (blogs.msdn.com/ie). 
+				</li>
+				<li> <strong>SmartScreen Filter</strong>. Introduced in Windows Internet Explorer 8, SmartScreen Filter blocks access to known harmful websites, which can include sites compromised by XSS. 
+				</li>
+				<li> <strong>Inline frame security and the HTML5 Sandbox</strong>: Website developers can specify a sandbox attribute for individual inline frames (IFrames). When a compliant browser loads a sandboxed IFrame with content from a domain other than the one hosting the frame, scripts and other potentially dangerous content are disabled. Several modern browsers support this HTML5 model, including Internet Explorer 10. For more information, see the article "How to Safeguard your Site with HTML5 Sandbox” at the Microsoft Developer Network (msdn.microsoft.com). 
+				</li>
+				</ul>
+				<li>The Microsoft Anti-Cross-Site Scripting Library is an encoding library designed to help developers protect their ASP.NET web-based applications from Cross-Site Scripting attacks.
+				<ul style="list-style:circle;margin-left:40px">
+					<li>It differs from most encoding libraries in that it uses the allow-listing technique, sometimes referred to as the principle of inclusions, to provide protection against XSS attacks.</li>
+					<li> This approach works by first defining a valid or allowable set of characters, and encodes anything outside this set (invalid characters or potential attacks). The allow-listing approach provides several advantages over other encoding schemes.</li>
+					<li>It is also important that server side security features that also do validation are built into the server side application.  Most modern websites have an <abbr title="Application Programming Interface">API</abbr> layer between web servers and database back ends.  Using a Security Development Lifecycle process that includes things like architectural mitigations can also be very helpful in driving a more holistic approach to solving issues like XSS.</li>
+				</li>
+   		 </ul>
+
+           <h2 id="resources">Helpful Resouces</h2>
+           <ul style="list-style:disc">
+           		<li><a href="http://www.microsoft.com/en-us/download/details.aspx?id=13759" class="urlextern" title="http://www.microsoft.com/en-us/download/details.aspx?id=13759">Quich Security Reference Guide</a>
+				</li>
+			<li > <a href="http://msdn.microsoft.com/en-us/security/aa973814.aspx" class="urlextern" title="http://msdn.microsoft.com/en-us/security/aa973814.aspx"> Anti Cross Site Scripting Library FAQ</a> 
+			</li>
+			<li> <a href="http://www.microsoft.com/en-us/download/details.aspx?id=28589" class="urlextern" title="http://www.microsoft.com/en-us/download/details.aspx?id=28589">Tool Download</a> 
+			</li>       
+           </ul>
+
+
+           <h2 id="references">References</h2>
+           <ul style="list-style:square">
+			<li> <a href="http://blogs.technet.com/b/security/archive/2012/11/29/microsoft-s-free-security-tools-a-deeper-look-at-xss-attacks-and-microsoft-s-free-anti-cross-site-scripting-library.aspx" class="urlextern" title="http://blogs.technet.com/b/security/archive/2012/11/29/microsoft-s-free-security-tools-a-deeper-look-at-xss-attacks-and-microsoft-s-free-anti-cross-site-scripting-library.aspx">http://blogs.technet.com/b/security/archive/2012/11/29/microsoft-s-free-security-tools-a-deeper-look-at-xss-attacks-and-microsoft-s-free-anti-cross-site-scripting-library.aspx</a>
+			</li>
+			
+			
+			
+           </div>
+            <div class="lavenderBox">
+            <div class="header">Panel title</div>
+            <div class="subtitle linklist"><a href="#">Lorem</a> <a href="#">Ipsum</a>
+              <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="https://info.flagcounter.com/WApn"><img
+                src="https://s11.flagcounter.com/count2/WApn/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+                alt="Flag Counter"
+                border="0"></a>
+          </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

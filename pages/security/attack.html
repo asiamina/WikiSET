@@ -1,0 +1,288 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Wikipedia Template</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="attack.html"><img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="attack.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px"><a href="../memory/main.html">
+                Memory/Malware Forensics</a></li>
+            <li class="auto-style1"><a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1"><a href="../network/main.html">Network
+                Forensics</a></li>
+            <li class="auto-style1"><a href="../social/main.html">Social
+                Engineering</a></li>
+          
+            <li class="auto-style1"><a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+
+            <li class="auto-style1"><a href="../threat/main.html">Content/Threat
+                Analysis</a></li>
+        
+            <li class="auto-style1"><a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+         
+          </ul>
+        
+            <h3>Interaction</h3>
+      
+          <ul>
+            <li class="auto-style1"><a href="secTest.html">Security Test</a></li>
+			  <li class="auto-style1"><a href="attack.html">Security Tools</a></li>
+			  <li class="auto-style1"><a href="../handson/main.html">Hands-on Experience</a></li>
+			  <li class="auto-style1"><a href="../course/main.html">Other Course Modules</a></li>
+			  <li class="auto-style1"><a href="../attacks/main.html">Attacks</a></li>
+                
+                
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="https://github.com/asiamina/WikiSET">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Attack Surface Analyzer</h1>
+		  
+          <p>Attack Surface Analyzer is a tool created for the analysis of changes made to the attack surface of the operating systems since Windows Vista and beyond.
+           It is a tool recommended by Microsoft in its SDL guidelines [1] in the verification stage of the development.</p>
+			<div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+            <ul>
+              <li> <span>1</span><a href="#history">History</a> </li>
+              <li> <span>2</span><a href="#features">Features</a>
+                <ul>
+                  <li><span>2.1</span><a href="#2.1">Analysis of Different Threat Categories</a> </li>
+                  <li><span>2.2</span><a href="#2.2">Enlisting Threats</a> </li>
+				  <li><span>2.3</span><a href="#2.3">Determining Threat Severity</a> </li>
+				  <li><span>2.4</span><a href="#2.4">Built in Help</a> </li>
+				  <li><span>2.5</span><a href="#2.5">Organization of Changes made to the Attack Surface</a> </li>
+				  <li><span>2.6</span><a href="#2.6">Report Generation</a> </li>
+
+                </ul>
+              </li>
+              <li> <span>3</span><a href="#system">System Requirements</a> </li>
+              <li> <span>4</span><a href="#scans">Scans</a> 
+              	<ul>
+                  <li><span>4.1</span><a href="#4.1">Baseline Scan</a> </li>
+                  <li><span>4.2</span><a href="#4.2">Product Scan</a> </li>
+                </ul>
+              </li>
+              <li><span>5</span><a href="#references">References</a></li>
+            </ul>
+          </div>
+
+           
+           <h2 id="history">History</h2>
+           
+			<ul style="list-style-type:disc">
+			<li> According to the Microsoft SDL Team they did not have an all in one tool for checking the changes made to the attack surface of Windows Operating System before Attack Surface Analyzer was developed.
+			 It was a problem to check and verify the effects of various software installations on the system way back since Windows Server 2003 was being developed. Back then they had to use multiple tools for every type of change made to the attack surface.
+			  It was a painful process when they had to check for everything again and again and using multiple tools.
+			</li>
+			<li> It was this problem which made Microsoft create an application using which developers could analyze the changes made to the Windows Attack Surface.
+			</li>
+			<li> It has at first been used by the developers at Microsoft. Later, on January 18, 2011, a beta version (version 5.1.3.0) of a tool named Attack Surface Analyzer was released in public for the testers and IT administrators.
+			 Attack Surface Analyzer can compare two scan data of a system called the baseline scan and product scan. 
+			</li>
+			</ul>
+			
+			
+			
+           <h2 id="features">Features</h2>
+           <h3 id="2.1">Analysis of Different Threat Categories</h3>
+           
+           <p>Attack Surface Analyzer is all in one tool for analysis of changes made to the various parts of the attack surface of Windows 6 series Operating System (includes Windows Vista and Windows 7). 
+           Using this one tool, you can analyze the changes made to the Registry, File permissions, Windows IIS Server, GAC assemblies and a lot more can be done.According to Microsoft, it is the same tool in use by the engineers of the security team at Microsoft 
+           to analyze the effects of software installation on the Windows Operating System.</p>
+            <p>It would not have been possible a year ago when there was no all in one tool. You would have had to use different software for all the different parts of Windows and then combine the effects logically by yourself. 
+            The tool enlists the various elements it enumerates while running a system scan. The elements are:</p>
+           
+           <ul style="list-style-type:disc; margin-left:30px">
+           <li class="level2"><div class="li"> files</div>
+			</li>
+			<li class="level2"><div class="li"> registry keys</div>
+			</li>
+			<li class="level2"><div class="li">  memory information</div>
+			</li>
+			<li class="level2"><div class="li"> windows</div>
+			</li>
+			<li class="level2"><div class="li"> windows firewall</div>
+			</li>
+			<li class="level2"><div class="li"> GAC assemblies</div>
+			</li>
+			<li class="level2"><div class="li"> network shares</div>
+			</li>
+			<li class="level2"><div class="li"> Logon sessions</div>
+			</li>
+			<li class="level2"><div class="li"> ports</div>
+			</li>
+			<li class="level2"><div class="li"> named pipes</div>
+			</li>
+			<li class="level2"><div class="li"> autorun tasks</div>
+			</li>
+			<li class="level2"><div class="li"> RPC endpoints</div>
+			</li>
+			<li class="level2"><div class="li"> processes</div>
+			</li>
+			<li class="level2"><div class="li"> threads</div>
+			</li>
+			<li class="level2"><div class="li"> desktops</div>
+			</li>
+			<li class="level2"><div class="li"> handles</div>
+			</li>
+			<li class="level2"><div class="li"> Microsoft Internet Information Services Server</div>
+			</li>
+
+		   </ul>
+
+           <p>The above list is a comprehensive set of elements which are both possible as well as important elements which can be changes when new software is installed on the system. 
+           While some software might change only a few elements in the list, some other can change a few more and different elements on the system.
+           Attack Surface Analyzer combines all of them so that it is easier to analyze all parts.
+           </p>
+           
+           <h3 id="2.2">Enlisting Threats</h3>
+           <p>While Attack Surface Analyzer can tell you the changes for sure, in some cases, it will also be able to tell you that a particular change in the configuration is causing a threat.
+            As of now, the tool does not enlist the threats in all the categories (or parts of the Operating System) it scans but only a few, the most noticeable of which are the issues in services configurations, File system ACLs and issues related to the processes running on the system.</p>
+           
+           <h3 id="2.3">Determining Threat Severity</h3>
+           <p>Getting the list of threats to the system is a great thing when you have it from software released by Microsoft itself. After all, no one knows Windows better than Microsoft. With the improved concerns over security shown by Microsoft, it is important that the severity of a threat is also known to the IT team of an enterprise. Attack Surface Analyzer also shows the severity of the threat which it finds. However, it seems not to report the severity of each and every threat. Instead it shows the severity of the threat by its category. For example, the severity of threat caused by "Executables With Weak ACLs” (threat severity of level 1) is less than that caused by "Processes With Impersonation Tokens” (threat severity of level 2). It is surely a desirable feature to enlist the level of severity caused by each threat rather by the category to which it belongs.
+            There however, is no news about when that might be available. </p>
+            
+           <h3 id="2.4">Built in Help</h3>
+			<p>Every organization has its experts on various domains of security. There may be a case when a network security expert in an organization is not aware of the details and terminology of some other domain (say Windows Services). However, the two issues may be connected to each other. While it is not possible (and in some case not important) for the experts of two security expert teams to know everything about the terms in use by each other, it might be required in a few cases. A brief description (along with a link to technet library describing the term in detail) of all threats and changes to the attack surface are enlisted in the report generated by the Attack Surface Analyzer. While the brief description is usually enough for the experts, it might be needed in other cases. Microsoft has made it easy to find the right resource for the term rather than relying upon the web search engines.</p>
+            
+            <h3 id="2.5">Organization of Changes made to the Attack Surface</h3>
+			<p>Attack Surface Analyzer can compare two scan data (generated by itself on two different scans) and generate a report which can then be viewed in the <abbr title="HyperText Markup Language">HTML</abbr> format. It is also possible to run the scans on one system and then generate on another system using the same tool. This is good for Windows Vista Clients because it is not possible to generate report using the current version of Attack Surface Analyzer on Windows Vista. In such a case, Attack Surface Analyzer can be used to run scans on the Windows Vista Client, transfer the scan result files to a computer running Windows 7 and then generate and browse the report on the Windows 7 based computer.</p>
+            
+            <h3 id="2.6">Report Generation</h3>
+            Attack Surface Analyzer can compare two scan data (generated by itself on two different scans) and generate a report which can then be viewed in the <abbr title="HyperText Markup Language">HTML</abbr> format. It is also possible to run the scans on one system and then generate on another system using the same tool. This is good for Windows Vista Clients because it is not possible to generate report using the current version of Attack Surface Analyzer on Windows Vista. In such a case, Attack Surface Analyzer can be used to run scans on the Windows Vista Client, transfer the scan result files to a computer running Windows 7 and then generate and browse the report on the Windows 7 based computer.
+
+            
+           <h2 id="system">System Requirements</h2>
+           <ul style="list-style:disc">
+				<li> Attack Surface Analyzer works on the Windows 6.X series of Operating Systems but report generation can only be done on 6.1 version Operating Systems. Following are the system requirements of Attack Surface Analyzer (from the official download page):
+				<ul style="list-style:circle;margin-left:40px">
+				<li> Installable on: Windows Vista, Windows 7, Windows Server 2008 and Windows Server 2008 R2
+				</li>
+				<li> Collection of Attack Surface Data: Windows Vista, Windows 7, Windows Server 2008 and Windows Server 2008 R2
+				</li>
+				<li> Analysis of Attack Surface data and report generation: Windows 7 or Windows Server 2008 R2 with Microsoft .Net 3.5 SP1
+				</li>
+				</ul>
+				</li>
+				<li class="level1"><div class="li"> Microsoft has not enlisted any hardware requirements separately. The tool should be able to perform its job on any machine meeting the hardware requirements of the installed Operating System. Note however that the running time for generation of scan data and report depends on the hardware capabilities (better hardware would get the work done faster).</div>
+				</li>
+		 </ul>
+
+           <h2 id="scans">Scans</h2>
+           <p>Attack Surface Analyzer list two types of scans namely baseline scan and product scan. In strict technical terms both the scans are same. The difference between them is logical, not technical.</p>
+           
+           <h3 id="4.1">Baseline Scan</h3>
+           <p>This is the scan run which the user will run to generate the data on the initial system. This data is then compared with the product scan. After running the baseline scan, the product whose effect on the attack surface of the Operating System is to be checked is installed. The installation changes the system configuration (possibly) by installing services, changing firewall rules, installing new .NET assemblies and so on. Baseline scan is a logical scan run by the user using Attack Surface Analyzer which generates the file containing the configuration of the system before this software is installed.</p>
+           
+           <h3 id="4.2">Product Scan</h3>
+           <p>Product scan signifies the state of the system after the ‘product’ was installed. In this context, the product is the software whose effects on the system upon installation are to be checked. To generate a report, two scans are required in minimum. The product scan would capture the changes made to the system by the installation of the software product under testing. The scan data generated in this scan is compared with the baseline scan data to find the changes made to the system configurations on different points. It is worth a note that more than one system state can be captured using Attack Surface Analyzer and any combination of them can be used for the report generation. However the ‘Baseline Scan’ should be the one which was taken before the other. The other can automatically be called as the product scan.</p>
+
+           <h2 id="references">References</h2>
+           <ul style="list-style:square">
+			<li> <a href="http://en.wikipedia.org/wiki/Attack_Surface_Analyzer" class="urlextern" title="http://en.wikipedia.org/wiki/Attack_Surface_Analyzer">http://en.wikipedia.org/wiki/Attack_Surface_Analyzer</a>
+			</li>
+			<li> <a href="http://www.microsoft.com/security/sdl/adopt/tools.aspx" class="urlextern" title="http://www.microsoft.com/security/sdl/adopt/tools.aspx">http://www.microsoft.com/security/sdl/adopt/tools.aspx</a>
+			</li>
+			<li> <a href="http://www.thetrozone.com/best-features-attack-surface-analyzer-windows-7" class="urlextern" title="http://www.thetrozone.com/best-features-attack-surface-analyzer-windows-7">http://www.thetrozone.com/best-features-attack-surface-analyzer-windows-7</a>
+			</li>
+			</ul>
+
+           </div>
+           
+           
+           
+           <div class="lavenderBox">
+            <div class="header">Panel title</div>
+            <div class="subtitle linklist"><a href="#">Lorem</a> <a href="#">Ipsum</a>
+              <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="https://info.flagcounter.com/WApn"><img
+                src="https://s11.flagcounter.com/count2/WApn/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+                alt="Flag Counter"
+                border="0"></a>
+          </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>
