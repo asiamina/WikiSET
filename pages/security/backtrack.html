@@ -1,0 +1,300 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>You are using an outdated browse</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="antixss.html"><img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="antixss.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px"><a href="../memory/main.html">
+                Memory/Malware Forensics</a></li>
+            <li class="auto-style1"><a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1"><a href="../network/main.html">Network
+                Forensics</a></li>
+            <li class="auto-style1"><a href="../social/main.html">Social
+                Engineering</a></li>
+          
+            <li class="auto-style1"><a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+
+            <li class="auto-style1"><a href="../threat/main.html">Content/Threat
+                Analysis</a></li>
+        
+            <li class="auto-style1"><a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+         
+          </ul>
+        
+            <h3>Interaction</h3>
+      
+          <ul>
+            <li class="auto-style1"><a href="secTest.html">Security Test</a></li>
+			  <li class="auto-style1"><a href="antixss.html">Security Tools</a></li>
+			  <li class="auto-style1"><a href="../handson/main.html">Hands-on Experience</a></li>
+			  <li class="auto-style1"><a href="../course/main.html">Other Course Modules</a></li>
+			  <li class="auto-style1"><a href="../attacks/main.html">Attacks</a></li>
+                
+                
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="https://github.com/asiamina/WikiSET">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>BackTrack Penetration Testing</h1>
+		  
+			<div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+            <ul>
+              <li> <a href="#backtrack_penetration_testing">BackTrack Penetration Testing</a>
+				<li class="level2"><div class="li"><a href="#introduction">Introduction</a></div></li>
+				<li class="level2"><div class="li"><a href="#requirements">Requirements</a></div></li>
+				<li class="level2"><div class="li"><a href="#backtrack_penetration_testing_tutorial">Backtrack Penetration Testing Tutorial</a></div>
+				<ul class="toc">
+				<li class="level3"><div class="li"><a href="#step_1information_gathering">Step 1 : Information Gathering</a></div></li>
+				<li class="level3"><div class="li"><a href="#step_2scanning">Step 2 : Scanning</a></div></li>
+				<li class="level3"><div class="li"><a href="#step_3exploitation">Step 3 : Exploitation</a></div></li>
+				</ul>
+				</li>
+				<li class="level2"><div class="li"><a href="#refrence">References</a></div></li>
+</ul>
+           
+          </div>
+
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Penetration testing is a legal and authorized attempt to exploit computer systems for the purpose of making the computer systems more secure. </div>
+</li>
+<li class="level1"><div class="li"> Backtrack is the best penetration testing distribution. Offers some penetration testing programs and these programs will used in this Backtrack Penetration Testing Tutorial.</div>
+</li>
+<li class="level1"><div class="li">  The results of penetration testing are addressing the vulnerabilities in the computer system and also particular recommendations for fixing the vulnerabilities. Penetration testing is used to protect the computer systems and networks from attackers (Black Hat Hacker).</div>
+</li>
+</ul>
+           
+<h2 class="sectionedit3" id="requirements">Requirements</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> You need a place to practice this Backtrack Penetration Testing Tutorial. Virtual Lab is the solutions. You can make a network in your own computer without “real computer”. With virtual lab you can practice without harming other computer systems. Virtual Machine is the solution. With Virtual Machine you can install <abbr title="Operating System">OS</abbr> under your <abbr title="Operating System">OS</abbr>, in other words you can use multiple <abbr title="Operating System">OS</abbr> in the same time and in the same machine.</div>
+</li>
+<li class="level1"><div class="li"> There are some Virtualization software, for example VirtualBox and VMware. But I recommended VirtualBox for this Backtrack Penetration Testing Tutorial. You can install VirtualBox on your Backtrack for free because VirtualBox is an Open Source software.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="backtrack_penetration_testing_tutorial">Backtrack Penetration Testing Tutorial</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> This Backtrack Penetration Testing Tutorial is a penetration testing tutorial using Backtrack Linux.</div>
+</li>
+</ul>
+</div>
+           
+<h3 class="sectionedit5" id="step_1information_gathering">Step 1 : Information Gathering</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> The first step of Backtrack Penetration Testing Tutorial is Information Gathering. Gathering all of the information from the web about victim. If your victim has a website you can gather all of the victim’s personal information in his domain name of the website. </div>
+</li>
+<li class="level1"><div class="li"> Not only that, you also can grab the website and make it offline website in your computer so you can access locally and identify the website. HTTrack is tool that can copy a website page-by-page and we will use it in this Backtrack Penetration Testing Tutorial. With HTTrack you can make off-line copy of the victim’s website.</div>
+</li>
+<li class="level1"><div class="li"> Installing HTTrack is easy. Open your terminal and install it by type :</div>
+</li>
+</ul>
+
+<p>
+<em>apt-get install httrack</em>
+</p>
+
+<p>
+<a href="../../img/ptesting1.jpg" class="media" title="vulnerability_case_study:ptesting1.jpg"><img src="../../img/ptesting1.jpg" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Open your HTTrack using terminal and enter your project name, base part (a path where you want to save the offline copy of the website), and <abbr title="Uniform Resource Locator">URL</abbr> (site that you want to copy). Wait for a moment and you will get offline copy of the site.</div>
+</li>
+<li class="level1"><div class="li"> Now lets collect another information using The Harvester. The Harvester is a Python script that allows to collect email addresses or subdomains that related to the victim’s website and we will use it in this Backtrack Penetration Testing Tutorial. This Christian Martorella’s script will use Google and Bing when looking for emails, hosts, or subdomain of the victim’s website.</div>
+</li>
+</ul>
+
+<p>
+ cd /pentest/enumeration/theharvester
+ ./theHarvester.py -d victimwebsite.com -l 10 -b google.com
+</p>
+
+<p>
+<a href="../../img/ptesting2.jpg" class="media" title="ptesting2.jpg"><img src="../../img/ptesting2.jpg" class="media" alt="" width="300" /></a>
+</p>
+</div>
+           
+<h3 class="sectionedit6" id="step_2scanning">Step 2 : Scanning</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Scanning the port of systems and the vulnerabilities is the next step of Backtrack Penetration Testing Tutorial. Scanning port is important because port is a location where software and hardware communicate in the networks. Port allows a computer to exchange information with other computers, softwares, or also devices.</div>
+</li>
+<li class="level1"><div class="li"> Common Ports and Services:</div>
+<ul>
+<li class="level2"><div class="li"> 20        <abbr title="File Transfer Protocol">FTP</abbr> data transfer</div>
+</li>
+<li class="level2"><div class="li"> 21        <abbr title="File Transfer Protocol">FTP</abbr> control</div>
+</li>
+<li class="level2"><div class="li"> 22        SSH</div>
+</li>
+<li class="level2"><div class="li"> 23        Telnet</div>
+</li>
+<li class="level2"><div class="li"> 25        SMTP (e-mail)</div>
+</li>
+<li class="level2"><div class="li"> 53        <abbr title="Domain Name System">DNS</abbr></div>
+</li>
+<li class="level2"><div class="li"> 80        HTTP</div>
+</li>
+<li class="level2"><div class="li"> 443      HTTPS</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Ping. Ping is a network tool used to test the reachability of a host on an Internet Protocol (IP) network and to measure the round-trip time for messages sent to a destination computer.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/ptesting3.jpg" class="media" title="ptesting3.jpg"><img src="../../img/ptesting3.jpg" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Port Scanning. Ports can be either TCP or UDP and there are 65.536 (0–65.535) ports on every computer. The purpose of scanning ports is to know the “open” port. So we can know what services used in the server.</div>
+</li>
+<li class="level1"><div class="li"> Nmap is the most popular port scanning tool and we will use it in this Backtrack Penetration Testing Tutorial. It is open source and build by default in the Backtrack. The simple way using nmap is: nmap -p- IP</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/pscanning.jpg" class="media" title="pscanning.jpg"><img src="../../img/pscanning.jpg" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Vulnerabilities Scanning. The purpose of vulnerabilities scanning is looking for vulnerabilities of the system so we can attack it with the suitable exploit. We need tool to scan systems for vulnerabilities, the vulnerability scanner called Nessus. We will use Nessus in this Backtrack Penetration Testing Tutorial. You can install Nessus on Backtrack and lets scan the vulnerabilities.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/ptesting4.jpg" class="media" title="ptesting4.jpg"><img src="../../img/ptesting4.jpg" class="media" alt="" width="300" /></a>
+</p>
+
+</div>
+
+<h3 class="sectionedit7" id="step_3exploitation">Step 3 : Exploitation</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> This is the final step of Backtrack Penetration Testing Tutorial. Exploitation can be launch with Exploitation Tools. You can use Metasploit or Medusa. </div>
+</li>
+<li class="level1"><div class="li"> Medusa is brute force tool that attempts to gain access to remote services (<abbr title="File Transfer Protocol">FTP</abbr>, HTTP, MySQL, Telnet, VNC, Web Form, and more). Before using Medusa we need some required things. We need IP target, username list, and password dictionary.</div>
+</li>
+<li class="level1"><div class="li"> Backtrack includes a word lists that you can use for brute forcing. We can find it at /pentest/passwords/wordlists/</div>
+</li>
+<li class="level1"><div class="li"> In order to using Medusa for brute-force attack, you can open terminal and type the following command: medusa –h target_ip –u username –P path_to_password_dictionary –M service_to_attack</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/medusa.jpg" class="media" title="medusa.jpg"><img src="../../img/medusa.jpg" class="media" alt="" width="300" /></a>
+</p>
+
+</div>
+
+<h2 class="sectionedit8" id="refrence">References</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://back-track-linux.blogspot.com/2012/11/backtrack-penetration-testing-tutorial.html" class="urlextern" title="http://back-track-linux.blogspot.com/2012/11/backtrack-penetration-testing-tutorial.html">http://back-track-linux.blogspot.com/2012/11/backtrack-penetration-testing-tutorial.html</a></div>
+</li>
+</ul>
+
+           
+           
+
+
+            <div class="lavenderBox">
+            <div class="header">Panel title</div>
+            <div class="subtitle linklist"><a href="#">Lorem</a> <a href="#">Ipsum</a>
+              <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="https://info.flagcounter.com/WApn"><img
+                src="https://s11.flagcounter.com/count2/WApn/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+                alt="Flag Counter"
+                border="0"></a>
+          </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,278 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>You are using an outdated browse</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="antixss.html"><img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="antixss.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px"><a href="../memory/main.html">
+                Memory/Malware Forensics</a></li>
+            <li class="auto-style1"><a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1"><a href="../network/main.html">Network
+                Forensics</a></li>
+            <li class="auto-style1"><a href="../social/main.html">Social
+                Engineering</a></li>
+          
+            <li class="auto-style1"><a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+
+            <li class="auto-style1"><a href="../threat/main.html">Content/Threat
+                Analysis</a></li>
+        
+            <li class="auto-style1"><a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+         
+          </ul>
+        
+            <h3>Interaction</h3>
+      
+          <ul>
+            <li class="auto-style1"><a href="secTest.html">Security Test</a></li>
+			  <li class="auto-style1"><a href="antixss.html">Security Tools</a></li>
+			  <li class="auto-style1"><a href="../handson/main.html">Hands-on Experience</a></li>
+			  <li class="auto-style1"><a href="../course/main.html">Other Course Modules</a></li>
+			  <li class="auto-style1"><a href="../attacks/main.html">Attacks</a></li>
+                
+                
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="https://github.com/asiamina/WikiSET">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Web Application Scanning</h1>
+		  
+			<div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+			 <ul class="toc">
+			<li class="level1"><div class="li"><a href="#web_application_scanning">Web Application Scanning</a></div></li>
+			<li class="level1"><div class="li"><a href="#w3af_s_architecture">w3af’s architecture</a></div></li>
+			<li class="level1"><div class="li"><a href="#w3af_s_phases">w3af’s phases</a></div></li>
+			<li class="level1"><div class="li"><a href="#configuration">Configuration</a></div>
+			<ul class="toc">
+			<li class="clear">
+			<ul class="toc">
+			<li class="level3"><div class="li"><a href="#plugin_configuration">Plugin Configuration</a></div></li>
+			<li class="level3"><div class="li"><a href="#global_configuration">Global Configuration</a></div></li>
+			<li class="level3"><div class="li"><a href="#saving_your_settings">Saving your settings</a></div></li>
+			</ul>
+           
+          </div>
+
+           
+<h2 class="sectionedit1" id="web_application_scanning">Web Application Scanning</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> Black-box web application scanning, if we abstract from the details, is a simple process</div>
+<ol>
+<li class="level4"><div class="li"> Identify all links, forms, query string parameters.</div>
+</li>
+<li class="level4"><div class="li"> Send specially crafted strings to each input and analyze the output</div>
+</li>
+<li class="level4"><div class="li"> Generate a report with the findings</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Due to various reasons that won’t be discussed in this document, this process is actually very complex and false positive/negative prone if done without the right tools.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit2" id="w3af_s_architecture">w3af’s architecture</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> The w3af framework is divided into three main sections:</div>
+<ol>
+<li class="level2"><div class="li"> The core, which coordinates the whole process and provides libraries for using in plugins.</div>
+</li>
+<li class="level2"><div class="li"> The user interfaces, which allow the user to configure and start scans</div>
+</li>
+<li class="level2"><div class="li"> The plugins, which find links and vulnerabilities</div>
+</li>
+</ol>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit3" id="w3af_s_phases">w3af’s phases</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> w3af follows the steps you would perform in a web application penetration test, see “Web Application Scanning” above. In order to do so it defines different types of plugins which are going to be called by the core in a specific order.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Starting with a target <abbr title="Uniform Resource Locator">URL</abbr> provided by the user, w3af will first try to identify all URLs, forms and query string parameters in the application by the means of crawl plugins. A very good example of this type of plugin is the web_spider which will extract URLs from a page, follow those links and once again extract URLs from it. Following that process it will create a complete application link and form map.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Once the application has been mapped, audit plugins will send specially crafted strings to each parameter in order to trigger bugs in the application’s code. When a bug is found it will be reported to the user. The most used audit plugin is sqli which will find error-based SQL injections.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Identified vulnerabilities, debug and error messages, all are reported to the user with output plugins. These plugins will write the messages in different formats to suit your needs. In most cases a text file is what users need, but for integration into other tools XML file format is also available.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="configuration">Configuration</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> The framework can be configured using two very different settings: plugin configuration and global configuration</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit5" id="plugin_configuration">Plugin Configuration</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Plugins might have configuration parameters, in all cases where the plugin has a setting a default value has been set. We recommend you read the setting help and in some cases the plugin source code in order to understand exactly what will happen if you change the configuration.</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit6" id="global_configuration">Global Configuration</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> The framework-wide configuration settings change the core’s behavior and are split in two: http-settings and misc-settings. As with the plugin configuration, all settings in the global configuration have a default value and should be changed with care. Changing a setting here might reduce the scanner’s performance, have the framework generate thousands of unnecessary HTTP requests, etc.</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit7" id="saving_your_settings">Saving your settings</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> All user defined settings can be saved using profiles, this helps users run their scans multiple times and in some cases run them with slightly different configurations. Creating, saving and loading profiles is an easy task that’s done from within the user interface.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit8" id="external_links">External links</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> The following videos give a demo on How to use  w3af for a web application security.</div>
+<ol>
+<li class="level4"><div class="li"> <a href="http://www.youtube.com/watch?v=JFmF-jX5RxA" class="urlextern" title="http://www.youtube.com/watch?v=JFmF-jX5RxA">http://www.youtube.com/watch?v=JFmF-jX5RxA</a></div>
+</li>
+<li class="level4"><div class="li"> <a href="http://www.youtube.com/watch?v=ZQFpwTHMrxM" class="urlextern" title="http://www.youtube.com/watch?v=ZQFpwTHMrxM">http://www.youtube.com/watch?v=ZQFpwTHMrxM</a></div>
+</li>
+</ol>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit9" id="references">References</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> <a href="http://w3af.org/howtos/understanding-the-basics" class="urlextern" title="http://w3af.org/howtos/understanding-the-basics">http://w3af.org/howtos/understanding-the-basics</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://searchsecurity.techtarget.com/video/W3af-tutorial-How-to-use-w3af-for-a-Web-application-security-scan" class="urlextern" title="http://searchsecurity.techtarget.com/video/W3af-tutorial-How-to-use-w3af-for-a-Web-application-security-scan">http://searchsecurity.techtarget.com/video/W3af-tutorial-How-to-use-w3af-for-a-Web-application-security-scan</a></div>
+</li>
+</ul>
+
+</div>
+
+
+
+
+
+
+
+
+            <div class="lavenderBox">
+            <div class="header">Panel title</div>
+            <div class="subtitle linklist"><a href="#">Lorem</a> <a href="#">Ipsum</a>
+              <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="https://info.flagcounter.com/WApn"><img
+                src="https://s11.flagcounter.com/count2/WApn/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+                alt="Flag Counter"
+                border="0"></a>
+          </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

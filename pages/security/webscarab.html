@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>You are using an outdated browse</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="urlscan.html"><img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="urlscan.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px"><a href="../memory/main.html">
+                Memory/Malware Forensics</a></li>
+            <li class="auto-style1"><a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1"><a href="../network/main.html">Network
+                Forensics</a></li>
+            <li class="auto-style1"><a href="../social/main.html">Social
+                Engineering</a></li>
+          
+            <li class="auto-style1"><a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+
+            <li class="auto-style1"><a href="../threat/main.html">Content/Threat
+                Analysis</a></li>
+        
+            <li class="auto-style1"><a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+         
+          </ul>
+        
+            <h3>Interaction</h3>
+      
+          <ul>
+            <li class="auto-style1"><a href="secTest.html">Security Test</a></li>
+			  <li class="auto-style1"><a href="urlscan.html">Security Tools</a></li>
+			  <li class="auto-style1"><a href="../handson/main.html">Hands-on Experience</a></li>
+			  <li class="auto-style1"><a href="../course/main.html">Other Course Modules</a></li>
+			  <li class="auto-style1"><a href="../attacks/main.html">Attacks</a></li>
+                
+                
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="https://github.com/asiamina/WikiSET">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Microsoft Security Scanner</h1>
+          <p class="siteSub">&nbsp;</p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+            <ul class="toc">
+				<li class="level1"><div class="li"><a href="#webscarab">WebScarab</a></div>
+				<ul class="toc">
+				<li class="level2"><div class="li"><a href="#introduction">Introduction</a></div></li>
+				<li class="level2"><div class="li"><a href="#webscarab_how_to_use">WebScarab How to use</a></div>
+				<ul class="toc">
+				<li class="level3"><div class="li"><a href="#tips_and_tricks">Tips and tricks</a></div></li>
+				</ul>
+				</li>
+				<li class="level2"><div class="li"><a href="#download">Download</a></div></li>
+				<li class="level2"><div class="li"><a href="#features">Features</a></div></li>
+				<li class="level2"><div class="li"><a href="#refrences">References</a></div></li>
+				</ul></li>
+          </div>
+          
+          
+<h2 class="sectionedit2" id="introduction">Introduction</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> WebScarab is a framework for analysing applications that communicate using the HTTP and HTTPS protocols. It is written in Java, and is thus portable to many platforms. WebScarab has several modes of operation, implemented by a number of plugins. </div>
+</li>
+<li class="level1"><div class="li"> WebScarab operates as an intercepting proxy, allowing the operator to review and modify requests created by the browser before they are sent to the server, and to review and modify responses returned from the server before they are received by the browser. WebScarab is able to intercept both HTTP and HTTPS communication. The operator can also review the conversations (requests and responses) that have passed through WebScarab.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit3" id="webscarab_how_to_use">WebScarab How to use</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> WebScarab has a large amount of functionality, and as such can be quite intimidating to the new user. But, for the simplest case, intercepting and modifying requests and responses between a browser and HTTP/S server, there is not a lot that needs to be learned. </div>
+</li>
+<li class="level1"><div class="li"> Initially, I will assume that you have full unrestricted access to the Internet (that is, you are not behind a proxy). For the sake of simplicity, I will also assume that you are using Internet Explorer. If you need to use a proxy to get out of your corporate network.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/webscarab1.png" class="media" title="webscarab1.png"><img src="../../img/webscarab1.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> This is what WebScarab looks like at startup. There are a few major areas that might need explanation. </div>
+</li>
+<li class="level1"><div class="li"> Firstly, the toolbar provides access to the various plugins, as well as the Summary window (main view), and messages (log) window. </div>
+</li>
+<li class="level1"><div class="li"> The Summary window is split into two parts. On the top is a tree table which will show the layout of the sites that you have visited, and some attributes of the various URLs. Below that is a table showing all of the conversations that have been seen by WebScarab, normally sorted in reverse by ID, so that more recent conversations are at the top of the table. The sort order can be changed by clicking in the column headers if desired. </div>
+</li>
+<li class="level1"><div class="li"> In order to start using WebScarab as a proxy, you need to configure your browser to use WebScarab as a proxy. This is configured in <abbr title="Internet Explorer">IE</abbr> using the Tools menu. Select Tools → Internet Options → Connections → <abbr title="Local Area Network">LAN</abbr> Settings to get the proxy configuration dialog. </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/webscarab2.png" class="media" title="webscarab2.png"><img src="../../img/webscarab2.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> WebScarab defaults to using port 8008 on localhost for its proxy. You need to configure <abbr title="Internet Explorer">IE</abbr> to relay requests to WebScarab, rather than fetching them itself, as shown in the above image. Make sure that all checkboxes are unchecked, except for “Use a proxy server”. Once you have configured <abbr title="Internet Explorer">IE</abbr> to use the proxy, select Ok on all dialogs to get back to the browser. Browse to a non-SSL website, and then switch to WebScarab. </div>
+</li>
+<li class="level1"><div class="li"> You should see something similar to the next image. If you don&#039;t, or you get an error while browsing, you should go back and check your proxy settings in Internet Explorer as described above. If the proxy settings are correct, one possibility is that there is already another program that is using port 8008, and preventing WebScarab from using it. If so, you should stop that other program. I will also show you how to tell WebScarab how to use a different port a bit later.</div>
+</li>
+<li class="level1"><div class="li"> NOTE: If you are using WebScarab to test a site that is running the same computer as the browser (i.e. localhost or 127.0.0.1), and you are using IE7, you will need to add a dot “.” after the hostname to force IE7 to use the proxy that you have configured. This is NOT a bug in WebScarab, but an unfortunate design decision (I assume) made by the developers of <abbr title="Internet Explorer">IE</abbr>. Basically, it will ignore any proxy settings if it thinks that the server you are trying to reach is on the local machine. One way of tricking it is to add the dot, as in <a href="http://localhost./WebGoat/attack" class="urlextern" title="http://localhost./WebGoat/attack">http://localhost./WebGoat/attack</a>. This will force <abbr title="Internet Explorer">IE</abbr> to use your configured proxy. </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/webscarab3.png" class="media" title="webscarab3.png"><img src="../../img/webscarab3.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Here you can see the tree of <abbr title="Uniform Resource Locator">URL</abbr>&#039;s, which represents the site layout, as well as the individual conversations that have passed through WebScarab. To see the details of a particular conversation, you can double-click on a row in the table, and a window showing the request and the details of the response will open. You can see the request and response in a variety of forms. The view shown here is the “Parsed” view, where the headers are broken out into a table, and the request or response content is presented according to its Content-Type header. You can also choose the “Raw” format, where the request or response is presented exactly as it would be seen on the wire.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/webscarab4.png" class="media" title="webscarab4.png"><img src="../../img/webscarab4.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> You can step from one conversation (request/response) to the next in the conversation window using the “previous” and “next” buttons, as well as jumping directly to a particular conversation using the drop down combo box.</div>
+</li>
+<li class="level1"><div class="li"> Now that you are familiar with the basic workings of WebScarab, and have made sure that your browser is correctly configured, the next step is to intercept some requests, and modify them before they are sent to the server.</div>
+</li>
+<li class="level1"><div class="li"> You enable proxy intercepts via the Proxy plugin, accessible via the “Proxy” button on the toolbar. Then choose the “Manual Edit” tab. Once you click the “Intercept Requests” checkbox, you can choose which request methods you wish to intercept (most commonly GET or POST), and can even choose multiple methods using “Ctrl-click”. Select “GET” for the moment. </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/webscarab5.png" class="media" title="webscarab5.png"><img src="../../img/webscarab5.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Now go back to your browser, and click on a link. You should see something like the following window appear (it may only flash in the task  </div>
+</li>
+<li class="level1"><div class="li"> bar initially, just select it. Future windows will pop-up properly). </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/webscarab6.png" class="media" title="webscarab6.png"><img src="../../img/webscarab6.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> You can now edit any part of the request you choose. Note that the headers are shown already <abbr title="Uniform Resource Locator">URL</abbr>-decoded, and anything that you type in will be <abbr title="Uniform Resource Locator">URL</abbr>-encoded automatically. If you do not want this to happen, you should use the Raw mode. In some cases, using the Raw mode may be the easiest anyway, especially if you have something that you wish to paste in.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Once you are happy with your changes, click on the “Accept changes” button to allow the modified request to be sent to the server. If you decide that you wish to revert the changes that you have made so far, you can click on the “Cancel changes” button to allow the original request to be sent to the server. You can also click on the “Abort request” button if you don&#039;t want to send a request to the server at all. This will send an error back to the browser. Finally, if there are multiple intercept windows opened (e.g the browser is using several threads simultaneously), you can release all the requests using the “Cancel ALL intercepts” button.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> WebScarab will continue to intercept all requests that match the method you specified until you uncheck the “Intercept requests” checkbox, either in the intercept conversation window, or in the “Manual Edit” tab of the Proxy plugin. But you may be wondering why WebScarab does not intercept requests for images, stylesheets, javascript, etc. If you go back to the “Manual Edit” tab, you will see a field labeled “Exclude paths matching:”. This field contains a regular expression which is matched against the request <abbr title="Uniform Resource Locator">URL</abbr>. If there is a match, the request is never intercepted.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> You can also configure WebScarab to intercept responses, in case you want to change the behaviour of some parts of the page. For example, you can disable JavaScript validation, change the list of possible items in a SELECT field, etc. </div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit4" id="tips_and_tricks">Tips and tricks</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> If you are using <abbr title="Internet Explorer">IE</abbr> and you would like WebScarab to automatically update your proxy settings for you, you need to complete the following steps. Note: This only works with the -installer version of WebScarab! </div>
+<ul>
+<li class="level4"><div class="li"> Change to the Full-Featured interface (Tools → Use Full-featured Interface), then go to the Proxy→Listeners tab. </div>
+</li>
+<li class="level4"><div class="li"> Select the only listener showing, and click “Stop”. </div>
+</li>
+<li class="level4"><div class="li"> About 2/3 of the way down the screen are several input fields, corresponding to the columns in the listener table. </div>
+</li>
+<li class="level4"><div class="li"> Each box should be filled in with the value from the most recently stopped proxy. </div>
+</li>
+<li class="level4"><div class="li"> At this point, you can check the “Primary” checkbox, and then click “Start”. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Your <abbr title="Internet Explorer">IE</abbr> proxy settings will automatically be updated to point to WebScarab, and will be reset when you exit WebScarab. This setting will be saved, and used on subsequent runs of WebScarab.  </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit5" id="download">Download</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> The canonical source repository for WebScarab is at <a href="https://github.com/OWASP/OWASP-WebScarab" class="urlextern" title="https://github.com/OWASP/OWASP-WebScarab">GitHub</a>. A zip archive of the tip of tree can be downloaded <a href="https://github.com/OWASP/OWASP-WebScarab/archive/master.zip" class="urlextern" title="https://github.com/OWASP/OWASP-WebScarab/archive/master.zip">here</a>. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit6" id="features">Features</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> WebScarab provides a number of plugins, mainly aimed at the security functionality for the moment. Those plugins include: </div>
+<ul>
+<li class="level3"><div class="li"> Fragments - extracts Scripts and <abbr title="HyperText Markup Language">HTML</abbr> comments from <abbr title="HyperText Markup Language">HTML</abbr> pages as they are seen via the proxy, or other plugins</div>
+</li>
+<li class="level3"><div class="li"> Proxy - observes traffic between the browser and the web server. The WebScarab proxy is able to observe both HTTP and encrypted HTTPS traffic, by negotiating an SSL connection between WebScarab and the browser instead of simply connecting the browser to the server and allowing an encrypted stream to pass through it. Various proxy plugins have also been developed to allow the operator to control the requests and responses that pass through the proxy. </div>
+</li>
+<li class="level3"><div class="li"> Manual intercept - allows the user to modify HTTP and HTTPS requests and responses on the fly, before they reach the server or browser.</div>
+</li>
+<li class="level3"><div class="li"> Beanshell - allows for the execution of arbitrarily complex operations on requests and responses. Anything that can be expressed in Java can be executed. </div>
+</li>
+<li class="level3"><div class="li"> Reveal hidden fields - sometimes it is easier to modify a hidden field in the page itself, rather than intercepting the request after it has been sent. This plugin simply changes all hidden fields found in <abbr title="HyperText Markup Language">HTML</abbr> pages to text fields, making them visible, and editable. </div>
+</li>
+<li class="level3"><div class="li"> Bandwidth simulator - allows the user to emulate a slower network, in order to observe how their website would perform when accessed over, say, a modem. </div>
+</li>
+<li class="level3"><div class="li"> Spider - identifies new URLs on the target site, and fetches them on command. </div>
+</li>
+<li class="level3"><div class="li"> Manual request - Allows editing and replay of previous requests, or creation of entirely new requests. </div>
+</li>
+<li class="level3"><div class="li"> SessionID analysis - collects and analyzes a number of cookies to visually determine the degree of randomness and unpredictability. Note that this analysis is rather trivial, and does not do any serious checks, such as FIPS, etc.</div>
+</li>
+<li class="level3"><div class="li"> Scripted - operators can use BeanShell (or any other BSF supported language found on the classpath) to write a script to create requests and fetch them from the server. The script can then perform some analysis on the responses, with all the power of the WebScarab Request and Response object model to simplify things. </div>
+</li>
+<li class="level3"><div class="li"> Parameter fuzzer - performs automated substitution of parameter values that are likely to expose incomplete parameter validation, leading to vulnerabilities like Cross Site Scripting (XSS) and SQL Injection. </div>
+</li>
+<li class="level3"><div class="li"> Search - allows the user to craft arbitrary BeanShell expressions to identify conversations that should be shown in the list.</div>
+</li>
+<li class="level3"><div class="li"> Compare - calculates the edit distance between the response bodies of the conversations observed, and a selected baseline conversation. The edit distance is “the number of edits required to transform one document into another”. For performance reasons, edits are calculated using word tokens, rather than byte by byte. </div>
+</li>
+<li class="level3"><div class="li">  SOAP - There is a plugin that parses WSDL, and presents the various functions and the required parameters, allowing them to be edited before being sent to the server. NOTE: This plugin is deprecated, and may be removed in the future. SOAPUI is streets beyond anything that Webscarab can do, or will ever do, and is also a free tool. </div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">     Extensions - automates checks for files that were mistakenly left in web server&#039;s root directory (e.g. .bak, ~, etc). Checks are performed for both, files and directories (e.g. /app/login.jsp will be checked for /app/login.jsp.bak, /app/login.jsp~, /app.zip, /app.tar.gz, etc). Extensions for files and directories can be edited by user. </div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">     XSS/CRLF - passive analysis plugin that searches for user-controlled data in HTTP response headers and body to identify potential CRLF injection (HTTP response splitting) and reflected cross-site scripting (XSS) vulnerabilities. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit7" id="refrences">References</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://www.owasp.org/index.php/OWASP_WebScarab_Project" class="urlextern" title="https://www.owasp.org/index.php/OWASP_WebScarab_Project">https://www.owasp.org/index.php/OWASP_WebScarab_Project</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://www.owasp.org/index.php/WebScarab_Getting_Started" class="urlextern" title="https://www.owasp.org/index.php/WebScarab_Getting_Started">https://www.owasp.org/index.php/WebScarab_Getting_Started</a></div>
+</li>
+</ul>
+
+</div>
+
+       
+          <br/>
+          <div class="lavenderBox">
+            <div class="header">Panel title</div>
+            <div class="subtitle linklist"><a href="#">Lorem</a> <a href="#">Ipsum</a>
+              <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="https://info.flagcounter.com/WApn"><img
+                src="https://s11.flagcounter.com/count2/WApn/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+                alt="Flag Counter"
+                border="0"></a>
+          </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

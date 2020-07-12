@@ -1,0 +1,281 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>You are using an outdated browse</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="../security/antixss.html"><img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="../security/antixss.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px"><a href="../memory/main.html">
+                Memory/Malware Forensics</a></li>
+            <li class="auto-style1"><a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1"><a href="../network/main.html">Network
+                Forensics</a></li>
+            <li class="auto-style1"><a href="../social/main.html">Social
+                Engineering</a></li>
+          
+            <li class="auto-style1"><a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+
+            <li class="auto-style1"><a href="../threat/main.html">Content/Threat
+                Analysis</a></li>
+        
+            <li class="auto-style1"><a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+         
+          </ul>
+        
+            <h3>Interaction</h3>
+      
+          <ul>
+            <li class="auto-style1"><a href="../security/secTest.html">Security Test</a></li>
+			  <li class="auto-style1"><a href="../security/antixss.html">Security Tools</a></li>
+			  <li class="auto-style1"><a href="../handson/main.html">Hands-on Experience</a></li>
+			  <li class="auto-style1"><a href="../course/main.html">Other Course Modules</a></li>
+			  <li class="auto-style1"><a href="../attacks/main.html">Attacks</a></li>
+                
+                
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="https://github.com/asiamina/WikiSET">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Cross Site Request Forgery</h1>
+		  
+			<div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+             <ul class="toc">
+<li class="level2"><div class="li"><a href="#background_information">Background Information</a></div></li>
+<li class="level2"><div class="li"><a href="#login_and_set_security_setup">Login and Set Security Setup</a></div></li>
+<li class="level2"><div class="li"><a href="#basic_cross_site_request_forgery_test">Basic Cross Site Request Forgery  Test</a></div></li>
+<li class="level2"><div class="li"><a href="#address_bar_csrf_test">Address Bar CSRF Test</a></div></li>
+<li class="level2"><div class="li"><a href="#refrences">Refrences</a></div></li>
+</ul>
+
+          </div>
+
+ <h2 class="sectionedit1" id="background_information">Background Information</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Damn Vulnerable Web App(DVWA) is a PHP/MySQL web application that is damn vulnerable. Its main goals are to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li">CSRF is an attack which forces an end user to execute unwanted actions on a web application in which he/she is currently authenticated. With a little help of social engineering (like sending a link via email/chat), an attacker may force the users of a web application to execute actions of the attacker&#039;s choosing. A successful CSRF exploit can compromise end user data and operation in case of normal user. If the targeted end user is the administrator account, this can compromise the entire web application. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit2" id="login_and_set_security_setup">Login and Set Security Setup</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">  Login to Damn Vulnerable Web App:</div>
+<ol>
+<li class="level4"><div class="li"> Start up FireFox</div>
+</li>
+<li class="level4"><div class="li"> Place <a href="http://127.0.0.1/dvwa/login.php" class="urlextern" title="http://127.0.0.1/dvwa/login.php">http://127.0.0.1/dvwa/login.php</a> in the address bar</div>
+</li>
+<li class="level4"><div class="li"> Input Username: admin and Password: password</div>
+</li>
+</ol>
+</li>
+</ul>
+
+<p>
+<a href="../../img/loginpage.png" class="media" title="loginpage.png"><img src="../../img/loginpage.png" class="media" alt="" width="500" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Set DVWA Security Level:</div>
+<ol>
+<li class="level4"><div class="li"> Click on DVWA Security, in the left hand menu.</div>
+</li>
+<li class="level4"><div class="li"> Select “low” and click Submit</div>
+</li>
+</ol>
+</li>
+</ul>
+
+<p>
+<a href="../../img/setuppage.png" class="media" title="setuppage.png"><img src="../../img/setuppage.png" class="media" alt="" width="400" /></a>
+</p>
+
+</div>
+
+<h2 class="sectionedit3" id="basic_cross_site_request_forgery_test">Basic Cross Site Request Forgery  Test</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Instructions:</div>
+<ol>
+<li class="level4"><div class="li"> Select “CSRF” from the left navigation menu.</div>
+</li>
+<li class="level4"><div class="li"> Input New password: abc123</div>
+</li>
+<li class="level4"><div class="li"> Confirm new password: abc123</div>
+</li>
+<li class="level4"><div class="li"> Click Change</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Notes:</div>
+<ul>
+<li class="level4"><div class="li"> Below the change button you will notice the message that says “Password Changed.”</div>
+</li>
+<li class="level4"><div class="li"> notice The is the <abbr title="Uniform Resource Locator">URL</abbr> string in the address bar. </div>
+</li>
+<li class="level4"><div class="li"> See how the <abbr title="Uniform Resource Locator">URL</abbr> string has the below two parameters separated by a “&amp;”.</div>
+<ul>
+<li class="level7"><div class="li"> password_new=abc123</div>
+</li>
+<li class="level7"><div class="li"> password_conf=abc123</div>
+</li>
+</ul>
+</li>
+<li class="level4"><div class="li"> This is DVWA&#039;s example of bad implementation of how to change a password on a web application for the following reasons:</div>
+<ul>
+<li class="level7"><div class="li"> http is being used instead of https, which means this password change was in clear text.</div>
+</li>
+<li class="level7"><div class="li"> An attacker could manipulate the <abbr title="Uniform Resource Locator">URL</abbr> string using the address bar to change the password. </div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="address_bar_csrf_test">Address Bar CSRF Test</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Instruction:</div>
+<ol>
+<li class="level4"><div class="li"> In the <abbr title="Uniform Resource Locator">URL</abbr>, after password_new=, replace abc123 with test123.</div>
+</li>
+<li class="level4"><div class="li"> In the <abbr title="Uniform Resource Locator">URL</abbr>, after password_conf=, replace abc123 with test123.</div>
+</li>
+<li class="level4"><div class="li"> Click the Reload Current Page Arrow</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Notes:</div>
+<ul>
+<li class="level4"><div class="li"> Notice the password is changed.</div>
+</li>
+<li class="level4"><div class="li"> Using cookie string and <abbr title="Uniform Resource Locator">URL</abbr> string the attacker will be able to change the password remotely without a browser. </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit5" id="refrences">References</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.owasp.org/index.php/Cross-Site_Request_Forgery_" class="urlextern" title="http://www.owasp.org/index.php/Cross-Site_Request_Forgery_">http://www.owasp.org/index.php/Cross-Site_Request_Forgery_</a>(CSRF)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.computersecuritystudent.com/SECURITY_TOOLS/DVWA/DVWAv107/lesson10/" class="urlextern" title="http://www.computersecuritystudent.com/SECURITY_TOOLS/DVWA/DVWAv107/lesson10/">http://www.computersecuritystudent.com/SECURITY_TOOLS/DVWA/DVWAv107/lesson10/</a></div>
+</li>
+</ul>
+
+</div>
+          
+
+
+
+
+          			
+			
+			
+           </div>
+            <div class="lavenderBox">
+            <div class="header">Panel title</div>
+            <div class="subtitle linklist"><a href="#">Lorem</a> <a href="#">Ipsum</a>
+              <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="https://info.flagcounter.com/WApn"><img
+                src="https://s11.flagcounter.com/count2/WApn/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+                alt="Flag Counter"
+                border="0"></a>
+          </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

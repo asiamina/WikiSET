@@ -1,0 +1,357 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>You are using an outdated browse</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="../security/antixss.html"><img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="../security/antixss.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px"><a href="../memory/main.html">
+                Memory/Malware Forensics</a></li>
+            <li class="auto-style1"><a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1"><a href="../network/main.html">Network
+                Forensics</a></li>
+            <li class="auto-style1"><a href="../social/main.html">Social
+                Engineering</a></li>
+          
+            <li class="auto-style1"><a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+
+            <li class="auto-style1"><a href="../threat/main.html">Content/Threat
+                Analysis</a></li>
+        
+            <li class="auto-style1"><a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+         
+          </ul>
+        
+            <h3>Interaction</h3>
+      
+          <ul>
+            <li class="auto-style1"><a href="../security/secTest.html">Security Test</a></li>
+			  <li class="auto-style1"><a href="../security/antixss.html">Security Tools</a></li>
+			  <li class="auto-style1"><a href="../handson/main.html">Hands-on Experience</a></li>
+			  <li class="auto-style1"><a href="../course/main.html">Other Course Modules</a></li>
+			  <li class="auto-style1"><a href="../attacks/main.html">Attacks</a></li>
+                
+                
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="https://github.com/asiamina/WikiSET">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Cross Site Scripting Library and Unrestricted File Upload</h1>
+		  
+			<div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+           <ul class="toc">
+				<li class="level2"><div class="li"><a href="#background_information">Background Information</a></div></li>
+				<li class="level2"><div class="li"><a href="#login_and_set_security_setup">Login and Set Security Setup</a></div></li>
+				<li class="level2"><div class="li"><a href="#xss_stored_basic_exploit_test">XSS Stored Basic Exploit Test</a></div></li>
+				<li class="level2"><div class="li"><a href="#xss_stored_iframe_exploit_test">XSS Stored IFRAME Exploit Test</a></div></li>
+				<li class="level2"><div class="li"><a href="#xss_stored_cookie_exploit_test">XSS Stored COOKIE Exploit Test</a></div></li>
+				<li class="level2"><div class="li"><a href="#unrestricted_file_upload">Unrestricted File Upload</a></div></li>
+				<li class="level2"><div class="li"><a href="#refrences">References</a></div></li>
+				</ul>          
+			</div>
+
+<h2 class="sectionedit1" id="background_information">Background Information</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Damn Vulnerable Web App(DVWA) is a PHP/MySQL web application that is damn vulnerable. Its main goals are to be an aid for security professionals to test their skills and tools in a legal environment, help web developers better understand the processes of securing web applications and aid teachers/students to teach/learn web application security in a class room environment.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Cross-Site Scripting attacks are a type of injection problem, in which malicious scripts are injected into the otherwise benign and trusted web sites. Cross-site scripting (XSS) attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user. Flaws that allow these attacks to succeed are quite widespread and occur anywhere a web application uses input from a user in the output it generates without validating or encoding it. An attacker can use XSS to send a malicious script to an unsuspecting user. The end user&#039;s browser has no way to know that the script should not be trusted, and will execute the script. Because it thinks the script came from a trusted source, the malicious script can access any cookies, session tokens, or other sensitive information retained by your browser and used with that site. These scripts can even rewrite the content of the <abbr title="HyperText Markup Language">HTML</abbr> page. </div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Cross-Site Scripting attacks are a type of injection problem, in which malicious scripts are injected into the otherwise benign and trusted web sites. Cross-site scripting (XSS) attacks occur when an attacker uses a web application to send malicious code, generally in the form of a browser side script, to a different end user. Flaws that allow these attacks to succeed are quite widespread and occur anywhere a web application uses input from a user in the output it generates without validating or encoding it. An attacker can use XSS to send a malicious script to an unsuspecting user. The end user&#039;s browser has no way to know that the script should not be trusted, and will execute the script. Because it thinks the script came from a trusted source, the malicious script can access any cookies, session tokens, or other sensitive information retained by your browser and used with that site. These scripts can even rewrite the content of the <abbr title="HyperText Markup Language">HTML</abbr> page. The XSS payload is stored in the database. The XSS is permanent until the database is reset or the payload is manually deleted.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Uploaded files represent a significant risk to applications. The first step in many attacks is to get some code to the system to be attacked. Then the attack only needs to find a way to get the code executed. Using a file upload helps the attacker accomplish the first step. The consequences of unrestricted file upload can vary, including complete system takeover, an overloaded file system, forwarding attacks to backend systems, and simple defacement.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit2" id="login_and_set_security_setup">Login and Set Security Setup</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">  Login to Damn Vulnerable Web App:</div>
+<ol>
+<li class="level4"><div class="li"> Start up FireFox</div>
+</li>
+<li class="level4"><div class="li"> Place <a href="http://127.0.0.1/dvwa/login.php" class="urlextern" title="http://127.0.0.1/dvwa/login.php">http://127.0.0.1/dvwa/login.php</a> in the address bar</div>
+</li>
+<li class="level4"><div class="li"> Input Username: admin and Password: password</div>
+</li>
+</ol>
+</li>
+</ul>
+
+<p>
+<a href="../../img/loginpage.png" class="media" title="loginpage.png"><img src="../../img/loginpage.png" class="media" alt="" width="500" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Set DVWA Security Level:</div>
+<ol>
+<li class="level4"><div class="li"> Click on DVWA Security, in the left hand menu.</div>
+</li>
+<li class="level4"><div class="li"> Select “low” and click Submit</div>
+</li>
+</ol>
+</li>
+</ul>
+
+<p>
+<a href="../../img/setuppage.png" class="media" title="setuppage.png"><img src="../../img/setuppage.png" class="media" alt="" width="400" /></a>
+</p>
+
+</div>
+
+<h2 class="sectionedit3" id="xss_stored_basic_exploit_test">XSS Stored Basic Exploit Test</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Instructions:</div>
+<ol>
+<li class="level4"><div class="li"> Select “XSS Stored” from the left navigation menu.</div>
+</li>
+<li class="level4"><div class="li"> Name: Test 1</div>
+</li>
+<li class="level4"><div class="li"> Message: &lt;script&gt;alert(“This is a XSS Exploit Test”)&lt;/script&gt;</div>
+</li>
+<li class="level4"><div class="li"> Click Sign Guestbookt</div>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Notes:</div>
+<ul>
+<li class="level4"><div class="li"> Notice that the JavaScript alert we just created is now displayed.</div>
+</li>
+<li class="level4"><div class="li"> Every Time a user comes to this forum, this XSS exploit will be displayed.</div>
+</li>
+<li class="level4"><div class="li"> This exploit can be easily modified to capture cookie/session information for future Man-in-Middle attacks.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="xss_stored_iframe_exploit_test">XSS Stored IFRAME Exploit Test</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> The First Step is to reset the DataBase</div>
+</li>
+<li class="level1"><div class="li"> Instructions:</div>
+<ol>
+<li class="level4"><div class="li"> Select “Setup” from the left menu navigation.</div>
+</li>
+<li class="level4"><div class="li"> Click on the Create / Reset Database Button.</div>
+</li>
+<li class="level4"><div class="li"> Select “XSS Stored” from the left navigation menu.</div>
+</li>
+<li class="level4"><div class="li"> Input Name: Test 2</div>
+</li>
+<li class="level4"><div class="li"> Input Message: &lt;iframe src=“<a href="http://www.cnn.com" class="urlextern" title="http://www.cnn.com">http://www.cnn.com</a>”&gt;&lt;/iframe&gt;</div>
+</li>
+<li class="level4"><div class="li"> Click Sign Guestbook</div>
+</li>
+</ol>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Notes: </div>
+<ul>
+<li class="level4"><div class="li"> We need to reset the database otherwise the each XSS exploit will appear for each example.</div>
+</li>
+<li class="level4"><div class="li"> Notice that CNN is displayed under “Test 2&#039;s” Message. This is a powerful exploit because a user could use SET to create Malicious cloned website and place in here.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit5" id="xss_stored_cookie_exploit_test">XSS Stored COOKIE Exploit Test</h2>
+<div class="level2">
+
+<p>
+ * The First Step is to reset the DataBase
+</p>
+<ul>
+<li class="level1"><div class="li"> Instructions:</div>
+<ol>
+<li class="level4"><div class="li"> Select “Setup” from the left menu navigation.</div>
+</li>
+<li class="level4"><div class="li"> Click on the Create / Reset Database Button.</div>
+</li>
+<li class="level4"><div class="li"> Select “XSS Stored” from the left navigation menu.</div>
+</li>
+<li class="level4"><div class="li"> Input Name: Test 3</div>
+</li>
+<li class="level4"><div class="li"> Input Message: &lt;script&gt;alert(document.cookie)&lt;/script&gt;</div>
+</li>
+<li class="level4"><div class="li"> Click Sign Guestbook</div>
+</li>
+<li class="level4"><div class="li"> Click OK</div>
+</li>
+</ol>
+</li>
+<li class="level1"><div class="li"> Notes: </div>
+<ul>
+<li class="level4"><div class="li"> We need to reset the database otherwise the each XSS exploit will appear for each example.</div>
+</li>
+<li class="level4"><div class="li"> An attacker could easily modify this XSS script to send the cookie to a remote location instead of displaying it.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit6" id="unrestricted_file_upload">Unrestricted File Upload</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Instructions:</div>
+<ol>
+<li class="level4"><div class="li"> Select “Upload” from the left navigation menu.</div>
+</li>
+<li class="level4"><div class="li"> Click Browse</div>
+</li>
+<li class="level4"><div class="li"> Choose a PHP file from root</div>
+</li>
+<li class="level4"><div class="li"> Click Upload button</div>
+</li>
+<li class="level4"><div class="li"> Reset the Database</div>
+</li>
+<li class="level4"><div class="li"> Set security level to high</div>
+</li>
+<li class="level4"><div class="li"> click Browse and choose The same PHP file</div>
+</li>
+<li class="level4"><div class="li"> click on view source bottom of the page, on the write</div>
+</li>
+<li class="level4"><div class="li"> compare the source codes </div>
+</li>
+</ol>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit7" id="refrences">References</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://www.computersecuritystudent.com/SECURITY_TOOLS/DVWA/DVWAv107/lesson9/" class="urlextern" title="http://www.computersecuritystudent.com/SECURITY_TOOLS/DVWA/DVWAv107/lesson9/">http://www.computersecuritystudent.com/SECURITY_TOOLS/DVWA/DVWAv107/lesson9/</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.owasp.org/index.php/Cross-site_Scripting_" class="urlextern" title="http://www.owasp.org/index.php/Cross-site_Scripting_">http://www.owasp.org/index.php/Cross-site_Scripting_</a>(XSS)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.owasp.org/index.php/Cross-site_Scripting_" class="urlextern" title="http://www.owasp.org/index.php/Cross-site_Scripting_">http://www.owasp.org/index.php/Cross-site_Scripting_</a>(XSS)</div>
+</li>
+<li class="level1"><div class="li"> <a href="http://www.owasp.org/index.php/Unrestricted_File_Upload" class="urlextern" title="http://www.owasp.org/index.php/Unrestricted_File_Upload">http://www.owasp.org/index.php/Unrestricted_File_Upload</a></div>
+</li>
+</ul>
+
+</div>
+           
+           
+
+
+			
+			
+			
+           </div>
+            <div class="lavenderBox">
+            <div class="header">Panel title</div>
+            <div class="subtitle linklist"><a href="#">Lorem</a> <a href="#">Ipsum</a>
+              <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="https://info.flagcounter.com/WApn"><img
+                src="https://s11.flagcounter.com/count2/WApn/bg_FFFFFF/txt_000000/border_CCCCCC/columns_2/maxflags_10/viewers_0/labels_0/pageviews_0/flags_0/percent_0/"
+                alt="Flag Counter"
+                border="0"></a>
+          </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>
