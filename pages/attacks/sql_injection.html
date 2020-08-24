@@ -1,0 +1,371 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>SQL Injection</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">
+			<a href="../../index.html">			../../index.html</a>You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="/">
+			<img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li>
+			<a href="../../index.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px">
+			<a href="../memory/main.html"> <span class="auto-style1">Memory/Malware
+                  Forensics</span></a></li>
+            <li class="auto-style1">
+			<a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1">
+			<a href="../network/main.html">Network Forensics</a></li>
+            <li class="auto-style1">
+			<a href="../social/main.html">Social
+                Engineering</a></li>
+           
+            <li class="auto-style1">
+			<a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+            
+            <li class="auto-style1">
+			<a href="../threat/main.html">Content/Threat
+                Analaysis</a></li>
+            <li class="auto-style1">
+			<a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+          
+          </ul>
+         
+            <h3>Interaction</h3>
+       
+          <ul>
+           
+            <li><a href="#">Help</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="#">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>SQL Injection</h1>
+			<p>&nbsp;</p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+
+  <ul class="toc">
+<li class="level2"><div class="li"><a href="#description">Description</a></div></li>
+<li class="level2"><div class="li"><a href="#example">Example</a></div></li>
+<li class="level2"><div class="li"><a href="#anatomy_of_an_exploit">Anatomy of an Exploit</a></div></li>
+<li class="level2"><div class="li"><a href="#real-world_examples">Real-World Examples</a></div></li>
+<li class="level2"><div class="li"><a href="#test_techniques">Test Techniques</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#black-box_testing">Black-Box Testing</a></div></li>
+<li class="level3"><div class="li"><a href="#white-box_testing">White-Box Testing</a></div></li>
+<li class="level3"><div class="li"><a href="#external_links">External Links</a></div></li>
+</ul></li>
+</ul> 
+</div>
+<!-- TOC END -->
+
+
+<h2 class="sectionedit2" id="description">Description</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> The  very first thing to point out is that this section is entitled “SQL Injection,” but injection attacks are not limited to applications running against a particular database server. MySQL, SQL Server, Oracle, etc, are all potentially susceptible. </div>
+</li>
+<li class="level1"><div class="li"> SQL injection vulnerabilities are common in  web application that access an SQL back end. The vulnerability has its roots in the use of  client-supplied data in SQL queries. </div>
+</li>
+<li class="level1"><div class="li"> Successful SQL injection attacks can result in the attacker possibly being to:</div>
+<ul>
+<li class="level2"><div class="li"> Run commands as the SQL Server user on the database server, 
+using the xp_cmdshell extended stored procedure.</div>
+</li>
+<li class="level2"><div class="li"> Read registry keys, potentially including the SAM (if SQL Server is  running as the local system account) using the xp_regread 	extended stored procedure.</div>
+</li>
+<li class="level2"><div class="li"> Run other extended stored procedures.</div>
+</li>
+<li class="level2"><div class="li"> Run queries on linked servers.</div>
+</li>
+<li class="level2"><div class="li"> Create new custom extended stored procedures to run explicit code with the SQL sever process.</div>
+</li>
+<li class="level2"><div class="li"> Use the “bulk insert” statement to read any file on the server.</div>
+</li>
+<li class="level2"><div class="li"> Use bcp to create arbitrary text files on the sever.</div>
+</li>
+<li class="level2"><div class="li"> Create OLE Automation applications that can do everything that an ASP script can </div>
+</li>
+<li class="level2"><div class="li"> The goal of an SQL injection attack is to attempt to manipulate queries or information sent to an SQL back end to gain control of the SQL server.</div>
+</li>
+<li class="level2"><div class="li"> This control can mean the ability to modify queries to get unauthorized information, but it can also go as far as modifying data on the server, invoking stored procedures, or even shutting down the SQL server, depending on the skill of the attacker and the level of control that can be gained. </div>
+</li>
+<li class="level2"><div class="li">   This is usually done by bypassing or tricking whatever safeguards are in place to validate or scrub data before it&#039;s sent to the back-end SQL server. </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit3" id="example">Example</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> SELECT FieldList FROM Table WHERE  field= &#039;user-clause&#039;;</div>
+</li>
+<li class="level1"><div class="li"> Now, if the clause supplied by the attacker is “myclause&#039;” (notice the trailing single quote), the SQL query now looks like this: </div>
+</li>
+</ul>
+
+<p>
+     SELECT FieldList FROM Table  WHERE  field = `myclause&#039; ;
+</p>
+<ul>
+<li class="level1"><div class="li"> Typically, this will result in a syntax error because the trailing single  quote will confuse the SQL server. </div>
+</li>
+<li class="level2"><div class="li"> Now, what if we try to change the nature of the WHERE clause by injecting a clause designed to always be true, such as “anything&#039; or &#039;z&#039;=z”. Our query then becomes: SELECT FieldList FROM Table WHERE field = &#039;anything&#039; or &#039;z&#039;=z&#039;; </div>
+</li>
+<li class="level2"><div class="li"> This version, because the conditions will always be met, will return all rows in the table.</div>
+</li>
+</ul>
+
+<p>
+ *  The attacker can continue on from there with some guesses at table names and even get to where, instead of just copying or stealing the information in the database, the attacker is writing data to the database&#039; if that is not forbidden. 
+</p>
+
+</div>
+
+<h2 class="sectionedit4" id="anatomy_of_an_exploit">Anatomy of an Exploit</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <strong>Look for a Possible Vulnerability</strong> </div>
+<ul>
+<li class="level3"><div class="li"> The start of an SQL injection attack generally begins with the attacker looking for vulnerability in a site. This could be just about anything that accepts input: a search string, a form, ASP, JSP, CGI, or PHP pages. </div>
+</li>
+<li class="level3"><div class="li"> Anything the attacker can see in the source is as vulnerable as what is openly displayed; perhaps more so, because sometimes there is less security on those fields that are hidden. </div>
+</li>
+<li class="level3"><div class="li"> Once a possible vulnerability is found, the attack can begin in earnest. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Test the Vulnerability</strong> </div>
+<ul>
+<li class="level3"><div class="li"> To test the vulnerability, the attacker often starts with what is the most common vulnerability: the single quote.</div>
+</li>
+<li class="level3"><div class="li"> In SQL, a single quote is the string literal delimiter. If user input is submitted directly to the SQL back end without sufficient validation or input “scrubbing,” it&#039;s incredibly easy to gain control of the SQL server. </div>
+</li>
+<li class="level3"><div class="li"> If the attacker is working with a hidden field in the source, it&#039;s only a bit more complicated in that the source needs to be downloaded from the site, saved, the <abbr title="Uniform Resource Locator">URL</abbr> and the hidden field modified, and then the source executed. </div>
+</li>
+<li class="level3"><div class="li"> If the user input is not being sufficiently validated and scrubbed, the additional information after the apostrophe will be treated as a part of the query string submitted to the SQL server and will be executed. </div>
+</li>
+<li class="level3"><div class="li"> Now the attacker takes a look at what is returned. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><strong> All Errors Are Not Created Equal</strong></div>
+<ul>
+<li class="level3"><div class="li"> Unfortunately, error pages can reveal a lot of information about exactly what is happening behind the scenes. If you know what to look for, they&#039;re a great tool to use when trying to diagnose and refine attack attempts.</div>
+</li>
+<li class="level3"><div class="li"> The first thing to do is see just what error page is returned. If it’s an ODBC error page, the attacker knows right away that this  is a true  vulnerability  because the error was generated from the SQL, which means the single quote inserted in the prior step was successful in passing from the front end to the SQL back end. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> If the attacker gets a different error, he will then look carefully through  the source of the error page for any references to &#039;SQL Server,“ “ODBC,” or “syntax.” Sometimes the details of the error are hidden in the headers or in comments that aren&#039;t visible except in the source. </div>
+<ul>
+<li class="level2"><div class="li"> If an error page is returned that includes links, the attacker will search the links to see of they contain more details of the error. </div>
+</li>
+<li class="level2"><div class="li"> If a 302 Page Redirect is called, the attacker will try to capture the page it is redirected from; this may have more error details in it that can&#039;t be easily read before the redirect occurs. </div>
+</li>
+<li class="level2"><div class="li"> If a 500 Error Page is returned, the attacker knows that the injection may have been successful as this is the default error page for most Web servers. Though the attacker may not be able to determine much from this page, it will spur him on to greater attempts to exploit a possible weakness.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>The Hunt Continues</strong></div>
+<ul>
+<li class="level3"><div class="li"> The attacker will continue to try other options as to how to bypass the site&#039;s validation and scrubbing routines. In each case, the server&#039;s responses will be carefully examined. These other options include: </div>
+<ul>
+<li class="level4"><div class="li"> Using the single quote in different places in the string to try to take advantage of any ordered validation routines (for example, an e-mail field may be validated to require an @ and a period, and if the attacker entered “joe@mysite.com,” it would fail that validation. However, it&#039;s never actually tested for a single quote, 
+so “joe@mysite.com- would succeed and expose the vulnerability).</div>
+</li>
+<li class="level4"><div class="li"> Using the single quote at the end of a maximum length string. If 
+the site is escaping single quotes, the attempt to escape a single 
+quote when it is already at maximum length for the string may 
+lead to the string&#039;s being truncated right back to the single quote 
+and the vulnerability exposed.</div>
+</li>
+<li class="level4"><div class="li"> Using two dashes. Two dashes in an SQL server indicate a single line comment and may be passed to the back-end server, causing the server to ignore the rest of the line. </div>
+</li>
+<li class="level4"><div class="li"> Using a semicolon. This is a character that indicates to the SQL  server that a new command follows. If this is passed through to the back end, the attacker may be able to concatenate another command and essentially piggyback on the prior query.</div>
+</li>
+<li class="level4"><div class="li"> Using all of these techniques in not just sting fields but in fields that appear to he set for other data types. For example, a back end SQL server may implicitly translate an integer into a varchar. Or a format may only be enforced by the Web code and never checked after that UI check. </div>
+</li>
+<li class="level4"><div class="li"> Using a # character. This is sometimes used as a date/time delimiter.</div>
+</li>
+<li class="level4"><div class="li"> Using char equivalents to the suspicious characters (for example. char(0x63)). </div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit5" id="real-world_examples">Real-World Examples</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Arguably, the most serious and widely publicized SQL injection attack is the one that was carried out on CardSystems in September 2004, where 263.000 credit card numbers were stolen and 40 million more numbers were exposed. </div>
+</li>
+<li class="level1"><div class="li"> Although the exact details of the attack are not available the attack is acknowledged to he the product of the exploit of an SQL injection vulnerability on the Web application that allows the customers to access account information. </div>
+</li>
+<li class="level1"><div class="li"> The attackers injected a script that would run every four days to extract records, zip them, and then export them to an FIT site.</div>
+</li>
+<li class="level1"><div class="li"> It is worth pointing out that the data that was exported had been kept in an unencrypted form and in violation of regulatory rules for supposed -research purposes.”</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit6" id="test_techniques">Test Techniques</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Every parameter of every call must be tested separately to have a good picture of the Web service&#039;s/site&#039;s SQL injection vulnerabilities. the following Table shows the list of characters I recommend testing with.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/table_21.1.png" class="media" title="vulnerability_case_study:table_21.1.png"><img src="../../img/table_21.1.png" class="media" alt="" width="200" /></a>
+<a href="../../img/table_21.1.b.png" class="media" title="vulnerability_case_study:table_21.1.b.png"><img src="../../img/table_21.1.b.png" class="media" alt="" width="300" /></a>
+</p>
+
+</div>
+
+<h3 class="sectionedit7" id="black-box_testing">Black-Box Testing</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> For black-box testing, you need to use a browser and perform parameter tampering in any query or parameter you can locate on the site.</div>
+</li>
+<li class="level1"><div class="li"> The basic process is to replace the argument in every parameter on every script on the server  with a test argument, one parameter at a time. Leave all the other parameters with valid data intact. Submit this parameter (or set of parameters) to the server  and then examine the returned  page for the signs of possible vulnerabilities listed in earlier section titled “ Anatomy of the Exploit”</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit8" id="white-box_testing">White-Box Testing</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Determine if the Web site is performing any type of input validation.</div>
+</li>
+<li class="level1"><div class="li"> String  tend to be more susceptible to parameter injection than other data types. </div>
+</li>
+<li class="level1"><div class="li"> One parameter at a time, replaces the argument of each parameter on each <abbr title="Application Programming Interface">API</abbr>, with each of the listed single-quote test scenario, and submits It. Then, examine the entire response from the server to see if you received an error and whether you can tell if it&#039;s an SQL error.</div>
+</li>
+<li class="level1"><div class="li">  One parameter at a time, replaces the argument of each parameter on each <abbr title="Application Programming Interface">API</abbr>, with each of the listed single-quote test scenario, and submits It. Then, examine the entire response from the server to see if you received an error and whether you can tell if it&#039;s an SQL error. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit9" id="external_links">External Links</h2>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> <a href="https://www.owasp.org/index.php/SQL_injection" class="urlextern" title="https://www.owasp.org/index.php/SQL_injection">https://www.owasp.org/index.php/SQL_injection</a></div>
+</li>
+</ul>
+
+</div>
+
+
+
+  
+  
+  
+
+
+
+
+ <div class="lavenderBox"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1">
+              <div class="header">Panel title</div>
+            </a>
+            <div class="subtitle linklist"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1"></a><a
+                href="#">Lorem</a>
+              <a href="#">Ipsum</a> <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+              suscipit </a> <a href="#">Has et partem </a> </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

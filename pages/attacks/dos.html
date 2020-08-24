@@ -1,0 +1,459 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Denial of service</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade"><a href="../../index.html">			../../index.html</a>You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="/"><img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="../../index.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px"><a href="../memory/main.html"> <span class="auto-style1">Memory/Malware
+                  Forensics</span></a></li>
+            <li class="auto-style1"><a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1"><a href="../network/main.html">Network Forensics</a></li>
+            <li class="auto-style1"><a href="../social/main.html">Social
+                Engineering</a></li>
+           
+            <li class="auto-style1"><a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+            
+            <li class="auto-style1"><a href="../threat/main.html">Content/Threat
+                Analaysis</a></li>
+            <li class="auto-style1"><a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+          
+          </ul>
+         
+            <h3>Interaction</h3>
+       
+          <ul>
+           
+            <li><a href="#">Help</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="#">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Denial-of-Service</h1>
+			<p>&nbsp;</p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+ 
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#description">Description</a></div></li>
+<li class="level1"><div class="li"><a href="#ping_of_death">Ping of Death</a></div></li>
+<li class="level1"><div class="li"><a href="#teardrop">Teardrop</a></div></li>
+<li class="level1"><div class="li"><a href="#ping_flooding">Ping Flooding</a></div></li>
+<li class="level1"><div class="li"><a href="#smurf_attacks">Smurf Attacks</a></div></li>
+<li class="level1"><div class="li"><a href="#amplification_attacks">Amplification Attacks</a></div></li>
+<li class="level1"><div class="li"><a href="#syn_flooding">SYN Flooding</a></div></li>
+<li class="level1"><div class="li"><a href="#distributed_denial_of_service_ddos">Distributed Denial of Service (DDoS)</a></div></li>
+<li class="level1"><div class="li"><a href="#anatomy_of_an_exploit">Anatomy of an Exploit</a></div></li>
+<li class="level1"><div class="li"><a href="#real_world_example_worldpay_ddos_attack">Real –World Example
+WorldPay DDoS Attack</a></div></li>
+<li class="level1"><div class="li"><a href="#gibson_research_corporation_ddos_attack">Gibson Research Corporation DDoS Attack</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#more_attacks_followed_on_the_following_schedule">More attacks followed on the following schedule:</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#chat_dos_attack">Chat DoS Attack</a></div></li>
+<li class="level1"><div class="li"><a href="#test_techniques">Test Techniques</a></div></li>
+<li class="level1"><div class="li"><a href="#network_dos">Network DoS</a></div></li>
+<li class="level1"><div class="li"><a href="#think_outside_the_typical_dos_box">Think Outside the Typical DoS Box</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#external_links">External Links</a></div></li>
+</ul></li>
+</ul>
+</div>
+ 
+<!-- TOC END -->
+
+<h2 class="sectionedit1" id="description">Description</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> A denial-of-service(DoS) attack is one in which an attacker uses multiple  techniques to deny legitimate users access to a system or resource. This Is generally done in one of two ways: </div>
+<ul>
+<li class="level3"><div class="li"> Crashing the resource or a particular requirement for access to the resource </div>
+</li>
+<li class="level3"><div class="li"> Flooding the access so legitimate traffic is unable to reach it.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> DoS attacks are extremely common because they are so simple to carry out, and there is a wealth of ready-to-use tools available for script kiddies to download</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit2" id="ping_of_death">Ping of Death</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> The stereotypical “ping of death” is based on the fact that Internet Control Messaging Protocol (ICMP) echo messages are designed to be no larger than 65,535 bytes. Because most of the information of interest in ICMP echo packets is contained in the header, sometimes the data portion is unchecked. If an ICMP echo packet is sent that is too large, some operating systems (OSs) will crash. </div>
+</li>
+<li class="level1"><div class="li"> Whereas a packet larger than 65,535 bytes is illegal, this limitation can be worked around by using fragmentation packets that, when reassembled on the receiving end, overflows the buffer on some systems. so it s basically a buffer overflow exploit. Because of the ease and prevalence of this attack, most systems are no longer vulnerable. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit3" id="teardrop">Teardrop</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> This attack is also dependent on fragmentation. Fragmented packets are sent but Instead of neatly lined-up fragmentation offsets, the offsets overlap. </div>
+</li>
+<li class="level1"><div class="li"> If the operating system does not have a plan in place for this eventuality, the system can crash, reboot, or lose stability. </div>
+</li>
+<li class="level1"><div class="li"> This is also an easy attack to learn; few systems are vulnerable anymore. It is named for the tool that exploits this vulnerability. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="ping_flooding">Ping Flooding</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> Ping flooding is an attack specifically aimed at denial of network resource.</div>
+</li>
+<li class="level1"><div class="li"> Ping flooding uses up the bandwidth of the network  so traffic from legitimate users can&#039;t get through. </div>
+</li>
+<li class="level1"><div class="li"> The general rule is that if the attacker has a greater bandwidth than the victim, the attacker will succeed in the DoS.</div>
+</li>
+<li class="level1"><div class="li"> This attack works as follows: the attacker send many large ping  packets as quickly as possible to the victim. This exhausts the victims inbound bandwidth may be consumed as well.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit5" id="smurf_attacks">Smurf Attacks</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> A smurf attack is a specific variation on a ping flood attack. Instead of a ping to a single system, a smurf attack uses repeated spoofed broadcast ping messages to flood the system. </div>
+</li>
+<li class="level1"><div class="li"> All of these ping messages use the spoofed IP address of the intended victim as their source address. If the ping is actually broadcast to the network, most hosts on that IP network will accept the ICMP echo request and reply to it with an echo reply per recipient, which will have the effect of multiplying the traffic by the number of hosts responding.</div>
+</li>
+<li class="level1"><div class="li"> This attack is also named after the attack program created to exploit this vulnerability.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit6" id="amplification_attacks">Amplification Attacks</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> This type of DoS attack uses both spoofing and broadcast addressing to amplify a single stream of packets several hundredfold to flood the victim&#039;s bandwidth. </div>
+</li>
+<li class="level1"><div class="li"> To carry out this attack, the attacker needs to find a network that both allows communications to the network&#039;s broadcast address and has a good number of hosts active on the network.</div>
+</li>
+<li class="level1"><div class="li"> The attacker sends large ICMP echo request packets to the broadcast address of the amplifier network with a spoofed  source address of the victim.</div>
+</li>
+<li class="level1"><div class="li"> The amplifier network then broadcasts these ICMP echo packets to all the hosts on that network, and each of these systems will then send corresponding ICMP echo replies to the spoofed source address of the victim, flooding their network bandwidth. </div>
+</li>
+<li class="level1"><div class="li"> This is also called a reflected attack. If the attack relies on ICMP packets, it&#039;s also called a smurf attack. If the attack relies on User Datagram Protocol (UDP) packets, it&#039;s called a fraggle attack.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit7" id="syn_flooding">SYN Flooding</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> In SYN flooding, the attacker attempts to exhaust the space in the Transmission Control Protocol/Internet Protocol (TCP/IP) stack with spoofed and only partially complete connections, so legitimate users are unable to connect.</div>
+</li>
+<li class="level1"><div class="li"> TCP maintains the connections so it has to be able to track them and their state somewhere; that place is the TCP/IP stack. But only a finite number of connections can he tracked in the TCP/IP stack, and SYN flooding uses spoofing to exploit this.</div>
+</li>
+<li class="level1"><div class="li"> The attacker floods the system with many SYN packets that have spoofed nonexistent source addresses. These packets behave as if a system that has the spoofed IP address wishes to open a connection with the victim computer.</div>
+</li>
+<li class="level1"><div class="li"> Now the victim sends out a SYN/ACK package and waits for the connection handshake be returned in order to finalize or to complete the handshake process. In the meantime, the waiting connection goes into a backlog queue and will only be removed from the queue if either the SYN/ACK packet is received or the connection times out. The timeout can take quite a while, and the SYN packets continue to come in. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit8" id="distributed_denial_of_service_ddos">Distributed Denial of Service (DDoS)</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> This is basically a DoS attack coming from more than a single location. To carry out a DDoS, the attacker will generally compromise other systems and install daemons on them for later use. The daemons are waiting for the attacker to determine which victim to attack. When a victim is chosen&#039; the attacker uses a controlling program to tell the daemons to simultaneously attack the target. </div>
+</li>
+<li class="level1"><div class="li"> The fact that the DDoS attack is not coming from a single location has several impacts on its success: </div>
+<ul>
+<li class="level3"><div class="li"> More volume can be generated. </div>
+</li>
+<li class="level3"><div class="li"> It&#039;s harder to filter or block multiple attacking systems. </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit9" id="anatomy_of_an_exploit">Anatomy of an Exploit</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> <strong>Ping of Death</strong></div>
+<ul>
+<li class="level3"><div class="li"> An attacker uses one of the ICMP ping tools available to construct an IP packet with a size larger than 65,535 bytes and sends it to the target choice. The header source IP is usually spoofed to help hide the source.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Teardrop</strong></div>
+<ul>
+<li class="level3"><div class="li"> An attacker target a network that seems vulnerable and uses that Teardrop tool to set up the attack by sending several IP fragmentation packets that are structured so that when the receiving system attempts to reassemble them, they will overlap.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Ping Flooding </strong> </div>
+<ul>
+<li class="level3"><div class="li"> When an attacker thinks he has a vulnerable target, he tells his army of bots to begin sending ICMP echo requests to the target IP address as quickly as possible. The headers of the requests can be forged with random bogus IP source addresses to resist any attempts to filter the requests by source addresses. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Smurf </strong> </div>
+<ul>
+<li class="level3"><div class="li"> In a smurf attack, the attacker targets a vulnerable network and uses the Smurf tool to craft ICMP echo requests where it has forged the source IP address to match that of the target.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>SYN Flooding </strong> </div>
+<ul>
+<li class="level3"><div class="li"> An attacker sends a continual series of TCP SYN packets to the target, each one with a different forged source IP address to exhaust the target&#039;s resources during this continual flooding. </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit10" id="real_world_example_worldpay_ddos_attack">Real –World Example
+WorldPay DDoS Attack</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> At about 6 p.m. on Saturday, October 2, 2003, the payment processing division of the Royal Bank of Scotland, WorldPay (WorldPay Ltd.), was hit with a sustained DDoS attack.</div>
+</li>
+<li class="level1"><div class="li"> This attack, employing hundreds or Possibly thousands of “zombie” computers to issue repeated automated requests, was designed to clog and slow the bank&#039;s systems.</div>
+</li>
+<li class="level1"><div class="li"> This attack lasted for three days, in spite of the attempts to block out traffic and restore functionality to the bank&#039;s customers.</div>
+</li>
+<li class="level1"><div class="li"> In April 2004, WorldPay was again hit with a DDoS attack. There have some conjectures that this was a case of attempted  cyber-extortion by organized crime ,but there never was full disclosure of the exact events surrounding either DDoS. These attacks, however, did of not reveal any of the data that WorldPay had stored. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit11" id="gibson_research_corporation_ddos_attack">Gibson Research Corporation DDoS Attack</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> On the evening of May 1. 2001, GRC.COM appeared to drop off the Internet. The network activity was analyzed quickly, and it was discovered that both of their T1 connections were maxed out with incoming traffic at their 1.54 megabit rate, and there was almost no outbound traffic.</div>
+</li>
+<li class="level1"><div class="li"> Capturing and analyzing the arriving packets themselves showed that the attack was a brute force UDP DDoS attack that was designed to use up all available network bandwidth and thus deny access to legitimate users. </div>
+<ul>
+<li class="level2"><div class="li"> GRC&#039;s firewalls and local routers easily recognized and discarded the bogus traffic but that meant the bandwidth to that point was still clogged. After 17 hr, filters were applied to the router that sat between the Internet and GRC&#039;s two Ti trunks to block out all UDP and ICMP traffic. From the type of packets generated, as well as other facts, it was determined that the attack was being carried out by 474 security-compromised Windows PCs. Because the attacks related to UDR the TCP-based senic° could continue even while the attack was still under way and the router was blocking all UDP and 1CMP traffic.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit12" id="more_attacks_followed_on_the_following_schedule">More attacks followed on the following schedule:</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> May 4 — First attack took place;17 hr to filter traffic and return to service.</div>
+</li>
+<li class="level1"><div class="li"> May 13 — Second attack. Identical to the first, including the attacking Windows machines; 8 hr to reestablish the same filters used on May 4.</div>
+</li>
+<li class="level1"><div class="li"> May 14 — Attacked twice this day. The first attack Of the day was 
+targeted at the IP of GRC&#039;s firewall, and GRC disappeared from the Internet again. This time the router filtering was changed t° 
+add the firewall&#039;s IP to the filtering and then GRC was back.</div>
+</li>
+<li class="level1"><div class="li"> May 14 – only 2 hr later, the attack  resumed, aimed at one of the T1 interfaces of GRC&#039;s Cisco router. This again flooded the Tls. And GRC was off the Net again, the decision was then made to shut down that Tl, which left one Tl to service GRC, but they  were back on the Net again.</div>
+</li>
+<li class="level1"><div class="li"> May 15 — This attack took GRC off the Internet for 6.5 hr before stopping on its own. A decision was made to simply shut down  at for the night because of some hugs in the routing software that made it possible to effectively filter this attack.</div>
+</li>
+<li class="level1"><div class="li"> May 16 — Comprehensive filtering was put in place after the 
+previous day&#039;s attack so traffic would be kept away from the entire  GRC site. Another attack occurred, but the new filtering was completely effective. An estimate of how many Packet were blocked by the filtering during this attack was 538,916&#039;268.</div>
+</li>
+<li class="level1"><div class="li"> May 17 to May 20 — During this time the GRC was completely 
+protected, but the number of packets filtered was estimated at 2,399,237,016.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit13" id="chat_dos_attack">Chat DoS Attack</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> A chat DoS attack that I experienced was somewhat low-tech, but I&#039;ve included it as an illustration of how sometimes these low-tech approaches can be very disrupting to legitimate users of a system. </div>
+</li>
+<li class="level1"><div class="li"> I was attending an online chat with a celebrity guest, and there were about 200 people in the online chat room. During the busy chat, two people who were logged in as anonymous guests began to repeat offensive messages as fast as they could paste the text and hit &#039;&#039;send.“ The speed at which these messages were being posted made the chat room completely unusable by legitimate customers.</div>
+</li>
+<li class="level1"><div class="li"> After a few minutes, an administrator booted the first of the attackers out, but before the second one could be booted as well, the first person (my own assumption) was back spamming again. This trade went on for about the next ten min before I gave up and left the room. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit14" id="test_techniques">Test Techniques</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> Testing for DoS attacks really has two major branches, and whether you use one or the other (or both) will depend on the product you are testing and what dependencies it has or services it offers to others. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit15" id="network_dos">Network DoS</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> Most network DoS attacks boil down to one of two situations. </div>
+</li>
+<li class="level1"><div class="li"> <strong>Protocol Vulnerability</strong></div>
+<ul>
+<li class="level3"><div class="li"> In many cases, the DoS is caused by the fact that a network device or system is  not able to deal with an exploit of a network protocol vulnerability. In these cases, fuzz testing is a good way to try to exercise the Protocols to determine the reaction of the system under test to protocol fuzzing. These are mostly network protocols and unless you are testing a system that deals directly with that low a level in the Open  System Interconnection(OSI) model, you are a little bit helpless and dependent on your <abbr title="Operating System">OS</abbr> and network to handle these issues. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Lack of Limits</strong></div>
+<ul>
+<li class="level3"><div class="li"> The other major factor is that limits on various types of transactions are either nonexistent or too high for the system to handle. In the latter case, it would pay if you can cause a DoS and then backtrack from it to question the limits that are in place to prevent DoS.</div>
+</li>
+<li class="level3"><div class="li"> There are several aspects of input that you can experiment with in trying to trigger a DoS:</div>
+<ul style="list-style:square; margin-left:20px">
+<li class="level6"><div class="li"> Quantity from a single source</div>
+</li>
+<li class="level6"><div class="li"> Quantity from multiple sources </div>
+</li>
+<li class="level6"><div class="li"> Size of individual items  </div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit16" id="think_outside_the_typical_dos_box">Think Outside the Typical DoS Box</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> In addition to the more standard DoS attack vectors, it pays to take a  look at the more unusual attacks that might be able to be turned into 
+DoS attacks.</div>
+</li>
+<li class="level1"><div class="li"> <em>Circular References</em></div>
+<ul>
+<li class="level3"><div class="li"> Is there any way you can cause a circular reference to occur in Your  system? If you can, you might be able to cause a DoS. I had a recent experience with an e-mail system that treated notification messages not in the same way it treated regular e-mail messages: there  were questions about whether or not a circular reference could be instigated  with a combination of two different types of system notification messages. It turned out that it did not work, but it was an interesting experiment. Any service- or system-crashing issues may become a DoS. If you run across a mysterious crash of your test system or a service on the system&#039; sometimes the tendency is to dismiss it as a fluke. Perhaps it is, but never just shrug it off. Always keep looking for what might have caused Ili 
+because some of these crashing issues are very real vulnerabilities that may be exploitable as a DoS at some later date </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit17" id="external_links">External Links</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://www.owasp.org/index.php/Testing_for_Denial_of_Service" class="urlextern" title="https://www.owasp.org/index.php/Testing_for_Denial_of_Service">https://www.owasp.org/index.php/Testing_for_Denial_of_Service</a></div>
+</li>
+</ul>
+
+</div>
+
+  
+
+  
+  
+  
+
+
+
+
+ <div class="lavenderBox"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1">
+              <div class="header">Panel title</div>
+            </a>
+            <div class="subtitle linklist"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1"></a><a
+                href="#">Lorem</a>
+              <a href="#">Ipsum</a> <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+              suscipit </a> <a href="#">Has et partem </a> </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

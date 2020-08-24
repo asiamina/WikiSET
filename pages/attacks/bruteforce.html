@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Brute Force Browsing</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade"><a href="../../index.html">			../../index.html</a>You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="/"><img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="../../index.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px"><a href="../memory/main.html"> <span class="auto-style1">Memory/Malware
+                  Forensics</span></a></li>
+            <li class="auto-style1"><a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1"><a href="../network/main.html">Network Forensics</a></li>
+            <li class="auto-style1"><a href="../social/main.html">Social
+                Engineering</a></li>
+           
+            <li class="auto-style1"><a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+            
+            <li class="auto-style1"><a href="../threat/main.html">Content/Threat
+                Analaysis</a></li>
+            <li class="auto-style1"><a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+          
+          </ul>
+         
+            <h3>Interaction</h3>
+       
+          <ul>
+           
+            <li><a href="#">Help</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="#">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Brute Force Browsing</h1>
+			<p>&nbsp;</p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+            <ul class="toc">
+<li class="level1"><div class="li"><a href="#vulnerabilities_case_studybrute_force_browsing">Vulnerabilities Case Study:Brute Force Browsing</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#description">Description</a></div></li>
+<li class="level2"><div class="li"><a href="#types_of_forceful_browsing">Types of Forceful Browsing</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#url_guessing">URL Guessing</a></div></li>
+<li class="level3"><div class="li"><a href="#session_replay_attack">Session Replay Attack</a></div></li>
+<li class="level3"><div class="li"><a href="#non-url_forceful_browsing">Non-URL Forceful Browsing</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#anatomy_of_an_exploit">Anatomy of an Exploit</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#url_guessing1">URL Guessing</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#session_replay">Session Replay</a></div></li>
+<li class="level2"><div class="li"><a href="#real-world_examples">Real-World Examples</a></div></li>
+<li class="level2"><div class="li"><a href="#test_techniques">Test Techniques</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#url_guessing2">URL Guessing</a></div></li>
+<li class="level3"><div class="li"><a href="#session_replay1">Session Replay</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#external_links">External Links</a></div></li>
+</ul></li>
+</ul>
+</div>
+          
+<h2 class="sectionedit2" id="description">Description</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Most Web browsers have a standard behavior of listening on port 80 for HTTP traffic and port 443 for HTTPS traffic. </div>
+</li>
+<li class="level1"><div class="li"> A Web server is only supposed to access files reachable from its own document root directory.</div>
+</li>
+<li class="level1"><div class="li"> Common Gateway Interface (CGI) is intended to allow ordinary programs to interact using a Web browser interface.</div>
+</li>
+<li class="level1"><div class="li"> CGI interfaces are present at the core of  almost all Web applications</div>
+</li>
+<li class="level1"><div class="li"> The Web server can restrict access to a CGI to specific users but cannot limit the files that the CGI can access.</div>
+</li>
+<li class="level1"><div class="li"> These facts lead to a set of vulnerabilities called “forceful browsing” or &#039;brute-force browsing“ vulnerabilities. </div>
+</li>
+<li class="level1"><div class="li"> In these vulnerabilities, an attacker can manipulate values in the data they submit to a CGI program by way of the browser and thus force the Web server to return Web pages or other files that the attacker would be unable to access otherwise. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit3" id="types_of_forceful_browsing">Types of Forceful Browsing</h2>
+
+<h3 class="sectionedit4" id="url_guessing">URL Guessing</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Guess the names of Web pages and enter them in the browser to see if they find a real page and if they can access it. </div>
+</li>
+<li class="level1"><div class="li"> Because the only security on these pages is that they are not linked to anywhere on the site that can be seen by a regular user.</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit5" id="session_replay_attack">Session Replay Attack</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> This type takes place when the attacker knows the <abbr title="Uniform Resource Locator">URL</abbr> already. This can be done via saved URLs where the attacker had one instance of legitimate access to the <abbr title="Uniform Resource Locator">URL</abbr> and now replays the <abbr title="Uniform Resource Locator">URL</abbr> to regain access or replay a prior transaction. If this succeeds. the attacker has carried out a session replay attack. </div>
+</li>
+<li class="level1"><div class="li"> The root cause of this vulnerability is the lack of state HTTP and CGIs were never intended to he accessed in a stateful fashion.</div>
+</li>
+<li class="level1"><div class="li"> Sometimes. a session variable is used to associate an authenticated user with a particular session, but these session variables can&#039;t he immediately expired by the server because any lag in the communication will cut off the legitimate user from his session.</div>
+</li>
+<li class="level1"><div class="li"> Session variables are often stored in hidden fields in the <abbr title="HyperText Markup Language">HTML</abbr> Pages of the site, or they are transmitted as art of the <abbr title="Uniform Resource Locator">URL</abbr>. </div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit6" id="non-url_forceful_browsing">Non-URL Forceful Browsing</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> URLs are the most common places from which to perform forceful browsing, but it is not the only place where browsing can be accomplished. Any of the CGI parameters that are present in the fields of the <abbr title="HyperText Markup Language">HTML</abbr> page (both hidden and unhidden) can he tampered with.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit7" id="anatomy_of_an_exploit">Anatomy of an Exploit</h2>
+
+<h3 class="sectionedit8" id="url_guessing1">URL Guessing</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> An attacker visits a Web site </div>
+<ul>
+<li class="level4"><div class="li"> for example: <a href="http://www.mywebsite.html/default.html" class="urlextern" title="http://www.mywebsite.html/default.html">http://www.mywebsite.html/default.html</a>. </div>
+</li>
+<li class="level4"><div class="li"> When the attacker browses the site. the attacker notices that there is a pattern to the URLs being seen.</div>
+</li>
+<li class="level4"><div class="li"> The link titled New Member” leads to the <abbr title="Uniform Resource Locator">URL</abbr> <a href="http://www.mywebsite.html/newmember.html" class="urlextern" title="http://www.mywebsite.html/newmember.html">http://www.mywebsite.html/newmember.html</a>.</div>
+</li>
+<li class="level4"><div class="li"> The link titled “Consultants” leads to the <abbr title="Uniform Resource Locator">URL</abbr> <a href="http://www.mywebsite.html/consultants.html" class="urlextern" title="http://www.mywebsite.html/consultants.html">http://www.mywebsite.html/consultants.html</a>. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> The attacker notices that there is no <abbr title="Uniform Resource Locator">URL</abbr> listed that seems to have anything to do with site administration and decides to see if he can find It.</div>
+</li>
+<li class="level1"><div class="li"> He guesses at a couple of URLs until he happens to guess the correct <abbr title="Uniform Resource Locator">URL</abbr> to achieve some level of access: <a href="http://www.mywebsite.html/admin.html" class="urlextern" title="http://www.mywebsite.html/admin.html">http://www.mywebsite.html/admin.html</a>. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit9" id="session_replay">Session Replay</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> An attacker sits down at a coworker&#039;s desk after the coworker has stepped away, and the computer is left unlocked. The coworker had just shown the attacker the new item he bought at a major online retailer.</div>
+</li>
+<li class="level1"><div class="li"> The attacker navigates to the account management page and changes coworker‘s email address and password to his own, then logs out of  the online retailer&#039;s site and closes the browser before returning to his own desk.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit10" id="real-world_examples">Real-World Examples</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Kerio Personal Firewall TM is a firewall for workstations. In 2003, a session replay vulnerability was reported. The vulnerability reported involved a law in the authentication when the firewall&#039;s remote administration was being used.  The traffic during the session is encrypted. but if the entire administration session is captured using a network sniffer and then replayed as a whole, the server recognizes it as a valid session. </div>
+</li>
+<li class="level1"><div class="li"> The impact of this vulnerability is that an attacker could record a session and replay it at will to cause the same administrative commands to be sent to the firewall. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit11" id="test_techniques">Test Techniques</h2>
+
+<h3 class="sectionedit12" id="url_guessing2">URL Guessing</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li">  Start testing for brute-force browsing vulnerabilities by mapping your site. Begin by creating a list of all the URLs that are intended to be safe and accessible to everyone, including those people who aren&#039;t logged in.</div>
+</li>
+<li class="level1"><div class="li">   Log on to your site as an administrator and manually walk through all the pages you can access or find links to.</div>
+</li>
+<li class="level1"><div class="li"> The next step is to log out of the site completely, and clear your    browser cache and cookies. Go back to your site and try all of the URIs both from the safe list and the administrator list. Mark each of the URLs that is reachable.</div>
+</li>
+<li class="level1"><div class="li"> Now repeat this process while logged in as a normal user. Again, mark each of the accessible pages. If there is any page that is accessible by non admininistrators and it is not on the safe list, then you have a <abbr title="Uniform Resource Identifier">URI</abbr>–guessing security vulnerability.</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit13" id="session_replay1">Session Replay</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Start by seeing if you can detect how your system is storing session information. </div>
+</li>
+<li class="level1"><div class="li">  Log into the system as a regular user, and navigate to a <abbr title="Uniform Resource Locator">URL</abbr> that requires you to be logged into the system to access. Look at the <abbr title="Uniform Resource Locator">URL</abbr> that is displayed in your browser&#039;s address bar. Does it contain any parameters with names like “session” or any long strings of seemingly random letters and numbers? If either of these are true, the <abbr title="Uniform Resource Locator">URL</abbr> probably contains the session variable.</div>
+</li>
+<li class="level1"><div class="li"> Now save the current page to a local file, and log out of your site. Delete your browser&#039;s cache and clear your cookies, then try opening the saved file in your browser, and click on one of the links. If you can still navigate around the site, your system may be vulnerable to a session replay attack.</div>
+</li>
+<li class="level1"><div class="li">  Try copying the <abbr title="Uniform Resource Locator">URL</abbr> to a file, and close your browser. Clear your cache and cookies again. Reopen your browser and paste the <abbr title="Uniform Resource Locator">URL</abbr> into the address bar and see if you can access the site without logging in. If you can, you may have a session replay attack. </div>
+</li>
+<li class="level1"><div class="li"> To verify your findings, try the same process from a different machine with the locally saved file and the <abbr title="Uniform Resource Locator">URL</abbr>. If you can still access the site without logging in, you have a confirmed vulnerability.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit14" id="external_links">External Links</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://www.owasp.org/index.php/Testing_for_Brute_Force_%28OWASP-AT-004%29" class="urlextern" title="https://www.owasp.org/index.php/Testing_for_Brute_Force_%28OWASP-AT-004%29">https://www.owasp.org/index.php/Testing_for_Brute_Force_%28OWASP-AT-004%29</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://www.owasp.org/index.php/OWASP_Periodic_Table_of_Vulnerabilities_-_Brute_Force_Login" class="urlextern" title="https://www.owasp.org/index.php/OWASP_Periodic_Table_of_Vulnerabilities_-_Brute_Force_Login">https://www.owasp.org/index.php/OWASP_Periodic_Table_of_Vulnerabilities_-_Brute_Force_Login</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://www.owasp.org/index.php/OWASP_Periodic_Table_of_Vulnerabilities_-_Brute_Force_Session_Identifier" class="urlextern" title="https://www.owasp.org/index.php/OWASP_Periodic_Table_of_Vulnerabilities_-_Brute_Force_Session_Identifier">https://www.owasp.org/index.php/OWASP_Periodic_Table_of_Vulnerabilities_-_Brute_Force_Session_Identifier</a></div>
+</li>
+</ul>
+
+</div>
+
+
+
+
+
+ <div class="lavenderBox"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1">
+              <div class="header">Panel title</div>
+            </a>
+            <div class="subtitle linklist"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1"></a><a
+                href="#">Lorem</a>
+              <a href="#">Ipsum</a> <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+              suscipit </a> <a href="#">Has et partem </a> </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

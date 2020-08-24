@@ -1,0 +1,439 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Format String Vulnerabilities</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">
+			<a href="../../index.html">			../../index.html</a>You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="/">
+			<img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li>
+			<a href="../../index.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px">
+			<a href="../memory/main.html"> <span class="auto-style1">Memory/Malware
+                  Forensics</span></a></li>
+            <li class="auto-style1">
+			<a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1">
+			<a href="../network/main.html">Network Forensics</a></li>
+            <li class="auto-style1">
+			<a href="../social/main.html">Social
+                Engineering</a></li>
+           
+            <li class="auto-style1">
+			<a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+            
+            <li class="auto-style1">
+			<a href="../threat/main.html">Content/Threat
+                Analaysis</a></li>
+            <li class="auto-style1">
+			<a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+          
+          </ul>
+         
+            <h3>Interaction</h3>
+       
+          <ul>
+           
+            <li><a href="#">Help</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="#">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Format String Vulnerabilities</h1>
+			<p>&nbsp;</p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+ 
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#format_string_attacks">Format string attacks</a></div></li>
+<li class="level2"><div class="li"><a href="#anatomy_of_an_exploit">Anatomy of an Exploit</a></div></li>
+<li class="level2"><div class="li"><a href="#real-world_example">Real-World Example</a></div></li>
+<li class="level2"><div class="li"><a href="#ramen_worm_toolkit">Ramen Worm Toolkit</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#wu-ftpd_port_2_l_tcp">wu-ftpd (port 2 l/tcp)</a></div></li>
+<li class="level3"><div class="li"><a href="#rpcstatd_port_111_udp">rpc.statd (port 111/udp)</a></div></li>
+<li class="level3"><div class="li"><a href="#iprng_port_515_tcp">Iprng (port 515/tcp)</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#test_techniques">Test Techniques</a></div></li>
+<li class="level2"><div class="li"><a href="#black_box">Black Box</a></div></li>
+<li class="level2"><div class="li"><a href="#white_box">White Box</a></div></li>
+<li class="level2"><div class="li"><a href="#tools">Tools</a></div></li>
+<li class="level2"><div class="li"><a href="#external_links">External Links</a></div></li>
+</ul>
+</div>
+
+<!-- TOC END -->
+
+<h2 class="sectionedit2" id="format_string_attacks">Format string attacks</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> The goal of a format string exploit is to take control of the execution of a program by overwriting data. It is dependent on programming mistakes or shortcuts made when using format functions such as print(). </div>
+</li>
+<li class="level1"><div class="li"> If the software being tested is written in C, C++, or Perl. even in part. there is a possibility that it may use one or more format functions. </div>
+</li>
+<li class="level1"><div class="li"> The root cause of this vulnerability is that these languages allow functions to accept any number of arguments by  “popping“ as many arguments as  they wish off the stack and trusting the early arguments to show how  many additional arguments are to be popped and what data types they  are. If this is combined with unfiltered user input as the format string. The vulnerability  is created.</div>
+</li>
+<li class="level1"><div class="li"> The following are the basic ANSI C functions that may be vulnerable to format string attacks:  </div>
+<ul style="list-style:square; margin-left:20px">
+<li class="level4"><div class="li"> fprintf — prints to a file stream </div>
+</li>
+<li class="level4"><div class="li"> printf — prints to the stdout stream </div>
+</li>
+<li class="level4"><div class="li"> sprintf — prints into a string </div>
+</li>
+<li class="level4"><div class="li"> snprintf — prints into a string with link checking </div>
+</li>
+<li class="level4"><div class="li"> vfprintf — print to a file stream from a va_arg structure </div>
+</li>
+<li class="level4"><div class="li"> vprintf — prints to a stdout stream from a va_arg structure </div>
+</li>
+<li class="level4"><div class="li"> vsprintf — prints to a string from a va_arg structure </div>
+</li>
+<li class="level4"><div class="li"> vsnprintf — prints to a string with length checking from a va_arg  structure. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> The format string itself contains the format parameters, similar to how inline formatting is done in <abbr title="HyperText Markup Language">HTML</abbr>. The format parameters for printf()are: </div>
+<ul style="list-style:square; margin-left:20px">
+<li class="level4"><div class="li"> %c — Unicode represented by an integer - passed as a value</div>
+</li>
+<li class="level4"><div class="li"> %d — decimal (int) - passed as a value</div>
+</li>
+<li class="level4"><div class="li"> %e — scientific representation of a floating pount number – passed as a value</div>
+</li>
+<li class="level4"><div class="li"> %f — signed decimal string of the form xx.yyy</div>
+</li>
+<li class="level4"><div class="li"> %i — signed decimal string - passed as a value</div>
+</li>
+<li class="level4"><div class="li"> %u — unsigned decimal (unsigned int) - passed as a value</div>
+</li>
+<li class="level4"><div class="li"> %n — number of bytes written so far (int) </div>
+</li>
+<li class="level4"><div class="li"> %o — unsigned octal string - passed as a value</div>
+</li>
+<li class="level4"><div class="li"> %p — formats a pointer to an address - passed as a reference</div>
+</li>
+<li class="level4"><div class="li"> %s — string ((const) (unsigned) char) – passed as a reference</div>
+</li>
+<li class="level4"><div class="li"> %x — hexadecimal (unsigned int) - passed as a value</div>
+</li>
+<li class="level4"><div class="li"> %%— used to print the escape character “%” </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> When a string is passed to a format function, the function evaluates the format string one character at a time and if the character is not is percentage sign (%). it is copied to the output. If the percentage sign is encountered, the next character specifies the type of parameter that requires evaluation.</div>
+</li>
+<li class="level1"><div class="li"> The following Figure illustrates the stack when a format string has been pushed onto it.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/photo15.1.png" class="media" title="vulnerability_case_study:photo15.1.png"><img src="../../img/photo15.1.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> For every an parameter found in the string, the function expects an additional variable to be passed in. So if four format parameters exist  in a format string, there should be a total of five  arguments passed to function — the format string itself and one additional argument for each of the parameters. The problems occur when developers use a format string function without explicitly stating that the input must be  treated as a string. </div>
+</li>
+<li class="level1"><div class="li"> Example: </div>
+<ul>
+<li class="level6"><div class="li"> Correct: printf(”%s“, inputString);</div>
+</li>
+<li class="level6"><div class="li"> As opposed to: Incorrect: printf (inputString);</div>
+</li>
+<li class="level6"><div class="li"> If the prior two uses of printf() are used where inputString = “Testing%s”: Correct: Testing%s </div>
+</li>
+<li class="level6"><div class="li"> Incorrect: Testing?? (where the ?? is whatever string is being pointed to by whatever memory address was at the top of the stack).</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> For a simple string that contains no format parameters. this will result in the same output. But if a string is provided to the function that includes One or more of these format parameters embedded in it, the function will treat the string (that the user wanted to treat as merely a string) as a format string. </div>
+<ul>
+<li class="level2"><div class="li"> The danger in this is that some of the format string functions take a pointer to memory — specifically %s  (string) and %n (number of bytes written so far).</div>
+</li>
+<li class="level2"><div class="li"> Example:</div>
+<ul>
+<li class="level4"><div class="li"> %s expects a memory address and then will print the data at that address until a null byte terminator is encountered to signal the</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+   end of the string.
+</p>
+<ul>
+<li class="level1"><div class="li"> %n expects a memory address and will write the number of bytes written so far into memory at that address.</div>
+</li>
+<li class="level4"><div class="li">  So if an attacker can create an input string that is passed to a vulnerable implementation of a format string function, the individual can do anything from crashing processes or systems, to showing the contents of pans of the stack, to writing your data to the stack.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit3" id="anatomy_of_an_exploit">Anatomy of an Exploit</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Most exploits of format string vulnerabilities start with knowing that a format string vulnerability exists. This can be discovered in multiple ways. including personal experimentation and seeing it posted on one of the many boards frequented by hackers.</div>
+</li>
+<li class="level1"><div class="li"> It&#039;s also helpful to know that the language the software is written in is one that has a risk for this vulnerability to exist (C, C++, and Perl, in this case). </div>
+</li>
+<li class="level1"><div class="li"> Once the vulnerability is known, the attacker needs to carefully craft a string to exploit the format string vulnerability. </div>
+</li>
+<li class="level1"><div class="li"> The exact string or strings will depend on what the attacker wishes to accomplish.</div>
+</li>
+<li class="level1"><div class="li"> Once the attackers determine what they want to accomplish, they can craft one or more strings to exploit the  vulnerability.</div>
+</li>
+<li class="level1"><div class="li"> Now they can combine  this exploit with other code to create malicious software to distribute or install. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="real-world_example">Real-World Example</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Although considerable numbers of format string vulnerabilities have been reported, few actual exploits are listed among the reports of real incidents.</div>
+</li>
+<li class="level1"><div class="li"> But a very interesting toolkit that did use string format vulnerabilities in some of its functionality was reported “in the wild” in January 2001.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit5" id="ramen_worm_toolkit">Ramen Worm Toolkit</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> This intrude  toolkit was recovered from several compromised  systems and analyzed to discover that it contained several tools for attempting  exploit vulnerabilities in common software.</div>
+</li>
+<li class="level1"><div class="li"> Ramen is self-propagating and restarting, and once it has completed modifications of the compromised host system, Ramen starts to scan and attempts exploits against external systems. Similar to all root compromises, Ramen is painful and time consuming (and therefore expensive) to recover from. </div>
+</li>
+<li class="level1"><div class="li"> The vulnerabilities Ramen attempts to exploit will cause a root compromise if even one of them is successful. These vulnerabilities are described as follows:</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit6" id="wu-ftpd_port_2_l_tcp">wu-ftpd (port 2 l/tcp)</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> The initial advisory for this vulnerability was reported in July 2000 — five months prior to the Ramen worm. There are actually two separate vulnerabilities under this advisory: </div>
+<ul>
+<li class="level3"><div class="li"> The “site exec” functionality allows a user logged into the ftp server to execute a limited number of commands on the server itself. However, this functionality uses the printf() function and, if the user passes carefully crafted strings when calling that functionality, the daemon can be tricked into executing an arbitrary code as the root. So, in other words, the developers didn&#039;t use a format specifier when they used printf(). </div>
+</li>
+<li class="level3"><div class="li"> The “setproctitle()” call sets a string used to display process identifier information. This functionality eventually calls vsnprintfO and passes the buffer created from the setproctitle0 as the format string. The developers didn&#039;t use a format specifier when they used vsnprintf(). </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit7" id="rpcstatd_port_111_udp">rpc.statd (port 111/udp)</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> The initial advisory for this vulnerability was reported in August 2000 — four months prior to the Ramen worm.</div>
+</li>
+<li class="level1"><div class="li">    The rpc.statd program passes user input data to the syslog() function as a format string. This means a user can create a string that put executable code into the process stack and overwrite the return address, forcing the code to be executed. The developers didn&#039;t use a format specifier when they called syslog().</div>
+</li>
+<li class="level1"><div class="li"> This was made worse by the fact that rpc.statd maintains root access privileges even though those privileges are only needed for it to initially open  its network socket. This means that whatever code the attacker injects is run with root (administrator) privileges. </div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit8" id="iprng_port_515_tcp">Iprng (port 515/tcp)</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> The initial advisory for this vulnerability was released on December 12,2000 – only one month prior to the Ramen worm.</div>
+</li>
+<li class="level1"><div class="li"> The Iprng software accepts user input that is later passed to syslog() as the format suing for a function call to snprintf(). This particular instance of the format string vulnerability can allow users who have remote access  to the printer port to overwrite addresses in the printing service&#039;s address space. This can cause segmentation that will lead to denial of printing services or can be used to execute an arbitrary code injected by other methods into the memory stack of the printer service.</div>
+</li>
+<li class="level1"><div class="li"> All the incidents were caused by the lack of a format specifier when syslog() was called. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit9" id="test_techniques">Test Techniques</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Out of the list of formatting functions, sprintf and vsprintf are the functions that deserve some special care and attention as they are the ones that -print- formatted data to a buffer. The fix for this vulnerability is to always use a format specifier to format data. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit10" id="black_box">Black Box</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li">  In Black-Box testing, it becomes important to include some of the formatting parameters in all input fields. These should include the following. but more can be used: </div>
+<ul>
+<li class="level3"><div class="li"> %x</div>
+</li>
+<li class="level3"><div class="li"> %s</div>
+</li>
+<li class="level3"><div class="li"> %n</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Then watch all output and the program itself for unusual output .or behavior. You can also try testing with several %s parameters embedd in the input string. If a format string vulnerability exists, the resulting behavior would be likely to be an access violation error or another error that would cause the application to crash. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit11" id="white_box">White Box</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> White-Box testers have a relatively easy time finding these vulnerabilities. The code base needs to be searched for any use of the C format string functions, and each time they are used, there must be a format string in place to insure that the data is correctly interpreted.</div>
+</li>
+<li class="level1"><div class="li"> There are some additional functions that use formatted output, which must also be scrutinized, and are fairly <abbr title="Operating System">OS</abbr> specific. These include functions such as syslog(). </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit12" id="tools">Tools</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> There are a number of potentially useful free tools that can provide additional checks of the C code. Although automated tools can add significant value to test efforts, they do not take the place of security reviews and dedicated security testing. They also have a tendency to generate a large number of false positives and thus a great deal of noise. </div>
+</li>
+</ul>
+<ol>
+<li class="level1"><div class="li"> Flawfinder: This is an open source tool that does security scans of C code. It can be 
+obtained from <a href="http://www.dwheeler.com/flawfinder/" class="urlextern" title="http://www.dwheeler.com/flawfinder/">http://www.dwheeler.com/flawfinder/</a>. </div>
+</li>
+<li class="level1"><div class="li"> ITS4 Security Scanner: This is a freeware tool from Cigital, Inc., that scans for potentially dangerous function calls in C code (including format string calls). It can be obtained from <a href="http://www.cigital.com/its4/" class="urlextern" title="http://www.cigital.com/its4/">http://www.cigital.com/its4/</a>. </div>
+</li>
+<li class="level1"><div class="li"> Pscan: This is an open source tool that scans C code for potentially dangerous 
+function calls. It can be obtained from  <a href="http://www.striker.ottawa.on.ca/%7Ealand/pscan/" class="urlextern" title="http://www.striker.ottawa.on.ca/%7Ealand/pscan/">http://www.striker.ottawa.on.ca/%7Ealand/pscan/</a>.</div>
+</li>
+<li class="level1"><div class="li"> Rough Auditing Tool for Security (RATS): This is an open source code analysis tool designed to check C source 
+code for potentially dangerous function calls (including format string calls). 
+It can be obtained from <a href="http://www.securesw.com/rats/" class="urlextern" title="http://www.securesw.com/rats/">http://www.securesw.com/rats/</a>. </div>
+</li>
+<li class="level1"><div class="li"> Smatch: This  is an open source tool that scans C and C++ code for known bugs and Potential security defects but is moldy focused on checking the Linux kernel code. It can be obtained from <a href="http://smatch" class="urlextern" title="http://smatch">http://smatch</a>•sourceforge.net/</div>
+</li>
+<li class="level1"><div class="li"> Splint: This is an open source code tool that scans C code for potential vulnerabilities and dangerous programming practices and can be obtained from <a href="http://splint.org/" class="urlextern" title="http://splint.org/">http://splint.org/</a></div>
+</li>
+</ol>
+
+</div>
+
+<h2 class="sectionedit13" id="external_links">External Links</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://www.owasp.org/index.php/Format_string_problem" class="urlextern" title="https://www.owasp.org/index.php/Format_string_problem">https://www.owasp.org/index.php/Format_string_problem</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="https://www.owasp.org/index.php/Format_string_attack" class="urlextern" title="https://www.owasp.org/index.php/Format_string_attack">https://www.owasp.org/index.php/Format_string_attack</a></div>
+</li>
+</ul>
+
+</div>
+
+  
+
+  
+  
+  
+
+
+
+
+ <div class="lavenderBox"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1">
+              <div class="header">Panel title</div>
+            </a>
+            <div class="subtitle linklist"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1"></a><a
+                href="#">Lorem</a>
+              <a href="#">Ipsum</a> <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+              suscipit </a> <a href="#">Has et partem </a> </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

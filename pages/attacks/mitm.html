@@ -1,0 +1,230 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Man-in-the-middle Attacks</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade"><a href="../../index.html">			../../index.html</a>You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="/"><img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="../../index.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px"><a href="../memory/main.html"> <span class="auto-style1">Memory/Malware
+                  Forensics</span></a></li>
+            <li class="auto-style1"><a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1"><a href="../network/main.html">Network Forensics</a></li>
+            <li class="auto-style1"><a href="../social/main.html">Social
+                Engineering</a></li>
+           
+            <li class="auto-style1"><a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+            
+            <li class="auto-style1"><a href="../threat/main.html">Content/Threat
+                Analaysis</a></li>
+            <li class="auto-style1"><a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+          
+          </ul>
+         
+            <h3>Interaction</h3>
+       
+          <ul>
+           
+            <li><a href="#">Help</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="#">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Man-in-the-Middle Attacks</h1>
+			<p>&nbsp;</p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+  <ul class="toc">
+<li class="level2"><div class="li"><a href="#description">Description</a></div></li>
+<li class="level2"><div class="li"><a href="#anatomy_of_an_exploit">Anatomy of an Exploit</a></div></li>
+<li class="level2"><div class="li"><a href="#real_world_examples">Real –World Examples</a></div></li>
+<li class="level2"><div class="li"><a href="#test_techniques">Test Techniques</a></div></li>
+<li class="level2"><div class="li"><a href="#external_links">External Links</a></div></li>
+</ul>
+</div>
+<!-- TOC END -->
+
+<h2 class="sectionedit2" id="description">Description</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Man-in-the-middle (MITM) attacks are named for the attacker’s position as quite literally the man in the middle. The attacker site between two other parties, and both of them believe they  are talking to each other but , instead, they are really talking to the man in the middle, the attacker. </div>
+</li>
+<li class="level1"><div class="li"> To accomplish the classic version of this attack, the attacker  must either be located between the two communicating systems or must share a network Path with one of them. </div>
+</li>
+<li class="level1"><div class="li"> When encrypted connections are set up, a secret key is generated between the two parties  and transmitted. </div>
+</li>
+<li class="level1"><div class="li"> This key is used to encrypt any communications between two parties is not readable by would-be attackers who may be sniffing the network, because the key is sent securely and used to encrypt the subsequent traffic. </div>
+</li>
+<li class="level1"><div class="li"> In an MITM attack, the two parties trying to communicate securely are tricked. Although the server thinks it is talking to the user, and the user thinks it is talking to the server, they are both wrong; they are really talking to the attacker. </div>
+</li>
+<li class="level1"><div class="li"> The original request to open a secure connection was intercepted by the attacker, and the attacker is maintaining the originally requested secure connection with the server and a separate secure connection with the user. </div>
+</li>
+<li class="level1"><div class="li"> Packets from the server are encrypted with the first key and sent to the attacker, which the server actually thinks is the user. The attacker then decrypts these packets with the first key and encrypts them with the second key. Then the attacker sends the newly encrypted packets to the user, who believes these packets are actually being sent by the server. </div>
+</li>
+<li class="level1"><div class="li"> By sitting in the middle and maintaining these two separate keys, the attacker is able to sniff and even modify traffic between the server and the user without either side being the wiser.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/figure_17.1.png" class="media" title="vulnerability_case_study:figure_17.1.png"><img src="../../img/figure_17.1.png" class="media" alt="" width="300" /></a>
+</p>
+
+</div>
+
+<h2 class="sectionedit3" id="anatomy_of_an_exploit">Anatomy of an Exploit</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> The attacker is sitting on the same network as the server and the victim but wants to intercept the traffic between the two. In preparing for the attack, the attacker has routed the network traffic through itself so that the attacker can see the traffic. </div>
+</li>
+<li class="level1"><div class="li"> The user now tries to open a Secure Sockets Layer (SSL) conversation with the server, but the attacker intercepts the traffic and responds as if he were the server, issuing a key with which to encrypt the traffic between itself and the user. The user responds with its key and a two-way SSL conversation is now in place between the user and the attacker, but because the attacker responded to a request made to the server, the user thinks he is talking directly to the server. </div>
+</li>
+<li class="level1"><div class="li"> At the same time, the attacker opens an SSL conversation with the server itself as if it were actually the user. The server responds to the request with a key with which to encrypt the data between the attacker and the sever. The attacker responds with its own key, and there is now a two-way SSL conversation in place between the attacker and the server. </div>
+</li>
+<li class="level1"><div class="li"> At this point, the server and the user think they are talking to each other, but the attacker is actually sitting between them, holding a secure connection to both of them. When data is sent, the attacker takes the data, decodes it with the appropriate key and then reencodes it with the other key and sends it on to the intended recipient. The attacker now has the transmitted data as unencoded to use as it wishes.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="real_world_examples">Real –World Examples</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> An interesting variation of the MITM attack was reported in July 2006. This attack targeted the users of CitiBank&#039;s CitiBusiness functionality. 
+ This attack was carried out by sending to Citibank customers an e-mail that claimed to be from Citibank. The e-mail informed the victims that someone attempted to log onto their account, and they need to confirm their account information. The e-mail included a link to do so. This is a fairly standard phishing email.</div>
+</li>
+<li class="level1"><div class="li"> Now CitiBusiness customers are required to use one of the seldom supplied security token to access their account online. This is one of the little fobs generating a password that changes frequently (every minute perhaps). This is a much-touted way to improve security.</div>
+</li>
+<li class="level1"><div class="li"> Once the victim clicks on the link in the e-mail, they are taken to a very well-done spoof of the Citibusiness login page. Even its address 
+appears believable as it ends with Citibank.com. However it is really a web site in Russia.</div>
+</li>
+<li class="level1"><div class="li"> This spoofed Web site is set up to act as the MITM between the victim and the real Citibusiness login site. When victims enter their username. password. and token-generated key, the Russian server forwards that information to the real Web site to validate it. If an error is generated by the real Citibank Web site, the spoofed Web site also generates an error. </div>
+</li>
+<li class="level1"><div class="li"> Now the Russian site is logged into the Citibusiness site with the victim&#039;s credentials and can do whatever it wants. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit5" id="test_techniques">Test Techniques</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Most testing of MITM attack vulnerabilities is begun by looking carefully at all protocols in use in your system to determine what information they exchange and how. In the clear? How is the remote server identified.</div>
+</li>
+<li class="level1"><div class="li"> If your method of identification is to put out a call and trust whatever system answers to he the correct one, you are most likely vulnerable to an MITM attack. </div>
+</li>
+<li class="level1"><div class="li"> Once you find a likely candidate to test, you can use one of the session-hijacking and MITM tools available to see if you can demonstrate the vulnerability.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit6" id="external_links">External Links</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://www.owasp.org/index.php/Man-in-the-middle_attack" class="urlextern" title="https://www.owasp.org/index.php/Man-in-the-middle_attack">https://www.owasp.org/index.php/Man-in-the-middle_attack</a></div>
+</li>
+</ul>
+
+</div>
+
+  
+  
+  
+
+
+
+
+ <div class="lavenderBox"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1">
+              <div class="header">Panel title</div>
+            </a>
+            <div class="subtitle linklist"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1"></a><a
+                href="#">Lorem</a>
+              <a href="#">Ipsum</a> <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+              suscipit </a> <a href="#">Has et partem </a> </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

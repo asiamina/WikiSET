@@ -1,0 +1,430 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cookie Tampering</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade"><a href="../../index.html">			../../index.html</a>You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="/"><img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="../../index.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px"><a href="../memory/main.html"> <span class="auto-style1">Memory/Malware
+                  Forensics</span></a></li>
+            <li class="auto-style1"><a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1"><a href="../network/main.html">Network Forensics</a></li>
+            <li class="auto-style1"><a href="../social/main.html">Social
+                Engineering</a></li>
+           
+            <li class="auto-style1"><a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+            
+            <li class="auto-style1"><a href="../threat/main.html">Content/Threat
+                Analaysis</a></li>
+            <li class="auto-style1"><a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+          
+          </ul>
+         
+            <h3>Interaction</h3>
+       
+          <ul>
+           
+            <li><a href="#">Help</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="#">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Cookie Tampering</h1>
+			<p>&nbsp;</p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+ <ul class="toc">
+<li class="level1"><div class="li"><a href="#description">Description</a></div></li>
+<li class="level1"><div class="li"><a href="#cookie_risks">Cookie Risks</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#cookie_theft">Cookie Theft</a></div></li>
+<li class="level3"><div class="li"><a href="#cookie_poisoning">Cookie Poisoning</a></div></li>
+<li class="level3"><div class="li"><a href="#cookie_inaccuracies">Cookie Inaccuracies</a></div></li>
+<li class="level3"><div class="li"><a href="#cross-site_cooking">Cross-Site Cooking</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#anatomy_of_an_exploit">Anatomy of an Exploit</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#cookie_theft1">Cookie Theft</a></div></li>
+<li class="level2"><div class="li"><a href="#cookie_poisoning1">Cookie Poisoning</a></div></li>
+<li class="level2"><div class="li"><a href="#cross-site_cooking1">Cross-Site Cooking</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#real-world_examples_cookie_theft">Real-World Examples
+Cookie Theft</a></div></li>
+<li class="level1"><div class="li"><a href="#test_techniques">Test Techniques</a></div></li>
+</ul>
+</div>
+
+
+
+<h2 class="sectionedit1" id="description">Description</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> Background</div>
+<ul>
+<li class="level2"><div class="li"> Cookies are technically small pieces of text that are sent to the Web client browser by a server and intended to be sent back to the server; unchanged, each time it accesses the same server or another server in the same  domain.</div>
+</li>
+<li class="level2"><div class="li"> Cookies are used for authentication, tracking, maintaining state Over stateless HTTP.</div>
+</li>
+<li class="level2"><div class="li"> The minimum size of a cookie is a name-value pair.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Cookies are used :</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> In Web applications that used online or virtual shopping baskets.</div>
+</li>
+<li class="level4"><div class="li"> Used when users log in to a Web site.</div>
+</li>
+<li class="level4"><div class="li"> Used to save user preferences for a site so that the site presentation and functionality can be personalized, based on the preferences of the user.</div>
+</li>
+<li class="level4"><div class="li"> Used to track user actions across the site or domain.</div>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> Cookies are destroyed at the point the user closes the browser unless a deletion date has been set. </div>
+</li>
+<li class="level2"><div class="li"> If a deletion date has been set. the cookie  will be destroyed on that date instead.</div>
+</li>
+<li class="level2"><div class="li"> Cookies are supposed to be sent only to the server that set them or another server in the same Internet domain.</div>
+</li>
+<li class="level2"><div class="li"> There are some privacy and security concerns around the use (and misuse) of cookies and that has caused some legislation to be enacted to the United States and the European Union.</div>
+</li>
+<li class="level2"><div class="li"> It is also important to know that the only real restriction on cookies is a maximum of 300 at a time which is respected by most browser manufacturers.</div>
+</li>
+<li class="level2"><div class="li"> The site can create one cookie or a lot of cookies — the number is truly up to the site in question and its needs. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit2" id="cookie_risks">Cookie Risks</h2>
+
+<h3 class="sectionedit3" id="cookie_theft">Cookie Theft</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Cookies are supposed to be sent only between the Web browser and the server or servers in the same domain that set the cookie. But if the is being sent Over an ordinary HTTP connection, it is visible to across the network using a packet sniffer.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="examples">Examples</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> For example. cross-site scripting can be used to send cookies to servers that should not he receiving that data. Encryption does not help stop this cookie theft, which is often done with a simple snippet of <abbr title="HyperText Markup Language">HTML</abbr> posted to a site that users can he tricked into clicking on. and which will send their cookie for that site to a location that the attacker specifies. </div>
+</li>
+<li class="level1"><div class="li"> Because the request is coming from the same domain intended for the cookie. there are no problems. These cookies can then be exploited by connecting to the same site using the stolen cookies, thus spoofing the original owner of the cookie. </div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit4" id="cookie_poisoning">Cookie Poisoning</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Cookies are supposed to be sent hack to the server unchanged. but attackers can modify the value of a cookie before sending them back to the server. This is typically done to carry out some sort of attack against the server that relates to some sort of data contained in the cookie.</div>
+</li>
+</ul>
+
+</div>
+
+<h4 id="example">Example</h4>
+<div class="level4">
+<ul>
+<li class="level1"><div class="li"> If a cookie contains the price per item for something in the shopping basket, a change to this value in the cookie may cause the server to charge the user a lower price for that item. This process of modifying a cookie before it is sent hack to the server is called Cookie poisoning. Sometimes, cookie poisoning is used after cookie theft. </div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit5" id="cookie_inaccuracies">Cookie Inaccuracies</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> There are aspects to how cookies are used in some situations that cause cookies to carry inaccurate data on which to base sensitive transactions. </div>
+</li>
+<li class="level1"><div class="li"> One issue is that separate people using the same computer. browser. and user account will unavoidably share cookies.</div>
+</li>
+<li class="level1"><div class="li"> Another is that if a single user uses multiple browsers, multiple computers. or multiple user accounts. it means that the user will have multiple sets of cookies.</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit6" id="cross-site_cooking">Cross-Site Cooking</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Despite the fact that each site is supposed to have its own set of cookies and to not be able to alter or set cookies for any other site, There are some browser flaws that cause cross-site cooking vulnerabilities and allow malicious sites to break this rule. </div>
+</li>
+<li class="level1"><div class="li"> Many browsers have a flaw in how they deal with overly relaxed cookie domains. They are supposed to require a two-dot specification for all domains under the following top-level domains:</div>
+<ul>
+<li class="level2"><div class="li"> .com</div>
+</li>
+<li class="level2"><div class="li"> .edu</div>
+</li>
+<li class="level2"><div class="li"> .net</div>
+</li>
+<li class="level2"><div class="li"> .org</div>
+</li>
+<li class="level2"><div class="li"> .gov</div>
+</li>
+<li class="level2"><div class="li"> .mil</div>
+</li>
+<li class="level2"><div class="li"> .int</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> This is supposed to prevent the setting of a cookie for a subdomain like .COM. So, the actual intent is that if you wish to set a cookie on a .COM site, you need to specify “.mysite.com” as the two-dot name. </div>
+</li>
+<li class="level2"><div class="li"> This breaks when you get to the international naming system for some domain&#039; like .COM.AU or .COM.DE. In some browsers, it&#039;s possible for a cookie to be set for the entire .COM.AU (for example) domain. </div>
+</li>
+<li class="level2"><div class="li"> Another problem is how some browsers deal with periods. There is typically no check to see whether there is anything between the periods or if there is trailing period being used to override the local domain search path.</div>
+</li>
+<li class="level2"><div class="li"> Attackers can force cookies on random visitors&#039; which are then relayed to a third-party site by setting IN A record and then redirecting users to the third-party site.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit7" id="anatomy_of_an_exploit">Anatomy of an Exploit</h2>
+
+<h2 class="sectionedit8" id="cookie_theft1">Cookie Theft</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> The attacker posts an auction that includes a link to what is advertised to be additional pictures or information about the object in the auction. Instead, when users click on the link, their cookie for the auction Web site is sent to the attacker&#039;s server, where a CGI script logs the information. 
+</div>
+</li>
+<li class="level1"><div class="li"> Now the attacker can look through the list of cookies and pick some of the most recent cookies to use to try to log in to the auction site and spoof the user.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit9" id="cookie_poisoning1">Cookie Poisoning</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> The attacker visits an E-commerce site and adds an expensive item to his shopping cart. Then, the user examines the cookie stored on his system from that site to see whether the cookie includes the total cost of the items in the attacker&#039;s cart.</div>
+</li>
+<li class="level1"><div class="li"> The attacker then modifies the cookie on his system to change the total to be $5.00 and resaves the cookie. Then, the user returns to the E-
+commerce site and checks his cart to see that the total is now $5.00 and proceeds to order the items for the false price. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit10" id="cross-site_cooking1">Cross-Site Cooking</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> The attacker crafts a cookie for the domain “.COM.UK” and sets up a Web site to distribute the cookie. Then, the attacker posts a link to his Web site  on various bulletin boards or via e-mail, and when the users click on the link, they are given the attacker&#039;s crafted cookie that can then overwrite or disrupt the real business they do with Web sites in that international domain.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit11" id="real-world_examples_cookie_theft">Real-World Examples
+Cookie Theft</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> A cookie theft vulnerability was reported in January 2005 in the Froogle comparison shopping service. </div>
+</li>
+<li class="level1"><div class="li"> Although the details reported are sketchy, it appears that malicious JavaScript in <abbr title="Uniform Resource Locator">URL</abbr> points to Froogle. Once a user clicks that link , the Java script execute a  redirect to a malicious Web site, which then steals the user&#039;s Google cookie.</div>
+</li>
+<li class="level1"><div class="li"> This stolen cookie apparently contained the username and password for the “Google Accounts” centralized log in service, information that is used by multiple Google services. </div>
+</li>
+<li class="level1"><div class="li"> Cross-Site Cooking:</div>
+<ul>
+<li class="level2"><div class="li"> At the moment, cross-site cooking is a proof of concept that demonstrates the vulnerability and hasn&#039;t emerged in the wild. </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit12" id="test_techniques">Test Techniques</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> <strong>Black-Box Testing</strong></div>
+<ul>
+<li class="level2"><div class="li"> The first thing you need to do is know just what cookies are being created by the application and when, and you need to know when and how the cookies are modified.</div>
+</li>
+<li class="level2"><div class="li"> As a black-box tester, you really need to explore the application, track what cookies are being set where, and exactly what they contain. Then. delete or modify the cookie, and see where the system is looking for the data from the cookies. You need to see where the application modifies the cookies.</div>
+</li>
+<li class="level2"><div class="li"> Generally start with a spreadsheet and have the page name on the left, a column for the date and time obtained, and then the contents of the cookies on the right, so I can compare them and the track changes.</div>
+</li>
+<li class="level2"><div class="li"> You should make multiple passes through the product with different user identities to give you a good amount of data to examine, and always include as many user states as you can (logged in, of not logged in,etc).</div>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>Analyze the Gathered Cookies</strong></div>
+<ul>
+<li class="level2"><div class="li"> Once you have some data gathered, you need to examine the cookies you have gathered to try to get an idea of what they are supposed to tell the server or store.</div>
+</li>
+<li class="level2"><div class="li"> The major items to look for are:</div>
+<ul>
+<li class="level3"><div class="li">  Predictability — By looking at several samples of the cookies, can you detect a pattern in the format or makeup of the cookies? There can be obviously predictable formats that are made clear by the  use of delimiters or labels. There can also be hints in the name  of the cookie itself. What changes in the cookies were issued from different sessions? For different users? What causes the cookie to be modified?</div>
+</li>
+<li class="level3"><div class="li"> Sensitive data storage — See if you can determine or guess what data is being stored in this cookie. Sometimes the labels help, but sometimes you can make educated guesses from hints of format, content, etc.</div>
+</li>
+<li class="level3"><div class="li"> Secure flag — Is the secure flag set? This would indicate the cookie is only supposed to be sent over a secure connection and may indicate the cookie contains sensitive data.</div>
+</li>
+<li class="level3"><div class="li"> Expiration data — If a cookie holds session information, it should either have a very short expiration date or no expiration, so that it will be deleted when the browser session is closed. If the cookie is meant to contain nonsensitive information, it may have a longer expiration date. </div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li class="level1"><div class="li"> <strong>Compare to Documentation</strong></div>
+<ul>
+<li class="level3"><div class="li"> Just because you are doing black-box testing does not mean that you cannot seek out any documentation on what the individual cookies are supposed to do and contain. </div>
+</li>
+<li class="level3"><div class="li"> If there is any documentation available, compare that to your spread sheet of notes and guesses and see if any issues are immediately obvious.</div>
+</li>
+<li class="level3"><div class="li"> Disparities can emerge between documentation and reality, and there may be cases where security measures (secure lag and expiration date) are not in place where they should be.</div>
+</li>
+<li class="level3"><div class="li"> These tested cookies become the first to manipulate and explore for vulnerabilities, as described in the next step.</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <strong>Modify Cookies </strong> </div>
+<ul>
+<li class="level3"><div class="li"> Now you need to start experimenting with the cookies to see if you can find vulnerabilities. If you have documentation to use, you can start with the ones you marked as most interesting. Otherwise, you can start wherever you think the most risk is. </div>
+</li>
+<li class="level3"><div class="li"> Start by modifying one field of one cookie at a time. If you have found a Pattern to the cookie, test both inside and outside the pattern.</div>
+</li>
+<li class="level3"><div class="li"> Naturally, cookies with one or more pieces of data in clear text are the easiest to modify, but to experiment with other cookies and cookie fields, too.</div>
+</li>
+<li class="level3"><div class="li"> Don&#039;t stay within the field size the real cookie is using. It may be possible to create an overflow, and that should be explored as well.</div>
+</li>
+<li class="level3"><div class="li"> Write down the results of each attempt and listen to your intuition when it comes to potential vulnerabilities.</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <strong>Cookie Misuse</strong> </div>
+<ul>
+<li class="level3"><div class="li"> Don&#039;t forget to try other cookie uses that go beyond cookie tampering. Try testing as if you had stolen someone else&#039;s valid cookie.</div>
+</li>
+</ul>
+</li>
+<li class="level2"><div class="li"> <strong>White-box</strong></div>
+<ul>
+<li class="level3"><div class="li"> White-box testing of cookie vulnerabilities uses the same basic theories, but because you have direct insight into the code that saves and reuses the cookies, you don&#039;t have carry out the somewhat tedious task of reverse engineering the cookie itself.  </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+
+
+
+ <div class="lavenderBox"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1">
+              <div class="header">Panel title</div>
+            </a>
+            <div class="subtitle linklist"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1"></a><a
+                href="#">Lorem</a>
+              <a href="#">Ipsum</a> <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+              suscipit </a> <a href="#">Has et partem </a> </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

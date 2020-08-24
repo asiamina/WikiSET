@@ -1,0 +1,241 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Session Hijacking</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">
+			<a href="../../index.html">			../../index.html</a>You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="/">
+			<img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li>
+			<a href="../../index.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px">
+			<a href="../memory/main.html"> <span class="auto-style1">Memory/Malware
+                  Forensics</span></a></li>
+            <li class="auto-style1">
+			<a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1">
+			<a href="../network/main.html">Network Forensics</a></li>
+            <li class="auto-style1">
+			<a href="../social/main.html">Social
+                Engineering</a></li>
+           
+            <li class="auto-style1">
+			<a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+            
+            <li class="auto-style1">
+			<a href="../threat/main.html">Content/Threat
+                Analaysis</a></li>
+            <li class="auto-style1">
+			<a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+          
+          </ul>
+         
+            <h3>Interaction</h3>
+       
+          <ul>
+           
+            <li><a href="#">Help</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="#">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Session Hijacking</h1>
+			<p>&nbsp;</p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+  <ul class="toc">
+<li class="level1"><div class="li"><a href="#vulnerability_case_studysession_hijacking">Vulnerability Case Study: 
+Session Hijacking</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#description">Description</a></div></li>
+<li class="level2"><div class="li"><a href="#anatomy_of_an_exploit">Anatomy of an Exploit</a></div></li>
+<li class="level2"><div class="li"><a href="#real-world_examples">Real-World Examples</a></div></li>
+<li class="level2"><div class="li"><a href="#test_techniques">Test Techniques</a></div></li>
+<li class="level2"><div class="li"><a href="#external_links">External Links</a></div></li>
+</ul></li>
+</ul>
+
+</div>
+<!-- TOC END -->
+
+<h2 class="sectionedit2" id="description">Description</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Session hijacking is when an attacker takes over a TCP session between  two machines, quite often in midstream, and usually for the purposes of either stealing information  or disrupting or inhibiting the flow of information. </div>
+</li>
+<li class="level1"><div class="li"> Because authentication only occurs at the start of TCP session, an attacker can use captured, brute –force, or a reverse-engineered session ID to seize control of a legitimate user’s Web application session while the session is still in progress.</div>
+</li>
+<li class="level1"><div class="li"> A session ID is an identification string (usually a long, random, alphanumeric string) that is transmitted between the client and the server. Session IDs are commonly stored in cookies, URLs, and hidden fields of Web pages. </div>
+</li>
+<li class="level1"><div class="li"> There are several problems with session IDs. </div>
+</li>
+</ul>
+<ol>
+<li class="level1"><div class="li"> Many popular Web sites use algorithms based on easily predictable variables, such as time or IP address to generate the session IDs, causing them to be predictable. If encryption is not used (typically, SSL), session IDs are transmitted in the clear and are susceptible to eavesdropping. </div>
+</li>
+<li class="level1"><div class="li"> Session hijacking involves an attacker using brute force captured or reverse-engineered session IDs to seize control of a legitimate user&#039;s session while that session is still in progress. In most applications, after successfully hijacking a session, the attacker gains complete access to all of the user&#039;s data and is permitted to perform operations instead of the user whose session was hijacked.</div>
+</li>
+<li class="level1"><div class="li"> Session IDs can also be stolen using script injections, such as cross site scripting. The user executes a malicious script that redirects the private user&#039;s information to the attacker. </div>
+</li>
+</ol>
+
+</div>
+
+<h2 class="sectionedit3" id="anatomy_of_an_exploit">Anatomy of an Exploit</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> In blind hijacking, the attacker injects such data as malicious commands into intercepted communications between two hosts commands such as “net.exe  localgroup administrators /add EvilAttacker.</div>
+</li>
+<li class="level1"><div class="li"> Called blind hijacking because the attacker can only inject data into the communications stream, he or she cannot see the response to that data (such as the  command completed successfully). </div>
+</li>
+<li class="level1"><div class="li"> In a session theft attack, the attacker neither intercepts nor injects data into existing communication between two hosts. </div>
+</li>
+<li class="level1"><div class="li"> The attacker creates new sessions or uses old ones. </div>
+</li>
+<li class="level1"><div class="li"> This type of session hijacking is most common at the application level, especially Web applications. </div>
+</li>
+<li class="level1"><div class="li"> Session hijacking at the network level is especially attractive to attackers. They don&#039;t need host access, as they do with host-level session hijacking. Nor do they need to customize attacks on a per-application basis, as they do at the application level. Network-level session-hijacking attacks allow attackers to remotely take over sessions, usually undetected.</div>
+</li>
+<li class="level1"><div class="li"> Successfully hijacking a session at the network level requires an attacker to overcome various obstacles.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="real-world_examples">Real-World Examples</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> In 2001, a vulnerability was reported in Sun&#039;s NetDynamics application server platform, where a user who authenticates with NetDynamics receives a session id and a random unique identifier. </div>
+</li>
+<li class="level1"><div class="li"> This session id and identifier remain active for up to 15 s after the user logs in, and a subsequent user can make use of those credentials to hijack the logged-in account.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit5" id="test_techniques">Test Techniques</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Most testing of session-hijacking vulnerabilities is begun by looking carefully  at all protocols  in use  your system and determine what information they exchange and how. In the clear? How is the remote server identified? Is authentication done only at the start of a session? </div>
+</li>
+<li class="level1"><div class="li"> If  your system authenticates your user only at start of a session, and after which the system on the other side of the connection is trusted, Your system is most likely vulnerable to a session-hijacking attack.</div>
+</li>
+<li class="level1"><div class="li"> Once you have a good idea of what your system does, you can use one of the session-hijacking and man-in-the-middle (MITM) tools available. to see if you can demonstrate the vulnerability. A good tool to try is Ettercap (<a href="http://ettercap.sourcefoixe.neta" class="urlextern" title="http://ettercap.sourcefoixe.neta">http://ettercap.sourcefoixe.neta</a> </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit6" id="external_links">External Links</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://www.owasp.org/index.php/Session_Management#Weak_Session_Cryptographic_Algorithms" class="urlextern" title="https://www.owasp.org/index.php/Session_Management#Weak_Session_Cryptographic_Algorithms">https://www.owasp.org/index.php/Session_Management#Weak_Session_Cryptographic_Algorithms</a></div>
+</li>
+<li class="level1"><div class="li"> <a href="http://en.wikipedia.org/wiki/Session_hijacking" class="urlextern" title="http://en.wikipedia.org/wiki/Session_hijacking">http://en.wikipedia.org/wiki/Session_hijacking</a></div>
+</li>
+</ul>
+
+</div>
+
+  
+  
+  
+
+
+
+
+ <div class="lavenderBox"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1">
+              <div class="header">Panel title</div>
+            </a>
+            <div class="subtitle linklist"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1"></a><a
+                href="#">Lorem</a>
+              <a href="#">Ipsum</a> <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+              suscipit </a> <a href="#">Has et partem </a> </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

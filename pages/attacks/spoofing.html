@@ -1,0 +1,286 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Spoofing Attacks</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">
+			<a href="../../index.html">			../../index.html</a>You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="/">
+			<img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li>
+			<a href="../../index.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px">
+			<a href="../memory/main.html"> <span class="auto-style1">Memory/Malware
+                  Forensics</span></a></li>
+            <li class="auto-style1">
+			<a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1">
+			<a href="../network/main.html">Network Forensics</a></li>
+            <li class="auto-style1">
+			<a href="../social/main.html">Social
+                Engineering</a></li>
+           
+            <li class="auto-style1">
+			<a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+            
+            <li class="auto-style1">
+			<a href="../threat/main.html">Content/Threat
+                Analaysis</a></li>
+            <li class="auto-style1">
+			<a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+          
+          </ul>
+         
+            <h3>Interaction</h3>
+       
+          <ul>
+           
+            <li><a href="#">Help</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="#">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Spoofing Attacks</h1>
+			<p>&nbsp;</p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+  <ul class="toc">
+<li class="level1"><div class="li"><a href="#vulnerability_case_studyspoofing_attacks">Vulnerability Case Study: 
+Spoofing Attacks</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#description">Description</a></div></li>
+<li class="level2"><div class="li"><a href="#nonblind_spoofing">Nonblind Spoofing</a></div></li>
+<li class="level2"><div class="li"><a href="#blind_spooling">Blind Spooling</a></div></li>
+<li class="level2"><div class="li"><a href="#denial_of_service_attack">Denial of Service Attack</a></div></li>
+<li class="level2"><div class="li"><a href="#anatomy_of_an_exploit">Anatomy of an Exploit</a></div></li>
+<li class="level2"><div class="li"><a href="#real-world_examples">Real-World Examples</a></div></li>
+<li class="level2"><div class="li"><a href="#test_techniques">Test Techniques</a></div></li>
+<li class="level2"><div class="li"><a href="#external_links">External Links</a></div></li>
+</ul></li>
+</ul>
+</div>
+<!-- TOC END -->
+
+<h2 class="sectionedit2" id="description">Description</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> This is an attack based on the creation of Internet Protocol (IP) packets with a forged IP source address. This forging makes the packet appear  as if it was sent from a different machine. </div>
+</li>
+<li class="level1"><div class="li">  This technique is very useful  as part of certain other attacks, as a way of trying to disguise identity, and as a way to defeat  portions of network security like IP address authentication. </div>
+</li>
+<li class="level1"><div class="li"> Carrying out an IP spoofing attack can be difficult, because it often means the header of thousand s of packets must  be modified, one packet at a time . This can’t usually be done on a computer  that’s running Microsoft Windows.</div>
+</li>
+<li class="level1"><div class="li"> To perform IP spoofing, the header of the packet must be modified. This header contains the following (among other data): </div>
+<ul>
+<li class="level7"><div class="li"> Source IP </div>
+</li>
+<li class="level7"><div class="li"> Destination IP </div>
+</li>
+<li class="level7"><div class="li"> Checksum value </div>
+</li>
+<li class="level7"><div class="li"> Order value </div>
+</li>
+</ul>
+</li>
+</ul>
+
+<p>
+ * When packets are transmitted to the Internet, they will most likely arrive at their destination out of order and must be reassembled using the order sent value.
+</p>
+<ul>
+<li class="level1"><div class="li"> When trust relationships exist between machines, these spoofing attacks can be especially effective. Some corporate networks make it a common practice to have trust relationships between various internal systems, so that a user can access other machines without a username or password as long as they are connecting from another machine on the internal network. </div>
+</li>
+<li class="level1"><div class="li"> Because of this connection from another system, they are assumed to have been authenticated by that system.</div>
+</li>
+<li class="level1"><div class="li"> By spoofing a connection from another machine in a trust relationship with the target, an attacker might be able to access the target machine without authenticating. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit3" id="nonblind_spoofing">Nonblind Spoofing</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> To perform this type of spoofing attack, the attacker needs to be on the same subnet as the target. The attacker can then use a packet sniffer to view the sequence and acknowledgment numbers, which means that the attacker doesn&#039;t have to worry about calculating them accurately and correctly. The biggest threat of spoofing in this case is session hijacking. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="blind_spooling">Blind Spooling</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> In this attack, the sequence and acknowledgment numbers are unreachable and unknown. </div>
+</li>
+<li class="level1"><div class="li">   To try to provide a basis for guessing or calculating the sequence and acknowledgment numbers, several sample packets are sent to the target machine to obtain sample sequence numbers.</div>
+</li>
+<li class="level1"><div class="li"> It was once a common practice to use simple methods to generate these sequence  numbers, which also made them easy to guess and calculate.</div>
+</li>
+<li class="level1"><div class="li"> Now, sequence numbers are typically the result of random number generation which makes it harder to predict the sequence. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit5" id="denial_of_service_attack">Denial of Service Attack</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> IP spoofing is almost always a component of denial-of-service, or DOS, attacks. Because the goal of these attacks is to consume bandwidth or other resources, there is no need to worry about properly completing the handshake or transactions. </div>
+</li>
+<li class="level1"><div class="li"> To consume these resources, the attacker wants to flood the victim with as many packets as possible and as quickly as possible. </div>
+</li>
+<li class="level1"><div class="li"> To prolong the attack, the attacker will forge source IP addresses on these packets to make tracing and stopping the DoS as difficult as possible. </div>
+</li>
+<li class="level1"><div class="li">  When multiple hosts are involved, and all of them are sending spoofed traffic, it can be very hard to block the traffic quickly. This tends to be a task where attackers use their army of bots. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit6" id="anatomy_of_an_exploit">Anatomy of an Exploit</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Nonblind Attack:</div>
+<ul>
+<li class="level3"><div class="li"> The attacker sets up a packet sniffer and collects the packet data from the system they are targeting to see what the pattern of sequence and acknowledgment numbers are. </div>
+</li>
+<li class="level3"><div class="li"> If a pattern can be detected. The attacker can construct a packet that uses that pattern and spoofs the IP address they want to attack. </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit7" id="real-world_examples">Real-World Examples</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> The most famous use of an IP spoofing attack is probably that of Kevin Mitnick&#039;s attack against Tsutomu Shimomura in December 2004. It&#039;s important to note, first, that IP spoofing was a component of this attack but not the sole vulnerability used. </div>
+</li>
+<li class="level1"><div class="li"> The initial sign of this attack was some probes against various machines. apparently to see if there might be an exploitable trust relationship between these machines. </div>
+</li>
+<li class="level1"><div class="li"> Then SYN flooding was used to make the first victim computer unable to respond to requests, while the attacking machine first probed for specific TCP behavior and sequencing. Then spoofed IP address of the first victim computer was used to issue a SYN request to the second victim computer, and Mitnick eventually gained root access on the second victim computer. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit8" id="test_techniques">Test Techniques</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> IP spoofing really isn’t a solvable problem, but the use of encryption and decryption should be tested as in some of the other attacks like man-in-the-middle or session-hijacking. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit9" id="external_links">External Links</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="http://en.wikipedia.org/wiki/Spoofing_attack" class="urlextern" title="http://en.wikipedia.org/wiki/Spoofing_attack">http://en.wikipedia.org/wiki/Spoofing_attack</a></div>
+</li>
+</ul>
+
+</div>
+
+  
+  
+  
+
+
+
+
+ <div class="lavenderBox"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1">
+              <div class="header">Panel title</div>
+            </a>
+            <div class="subtitle linklist"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1"></a><a
+                href="#">Lorem</a>
+              <a href="#">Ipsum</a> <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+              suscipit </a> <a href="#">Has et partem </a> </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,314 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Integer Overflow and Underflow</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">
+			<a href="../../index.html">			../../index.html</a>You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="/">
+			<img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li>
+			<a href="../../index.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px">
+			<a href="../memory/main.html"> <span class="auto-style1">Memory/Malware
+                  Forensics</span></a></li>
+            <li class="auto-style1">
+			<a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1">
+			<a href="../network/main.html">Network Forensics</a></li>
+            <li class="auto-style1">
+			<a href="../social/main.html">Social
+                Engineering</a></li>
+           
+            <li class="auto-style1">
+			<a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+            
+            <li class="auto-style1">
+			<a href="../threat/main.html">Content/Threat
+                Analaysis</a></li>
+            <li class="auto-style1">
+			<a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+          
+          </ul>
+         
+            <h3>Interaction</h3>
+       
+          <ul>
+           
+            <li><a href="#">Help</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="#">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Integer Overflows and Underflows</h1>
+			<p>&nbsp;</p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+ 
+<ul class="toc">
+<li class="level1"><div class="li"><a href="#vulnerability_case_studyinteger_overflows_and_underflows">Vulnerability Case Study: 
+Integer Overflows and 
+Underflows</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#description">Description</a></div></li>
+<li class="level2"><div class="li"><a href="#anatomy_of_an_exploit">Anatomy of an Exploit</a></div></li>
+<li class="level2"><div class="li"><a href="#real-world_examples">Real-World Examples</a></div></li>
+<li class="level2"><div class="li"><a href="#test_techniques">Test Techniques</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#black_box">Black Box</a></div></li>
+<li class="level3"><div class="li"><a href="#white_box">White Box</a></div></li>
+</ul>
+</li>
+<li class="level2"><div class="li"><a href="#external_links">External Links</a></div></li>
+</ul></li>
+</ul>
+</div>
+ 
+<!-- TOC END -->
+
+ 
+<h2 class="sectionedit2" id="description">Description</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Integer overflows and underflows are made possible by the way numbers are handled in computer memory. </div>
+</li>
+<li class="level1"><div class="li"> Each hit in computer memory has only possible values, 1 or 0, and different numbers of bytes (units of 8 bits) are used to store integers based on the size of the number to be stored.</div>
+</li>
+<li class="level1"><div class="li"> If no negative numbers are needed, a signed datatype will often be used. In a signed datatype, the value is always positive, and a larger positive number can be stored in the same number of bytes than can be stored using an unsigned datatype because the first bit is not reserved to Indicate whether the integer is positive or negative.</div>
+</li>
+<li class="level1"><div class="li"> The ranges of some common C datatypes are shown in the table. </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/table_16.1.png" class="media" title="vulnerability_case_study:table_16.1.png"><img src="../../img/table_16.1.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Integer math is handled with a method called twos complement arithmetic. This, along with fact that computers are very literal, can cause a security vulnerability. When told to add or subtract, they do so based on this specialized type of arithmetic with no regard to whether the results make logical sense. </div>
+</li>
+<li class="level1"><div class="li"> This method of doing arithmetic is used on almost all systems because the overhead of doing floating point math is so high.</div>
+</li>
+<li class="level1"><div class="li"> In two&#039;s complement, if you are dealing with a signed integer datatype: the binary value can be translated directly to decimal, and nothing special needs to be done. If you are using an unsigned datatype, and the leftmost bit (the one that indicates the sign of the number) is a 0, then your number is positive and can be translated directly to decimal.</div>
+</li>
+<li class="level1"><div class="li"> If, however, it is a negative number, then the following must be done to obtain an accurate decimal translation. </div>
+</li>
+<li class="level1"><div class="li"> First the two&#039;s complement needs to be translated back to normal binary. Starting with the rightmost (least significant) bit, copy the bit pattern of the two’s complement number until you copy the first bit that is one.</div>
+</li>
+<li class="level1"><div class="li"> Then, write down the complements of the remaining digits.</div>
+</li>
+<li class="level1"><div class="li"> If the original bit was a one, write down zero and vice versa. </div>
+</li>
+<li class="level1"><div class="li"> Once two’s complement has been translated back to a standard binary number. you can translate it to decimal using normal rules and then add a negative sign. </div>
+</li>
+<li class="level1"><div class="li"> When integer math is performed, the appropriate bits are flipped , but the result incrementing a large positive number can be a large negative number or zero.</div>
+</li>
+<li class="level1"><div class="li"> The result of decrementing a large negative number can be a large positive number. </div>
+</li>
+<li class="level1"><div class="li"> If the results require that another bit than is available in the datatype be allocated, the leftmost digit is simply truncated.</div>
+</li>
+<li class="level1"><div class="li"> Two samples of incrementing and decrementing are shown in the following two figures, respectively. </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/tale_16.2.png" class="media" title="vulnerability_case_study:tale_16.2.png"><img src="../../img/tale_16.2.png" class="media" alt="" width="200" /></a>
+<a href="../../img/tale_16.3.png" class="media" title="vulnerability_case_study:tale_16.3.png"><img src="../../img/tale_16.3.png" class="media" alt="" width="300" /></a>
+</p>
+
+</div>
+
+<h2 class="sectionedit3" id="anatomy_of_an_exploit">Anatomy of an Exploit</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Integer overflows are most useful as a way to set up for stack overflow if the attacker is able to create an integer overflow in a variable that is latter used in the dynamic allocation of memory.</div>
+</li>
+<li class="level1"><div class="li"> Because no widespread exploits are in the wild,  an attack is pretty much based on logic and conjecture.</div>
+</li>
+<li class="level1"><div class="li"> To carry out an attack based on an integer overflow, the attackers would need to know that an integer overflow or underflow vulnerability exists and what that integer affects in the program under attack.</div>
+</li>
+<li class="level1"><div class="li"> Based on the desired effect (a very large or very small number) after the vulnerability is exploited, the attackers will craft their exploit to achieve that end. </div>
+</li>
+<li class="level1"><div class="li"> Sometimes, a very small number is desired, for example, the quantity of items being purchased. so that the amount owed is very small, zero  or even negative (which would result in a credit to the buyer).</div>
+</li>
+<li class="level1"><div class="li"> A number can also be desired if that number is used to determine how large a buffer to allocate. and later a large number is stored in that undersized buffer.</div>
+</li>
+<li class="level1"><div class="li"> Sometimes, a very large number is desired to create buffer overrun or similar situation in which the number is the length of  something being transmitted or stored and will result in overrun when it is later stored in a buffer that was expected to hold something smaller.</div>
+</li>
+<li class="level1"><div class="li"> The attacker can also attempt to force the integer to contain a zero by either  integer underflow or overflow so as to cause  a division by zero or some other error when a code that doesn&#039;t expect a zero attempt to process one.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="real-world_examples">Real-World Examples</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> No widespread exploits have been reported as being based on an integer overflow, but quite a few vulnerabilities have been reported and Patched especially in the last few years. This is only smart because there will certainly be attention paid to how to successfully exploit the known vulnerability. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit5" id="test_techniques">Test Techniques</h2>
+
+<h3 class="sectionedit6" id="black_box">Black Box</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> Black-box testing of integer overflows and underflows is very difficult. All variables still need to be examined, and the tester should know or discover what calculations are carried out with those variables and then attempt to influence those results.</div>
+</li>
+<li class="level1"><div class="li"> Sometimes you will seemingly get no response; sometimes you will get an error message that gives more clues to the actual datatype being used. The ranges typically returned in some  of these error messages can often be translated directly into datatype range Values, thus revealing a potentially useful bit of data to the attackers but also to the tester. </div>
+</li>
+<li class="level1"><div class="li"> Try to set the variable to a maximum or minimum value and then try to increment the maximum or decrement the minimum. </div>
+</li>
+<li class="level1"><div class="li"> Always try long strings in input fields and remember that “long&#039; tends to be a rather fluid description. </div>
+</li>
+<li class="level1"><div class="li"> Always try the largest and smallest allowable values in numeric fields to see if there is a case in which the individual integers are correctly checked but perhaps operations performed with them are not.</div>
+</li>
+<li class="level1"><div class="li"> Always verify the data coming from other sources for the same flaws as data being input directly into the program itself. All trust is misplaced.</div>
+</li>
+<li class="level1"><div class="li"> Don’t forget applications programming interface (<abbr title="Application Programming Interface">API</abbr>) calls and methods of passing data other than the user interface (UI). </div>
+</li>
+<li class="level1"><div class="li"> Never trust what calling your functionality to do so correctly and with the correct data. 
+trust is misplaced. </div>
+</li>
+<li class="level1"><div class="li"> Your program needs to be able to protect itself. </div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit7" id="white_box">White Box</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> There are several places in a code where an integer underflow or overflow can occur. These include: </div>
+<ul>
+<li class="level5"><div class="li"> Arithmetic operations </div>
+</li>
+<li class="level5"><div class="li"> Conversions and casts </div>
+</li>
+<li class="level5"><div class="li"> Copying and reading </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> If the expected value of a variable is easily defined, the variable should he checked for that value or range/size before it is used or stored. This allows the system to protect itself, at least in part. </div>
+</li>
+<li class="level1"><div class="li"> All integer values need to be followed through the system to examine the bounds of each variable and then the bounds possible (not just expected) when an arithmetic operation or cast is carried out.</div>
+</li>
+<li class="level1"><div class="li"> Then, take combinations of the maximum values of each variable and carry out the operation to determine if the resulting value is larger or smaller than the resulting  integer type. </div>
+</li>
+<li class="level1"><div class="li">  Next, carry out the same process using combination of the smallest possible values and check the result of that against the resulting integer type as well. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit8" id="external_links">External Links</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://www.owasp.org/index.php/Integer_overflow" class="urlextern" title="https://www.owasp.org/index.php/Integer_overflow">https://www.owasp.org/index.php/Integer_overflow</a></div>
+</li>
+</ul>
+
+  
+
+  
+  
+  
+
+
+
+
+ <div class="lavenderBox"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1">
+              <div class="header">Panel title</div>
+            </a>
+            <div class="subtitle linklist"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1"></a><a
+                href="#">Lorem</a>
+              <a href="#">Ipsum</a> <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+              suscipit </a> <a href="#">Has et partem </a> </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

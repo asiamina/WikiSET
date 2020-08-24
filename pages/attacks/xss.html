@@ -1,0 +1,523 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cross-Site Scripting</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade"><a href="../../index.html">			../../index.html</a>You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="/"><img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="../../index.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px"><a href="../memory/main.html"> <span class="auto-style1">Memory/Malware
+                  Forensics</span></a></li>
+            <li class="auto-style1"><a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1"><a href="../network/main.html">Network Forensics</a></li>
+            <li class="auto-style1"><a href="../social/main.html">Social
+                Engineering</a></li>
+           
+            <li class="auto-style1"><a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+            
+            <li class="auto-style1"><a href="../threat/main.html">Content/Threat
+                Analaysis</a></li>
+            <li class="auto-style1"><a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+          
+          </ul>
+         
+            <h3>Interaction</h3>
+       
+          <ul>
+           
+            <li><a href="#">Help</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="#">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Cross-Site Scripting</h1>
+			<p>&nbsp;</p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+  <ul class="toc">
+<li class="level1"><div class="li"><a href="#description">Description</a></div></li>
+<li class="level1"><div class="li"><a href="#there_are_three_types_of_cross-site_scripting_generally_recognized">There are three types of cross-site scripting generally recognized</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#nonpersistent_or_reflected">Nonpersistent or Reflected</a></div></li>
+<li class="level2"><div class="li"><a href="#persistent_or_stored">Persistent or Stored</a></div></li>
+<li class="level2"><div class="li"><a href="#dom-based_or_local">DOM-Based or &#039;Local&#039;</a></div>
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#example">Example</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#anatomy_of_an_exploit">Anatomy of an Exploit</a></div></li>
+<li class="level1"><div class="li"><a href="#real-world_examples">Real-World Examples</a></div>
+<ul class="toc">
+<li class="clear">
+<ul class="toc">
+<li class="level3"><div class="li"><a href="#bugzilla_dom-based_xss">Bugzilla DOM-Based XSS</a></div></li>
+<li class="level3"><div class="li"><a href="#paypal_xss">PayPal XSS</a></div></li>
+<li class="level3"><div class="li"><a href="#microsoft_passport">Microsoft Passport</a></div></li>
+<li class="level3"><div class="li"><a href="#myspace_xss_worm">MySpace XSS Worm</a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#test_techniques">Test Techniques</a></div></li>
+<li class="level1"><div class="li"><a href="#question_all_filtering_and_encoding">Question All Filtering and Encoding</a></div></li>
+<li class="level1"><div class="li"><a href="#black-box_testing_basic_script_test">Black-Box Testing
+ Basic Script Test</a></div></li>
+<li class="level1"><div class="li"><a href="#black-box_testing_encoding_test">Black-Box Testing 
+Encoding Test</a></div></li>
+<li class="level1"><div class="li"><a href="#black-box_testing_returned_code_examination">Black-Box Testing 
+Returned Code Examination</a></div></li>
+<li class="level1"><div class="li"><a href="#white-box_testing">White-Box Testing</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#external_links">External links</a></div></li>
+</ul></li>
+</ul>
+</div>
+ 
+<!-- TOC END -->
+
+<h2 class="sectionedit1" id="description">Description</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> Cross-site scripting is a vulnerability rooted in the way  <abbr title="HyperText Markup Language">HTML</abbr> content is generated and interpreted by client browsers.</div>
+</li>
+<li class="level1"><div class="li"> These vulnerabilities are usually found in Web applications and allow attackers to inject <abbr title="HyperText Markup Language">HTML</abbr> or client-side scripting into input of a web-based application in the hope (or with the knowledge) that the input the attacker provided will be returned unparsed.</div>
+</li>
+<li class="level1"><div class="li"> This basic vulnerability, depending on how it&#039;s exploited, can be used for a multitude of purposes. The number of these seems to grow all the time, but some of these are: </div>
+<ul style="margin-left:25px;list-style:square">
+<li class="level3"><div class="li"> Cookie theft </div>
+</li>
+<li class="level3"><div class="li"> Session ID theft </div>
+</li>
+<li class="level3"><div class="li"> Defacing a Web site </div>
+</li>
+<li class="level3"><div class="li"> Limited execution of arbitrary code on the victim&#039;s machine, particularly, if it&#039;s a trusted Web site or a Web-driven client application. or even if it is combined with an unsafe ActiveX control.</div>
+</li>
+<li class="level3"><div class="li"> Manipulating the DOM (Document Object Model) </div>
+</li>
+<li class="level3"><div class="li"> Cookie poisoning </div>
+</li>
+<li class="level3"><div class="li"> Changing user settings</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Malicious scripting can he created using a variety of languages or technologies, such as: </div>
+<ul style="margin-left:25px;list-style:square">
+<li class="level3"><div class="li"> JavaScript</div>
+</li>
+<li class="level3"><div class="li"> VBScript</div>
+</li>
+<li class="level3"><div class="li"> ActiveX </div>
+</li>
+<li class="level3"><div class="li"> <abbr title="HyperText Markup Language">HTML</abbr> </div>
+</li>
+<li class="level3"><div class="li"> Flash</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit2" id="there_are_three_types_of_cross-site_scripting_generally_recognized">There are three types of cross-site scripting generally recognized</h2>
+
+<h2 class="sectionedit3" id="nonpersistent_or_reflected">Nonpersistent or Reflected</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> This is the most common type of cross-site scripting vulnerability by far — a vulnerability where data from a Web client is immediately used by the server to generate a page to return to the user.</div>
+</li>
+<li class="level1"><div class="li"> A classic example of this is encountered in search engines: If you search for a string that includes some <abbr title="HyperText Markup Language">HTML</abbr>. special characters. often search string will be redisplayed on the results page to indicate what was searched for, or the search terms will at least appear in a new search text box for easier editing. If all occurrences of the search term are not <abbr title="HyperText Markup Language">HTML</abbr> entity-encoded, an XSS vulnerability will exist because that redisplayed search string would then contain the client-side script that your browser would execute.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="persistent_or_stored">Persistent or Stored</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> This is not the most common type of attack, but it is the most powerful. This vulnerability occurs when data provided to a Web application by an attacker is first stored persistently on the server, and then later it&#039;s displayed to users in a Web page without being <abbr title="HyperText Markup Language">HTML</abbr>-encoded. </div>
+</li>
+<li class="level1"><div class="li"> One of  the reasons this is a more serious or significant vulnerability is that an attacker can post an attack once and can potentially affect a large number of users without having to resort to social engineering. The attacker also doesn&#039;t need to use the Web application itself to exploit this vulnerability. Any data received by the Web application by other means, including e-mail, system logs, etc.. is capable of exploiting these vulnerabilities.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit5" id="dom-based_or_local">DOM-Based or &#039;Local&#039;</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> This cross-site scripting vulnerability is one that is focused on the DOM (Document Object Model ).When JavaScript is executed. the browser sends several objects that represent the DOM hack to JavaScript.</div>
+</li>
+<li class="level1"><div class="li"> The document object contains multiple other objects, all populated from the browsers point of view — which is important to remember.</div>
+</li>
+<li class="level1"><div class="li"> Basically, this type of XSS modifies the DOM itself to take advantage of any Web pages that then use the DOM information. </div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit6" id="example">Example</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> An example of this would be the document.<abbr title="Uniform Resource Locator">URL</abbr> that contains the <abbr title="Uniform Resource Locator">URL</abbr> the browser navigated to, not the <abbr title="Uniform Resource Identifier">URI</abbr> extracted from the <abbr title="HyperText Markup Language">HTML</abbr> body.</div>
+</li>
+<li class="level1"><div class="li"> This means that if a hyperlink is sent that contains scripting as part of the <abbr title="Uniform Resource Locator">URL</abbr>, and the page referenced uses that document.<abbr title="Uniform Resource Locator">URL</abbr> value in a dynamic page, the script embedded in the <abbr title="Uniform Resource Locator">URL</abbr> is executed.</div>
+</li>
+<li class="level1"><div class="li"> Some DOM objects that are at risk: </div>
+<ul>
+<li class="level3"><div class="li"> Document.<abbr title="Uniform Resource Locator">URL</abbr></div>
+</li>
+<li class="level3"><div class="li"> Document.URLEncoded</div>
+</li>
+<li class="level3"><div class="li"> Document location (and many of its properties)</div>
+</li>
+<li class="level3"><div class="li"> Document.referrer</div>
+</li>
+<li class="level3"><div class="li"> Window.location (and many of its properties) </div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit7" id="anatomy_of_an_exploit">Anatomy of an Exploit</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> <strong>Nonpersistent or Reflected Exploit:</strong></div>
+<ul>
+<li class="level3"><div class="li"> Here, the attacker discovers a Web site that has an XSS vulnerability by entering a string such as “&lt;test&gt;” to see if the string is reflected back with the greater-than and less-than symbols unencoded.</div>
+</li>
+<li class="level3"><div class="li"> Once XSS vulnerability is found, the attacker crafts a <abbr title="Uniform Resource Locator">URL</abbr> that Will exploit the vulnerability, and he sends the crafted <abbr title="Uniform Resource Locator">URL</abbr> to another user of the site, generally as a spoofed e-mail.</div>
+</li>
+<li class="level3"><div class="li"> When the potential victim visits the site using the link contained in the e-mail, the malicious script contained in the crafted <abbr title="Uniform Resource Locator">URL</abbr> is executed by the potential victim&#039;s browser as if it came from the Web site with the XSS vulnerability. The script steals whatever sensitive information It can and sends the data to the attacker.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>Persistent or Stored Exploit</strong></div>
+<ul>
+<li class="level3"><div class="li"> This attack also requires that the attacker discover a Web site allowing users to post information for retrieval by other users in something  other than plaintext (i.e., <abbr title="HyperText Markup Language">HTML</abbr>-encoded, etc.). For <abbr title="HyperText Markup Language">HTML</abbr> encoding of messages to be available, the browser reading the post or data has to process the <abbr title="HyperText Markup Language">HTML</abbr>.</div>
+</li>
+<li class="level3"><div class="li"> The attacker can also test this by posting data to this Web site, using a test string to see if the user input is filtered or otherwise encoded. </div>
+</li>
+<li class="level3"><div class="li"> Once the attacker finds that the site has an exploitable XSS vulnerability the attacker posts a message designed to attract the maximum that possible (so it&#039;s generally controversial or even obnoxious), and in message is embedded the code to exploit XSS vulnerability.</div>
+</li>
+<li class="level3"><div class="li"> Now, whenever the posted message is viewed, the session cookies other credentials are sent to the attacker&#039;s Web server. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> <strong>DOM-Based or Local</strong></div>
+<ul>
+<li class="level3"><div class="li"> Here, the attacker must know of a Web site with a page that uses part of the DOM not wholly under the control of the server-side page. </div>
+</li>
+<li class="level3"><div class="li"> Once the attacker finds a page that parses the <abbr title="Uniform Resource Locator">URL</abbr>, or similarly uses information in the DOM to provide data for client-side logic, the attacker can craft a <abbr title="Uniform Resource Locator">URL</abbr> to take advantage of that vulnerability and e-mail or otherwise distribute the <abbr title="Uniform Resource Locator">URL</abbr> to potential victims.</div>
+</li>
+<li class="level3"><div class="li"> When the potential victim receives the link and clicks on it, the malicious code is exploited; the vulnerable Web page is returned from the server and may now run a variety of commands with whatever privileges the user has on the computer it is running on.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit8" id="real-world_examples">Real-World Examples</h2>
+
+<h3 class="sectionedit9" id="bugzilla_dom-based_xss">Bugzilla DOM-Based XSS</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> In December 2004, a vulnerability was reported in Bugzilla&#039; (The Mozilla Foundation, California) where, if an internal error was encountered, an error page used JavaScript to write the <abbr title="Uniform Resource Locator">URL</abbr> (using document.location) to the Web page without filtering or encoding it. This would allow someone to force an error and inject JavaScript code.</div>
+</li>
+<li class="level1"><div class="li"> The fix for this was to encode the special characters in the document.location string before it is written to the page. More details and some sample codes are available at 
+<a href="https://bugzillamozilla.org/show_bug.cgi?id=272620" class="urlextern" title="https://bugzillamozilla.org/show_bug.cgi?id=272620">https://bugzillamozilla.org/show_bug.cgi?id=272620</a>. </div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit10" id="paypal_xss">PayPal XSS</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> In June 2006, PayPal6 (EBay, Inc., San Jose, California) was hit by a complex attack that used a combination of an e-mail phishing that asked the users to click on a link leading to a <abbr title="Uniform Resource Locator">URL</abbr> on the real PayPal Web site. The link to this <abbr title="Uniform Resource Locator">URL</abbr> utilized cross-site scripting to present the users with some text informing them that their account is disabled because of suspicions that it had been compromised and that they would be redirected to a resolution center. Then the users were indeed redirected but to a trap site in South Korea.</div>
+</li>
+<li class="level1"><div class="li"> This trap site was basically a phishing site. The users were asked for their PayPal login details, and even more sensitive information such as Social Security number, bank account numbers, etc. </div>
+</li>
+<li class="level1"><div class="li"> One of the most interesting facts about this attack is that on the initial PayPal page the user is directed to is an SSL page; the valid 256-bit SS certificate to confirm it belongs to PayPal. By the time users are actually redirected to the fake PayPal phishing site, they may be off guard because they&#039;ve already done what they have been taught: They think they have verified that the original page is HTTPS, complete with its little lock ion 
+and a security certificate.</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit11" id="microsoft_passport">Microsoft Passport</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> In October 2001, a security researcher, Marc Slemko, conducted some investigations into the integrated Passport&#039;“ (Microsoft Corporation. Redmond, Washington) system and its component services and brought one vulnerability to light: using Hotmail&#039;s <abbr title="HyperText Markup Language">HTML</abbr> filtering and cross-site scripting can expose the user&#039;s Passport data. </div>
+</li>
+<li class="level1"><div class="li"> In this case, an e-mail was sent to a Hotmail user that included a tag, starting with “&lt;_img.” Hotmail thinks this is the start of an Fine tag and treats the information inside as attributes but Internet Explorer (<abbr title="Internet Explorer">IE</abbr>) doesn’t recognize any tag starting with an invalid character, so it just continue as if the tag isn&#039;t there.</div>
+</li>
+<li class="level1"><div class="li"> Part of the problem is that <abbr title="Internet Explorer">IE</abbr> is performing what is called a “white list” check for the tag. If the tag is not specifically considered to be invalid, then it is invalid by default. Hotmail, however, is performing what is checked . a &#039;black list“ check. If the tag is not specifically considered to be invalid then it is valid by default. </div>
+</li>
+<li class="level1"><div class="li"> This Hotmail issue is merely an easy way to got around the necessarily of sending some social engineering e-mails to get the user to click on the link— it&#039;s not actually a required part of the vulnerability demonstration.</div>
+</li>
+<li class="level1"><div class="li"> We recall that since the user is doing this through a Hotmail account, passport has already been logged into and a Passport cookie has been issued.</div>
+</li>
+<li class="level1"><div class="li"> Once the <abbr title="HyperText Markup Language">HTML</abbr> exploit pages is loaded, its opens two frames, one of these connect to a page in the  passport’s secure path to enable the attacker to steal passport cookie.</div>
+</li>
+<li class="level1"><div class="li"> The second  frame exploit an XSS vulnerability  in Passport: if you are already logged in, a page is returned  including the unencoded passed in information — in this case- executed by JavaScript on the attacker&#039;s server. This JavaScript then proceeds to capture  the user‘s Passport cookie and sends the cookie off to CGI script that captures them.</div>
+</li>
+</ul>
+
+</div>
+
+<h3 class="sectionedit12" id="myspace_xss_worm">MySpace XSS Worm</h3>
+<div class="level3">
+<ul>
+<li class="level1"><div class="li"> The first incident of an XSS worm occurred in late 2005 when a MySpace(MySpace, Inc.) user figured out a way to increase his friend&#039;s list by first creating a script in his user profile that overcame the MySpace restriction against JavaScript. It achieved this by splitting it between two lines and then placing this script code within a cascading style sheet, exposing a leniency in <abbr title="Internet Explorer">IE</abbr>. </div>
+</li>
+<li class="level1"><div class="li"> Then, the attacker used a JavaScript object to load a MySpace <abbr title="Uniform Resource Locator">URL</abbr> that would automatically invite the attacker as a friend, and later as a “hero,” into the visitor&#039;s own profile. </div>
+</li>
+<li class="level1"><div class="li"> Next, he turned around and embedded this script into each of his visitor&#039;s profiles, so that the code continued to propagate to anyone who viewed their profiles.</div>
+</li>
+<li class="level1"><div class="li"> By 9:30 that night, there were over 1 million requests, and less than an hour later the entire MySpace site had to be taken offline while the worm was removed from all user profiles.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit13" id="test_techniques">Test Techniques</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> One of the difficulties in testing cross-site scripting is that the more advanced efforts often involve encoding some of the telltale signs of cross site scripting exploits in any one of a number of formats.</div>
+</li>
+<li class="level1"><div class="li"> Following table gives examples of texts that can represent the &lt;script&gt; tag in <abbr title="HyperText Markup Language">HTML</abbr>. </div>
+</li>
+<li class="level1"><div class="li"> If your application accepts UTF-8 characters, this becomes even more complex because you have multiple ways to encode each character. If this is the case for your application, it&#039;s a strong argument for deleting characters that are not explicitly safe and allowable.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/table13.png" class="media" title="vulnerability_case_study:table13.png"><img src="../../img/table13.png" class="media" alt="" width="300" /></a>
+</p>
+
+</div>
+
+<h2 class="sectionedit14" id="question_all_filtering_and_encoding">Question All Filtering and Encoding</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> A valuable exercise you can do before actually starting the test is to ask several questions about every field in your product: </div>
+<ul>
+<li class="level3"><div class="li"> Does this field have a limited set of expected input? </div>
+</li>
+<li class="level3"><div class="li"> Is there filtering or error checking in place to enforce that only input that meets the requirements of the field is passed through?</div>
+</li>
+<li class="level3"><div class="li"> If your product accepts UTF-8 characters, is there filtering in place to delete all characters not explicitly safe? </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> There may be reasons that input cannot be as severely filtered as you might wish, but the fields should all be filtered as closely as possible without impairing necessary functionality. </div>
+</li>
+<li class="level1"><div class="li"> In addition, there is a set of minimum characters that should always he encoded into their literal, printable equivalents. If this is done. any script code that makes it into the system can&#039;t be output again unless it&#039;s converted to safe formatting. This list is shown in following table.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/table132.png" class="media" title="vulnerability_case_study:table132.png"><img src="../../img/table132.png" class="media" alt="" width="200" /></a>
+</p>
+
+</div>
+
+<h2 class="sectionedit15" id="black-box_testing_basic_script_test">Black-Box Testing
+ Basic Script Test</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> The best way to start testing for cross-site vulnerabilities is to test every input field you can find with a simple test script:</div>
+<ul>
+<li class="level3"><div class="li"> &lt;script&gt;alert(&#039;XSS Vulnerability Found&#039;)&lt;/script&gt;</div>
+</li>
+<li class="level3"><div class="li"> &lt;img xsstest=javascript:alert(&#039;XSS Vulnerability Found&#039;)&gt;</div>
+</li>
+<li class="level3"><div class="li"> &amp;(alert(&#039;XSS Vulnerability Found&#039;)); </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> If the message box displays “XSS Vulnerability Found,” the input field you are testing has an XSS vulnerability. If it doesn&#039;t display the phrase but the <abbr title="HyperText Markup Language">HTML</abbr> page retuned displays incorrectly, the component may still be vulnerable and should be further tested. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit16" id="black-box_testing_encoding_test">Black-Box Testing 
+Encoding Test</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> Now for each visible variable, submit the following string: </div>
+</li>
+</ul>
+
+<p>
+11; ! —”&lt;XSS_Check&gt;=&amp;{()} On the page that is returned, search for the string
+ “&lt;XSS_Check&gt;.”
+</p>
+<ul>
+<li class="level1"><div class="li"> If you can find that test string in the retuned page, it&#039;s likely that the component has an XSS vulnerability. </div>
+</li>
+<li class="level1"><div class="li"> If it&#039;s displayed literally (including the greater than or less than characters at any point), there is a definite XSS vulnerability. </div>
+</li>
+<li class="level1"><div class="li"> If only the phrase “XSS_Check” is displayed but the greater-than and less-than symbols have been stripped away completely, the component is not vulnerable. </div>
+</li>
+<li class="level1"><div class="li"> If there was some encoding done and you see something such as “&amp;lt;XSS_Check&amp;gt;” then a vulnerability may still exist.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit17" id="black-box_testing_returned_code_examination">Black-Box Testing 
+Returned Code Examination</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> Now examine the other characters that were input around the test string to see what characters are filtered or encoded. This will indicate if the component may still be vulnerable. </div>
+</li>
+<li class="level1"><div class="li"> Carefully examine the returned <abbr title="HyperText Markup Language">HTML</abbr> page to see if you can identify what string an attacker could use to break out of the <abbr title="HyperText Markup Language">HTML</abbr> code or sequence surrounding the test string. If these codes exist in an unfiltered form in the previous step it is very likely that the component is vulnerable. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit18" id="white-box_testing">White-Box Testing</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> The steps for black-box testing are still needed. but if you are doing white-box testing , you can follow the input string through the code to see wherever it may be used or returned to the client browser. </div>
+</li>
+<li class="level1"><div class="li"> Some of these places may not be obvious or may be difficult to find with black box testing, especially pages that are not pan of the well-known normal code path. This includes error pages, and the like. </div>
+</li>
+<li class="level1"><div class="li"> There are two other tests that should he done if you are conducting white-box testing:</div>
+<ul>
+<li class="level3"><div class="li"> <em>Hidden Fields </em> </div>
+<ul>
+<li class="level5"><div class="li"> Repeat the set of black-box tests on every hidden field, the ones that are not normally editable. This may require the use of automation, a custom tool, or one of the proxy servers available commercially. You need to be able to edit HTTP requests between client and server. </div>
+</li>
+</ul>
+</li>
+<li class="level3"><div class="li"> <em>GET Versus POST</em></div>
+<ul>
+<li class="level5"><div class="li"> If particular components are submitting data via an HTTP GET request try turning the submission into an HTTP POST request for any components if the results of the prior testing indicate the possibility of an XSS vulnerability.  </div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit19" id="external_links">External links</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29" class="urlextern" title="https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29">https://www.owasp.org/index.php/Cross-site_Scripting_%28XSS%29</a></div>
+</li>
+</ul>
+
+</div>
+
+  
+  
+  
+
+
+
+
+ <div class="lavenderBox"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1">
+              <div class="header">Panel title</div>
+            </a>
+            <div class="subtitle linklist"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1"></a><a
+                href="#">Lorem</a>
+              <a href="#">Ipsum</a> <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+              suscipit </a> <a href="#">Has et partem </a> </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>

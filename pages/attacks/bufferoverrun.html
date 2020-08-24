@@ -1,0 +1,431 @@
+﻿<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Untitled 1</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="canonical" href="http://html5-templates.com/">
+    <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="../../style.css">
+    <script src="../../js/vendor/modernizr-2.8.3.min.js"></script>
+    <style type="text/css">
+		.auto-style1 {
+			color: #0645AD;
+		}
+		</style>
+  </head>
+  <body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade"><a href="../../index.html">			../../index.html</a>You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>        <![endif]-->
+    <div class="wrapAll clearfix">
+      <div class="sidebar" style="left: -21px; top: 32px; width: 10.6em; height: 618px">
+        <div class="logo"> <a href="/"><img src="../../img/logo.png" alt="logo"></a>
+        </div>
+        <div class="navigation">
+          <ul>
+            <li><a href="../../index.html">Main page</a></li>
+            <li><a href="#">Contents</a></li>
+            <li><a href="#">Featured content</a></li>
+          </ul>
+          <h3>Interaction</h3>
+          <ul>
+            <li style="width: 155px"><a href="../memory/main.html"> <span class="auto-style1">Memory/Malware
+                  Forensics</span></a></li>
+            <li class="auto-style1"><a href="../software/main.html">Software
+                Security</a></li>
+            <li class="auto-style1"><a href="../network/main.html">Network Forensics</a></li>
+            <li class="auto-style1"><a href="../social/main.html">Social
+                Engineering</a></li>
+           
+            <li class="auto-style1"><a href="../reverse/main.html">Reverse
+                Engineering</a></li>
+            
+            <li class="auto-style1"><a href="../threat/main.html">Content/Threat
+                Analaysis</a></li>
+            <li class="auto-style1"><a href="../mobile/main.html">Mobile
+                Forensics</a></li>
+          
+          </ul>
+         
+            <h3>Interaction</h3>
+       
+          <ul>
+           
+            <li><a href="#">Help</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mainsection">
+        <div class="headerLinks"> &nbsp; <a href="#">Contributions</a>&nbsp;&nbsp;
+          </div>
+        <div class="tabs clearfix">
+          <div class="tabsLeft">
+            <ul>
+              <li><a href="#" class="active">Article</a></li>
+            </ul>
+          </div>
+          <div id="simpleSearch"> <input name="searchInput" id="searchInput" placeholder="Search Wikipedia"
+              size="12"
+              type="text">
+            <div id="submitSearch"></div>
+          </div>
+          <div class="tabsRight">
+            <ul>
+              <li><a href="#" class="active">Read</a></li>
+              <li><a href="#">View source</a></li>
+              <li><a href="#">View history</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="article">
+          <h1>Buffer Overrun</h1>
+          <p> &nbsp;</p>
+          <div class="contentsPanel">
+            <div class="contentsHeader">Contents</div>
+            <ul class="toc">
+<li class="level1"><div class="li"><a href="#description">Description</a></div></li>
+<li class="level1"><div class="li"><a href="#types_of_buffer_overruns">Types of buffer overruns</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#stack_buffer">Stack buffer</a></div></li>
+<li class="level2"><div class="li"><a href="#heap_buffer_overruns">Heap Buffer Overruns</a></div></li>
+</ul>
+</li>
+<li class="level1"><div class="li"><a href="#anatomy_of_an_exploit">Anatomy of an Exploit</a></div></li>
+<li class="level1"><div class="li"><a href="#real-world_examples">Real-World Examples</a></div></li>
+<li class="level1"><div class="li"><a href="#stack_buffer_overrun_stack_smashing">Stack Buffer Overrun/Stack Smashing</a></div></li>
+<li class="level1"><div class="li"><a href="#heap_buffer_overrun_heap_smashing">Heap Buffer Overrun/Heap Smashing</a></div></li>
+<li class="level1"><div class="li"><a href="#test_techniques">Test Techniques</a></div>
+<ul class="toc">
+<li class="level2"><div class="li"><a href="#external_links">External Links</a></div></li>
+</ul></li>
+</ul>
+</div>
+          
+
+<h1 class="sectionedit1" id="description">Description</h1>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li">    A buffer overrun is caused when data is stored in a buffer, that is too small to contain the  data being stored. This causes the data to overflow or overrun into adjacent memory.</div>
+</li>
+<li class="level1"><div class="li"> If the software being tested is written in C or C++,even only in part, this is definitely something that should carefully tested.</div>
+</li>
+<li class="level1"><div class="li"> In following figure, adjacent memory has been allocated as follows: a 2 byte integer with contents of 1(A), an 8-byte-long string buffer that is empty. application (B), a 2-byte integer buffer containing the number 3(C), and a 2-byte-long string buffer with the string “usr” and the string terminating zero byte (D).</div>
+</li>
+<li class="level1"><div class="li"> Now the program attempts to store the character string “extrabits” and the string terminating zero byte in buffer B. No bounds checking in advance means it ills buffer B and overflows to buffer C. The buffer contents now look like those in following figure.</div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/array11.jpg" class="media" title="vulnerability_case_study:array11.jpg"><img src="../../img/array11.jpg" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> If an attacker is aware of this buffer overrun vulnerability and knows that buffer D contains an access level variable, the string being stored in buffer B can be crafted to overwrite the buffer D data with the string that grants administrator privileges. It now might look like following figure. </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/array11_2.png" class="media" title="vulnerability_case_study:array11_2.png"><img src="../../img/array11_2.png" class="media" alt="" width="300" /></a>
+</p>
+
+</div>
+
+<h1 class="sectionedit2" id="types_of_buffer_overruns">Types of buffer overruns</h1>
+
+<h2 class="sectionedit3" id="stack_buffer">Stack buffer</h2>
+<div class="level2">
+
+ There is a special stack that holds information about the active subroutines of a program.
+
+ One of the main functions of the stack is to keep track of where to return control when the current subroutine finishes executing. This is often done by putting the return address into the call stack. 
+
+ Depending on the environment, programming language, and other variables, the stack can also be responsible for:
+<ul style="margin-left:20px; list-style:square">
+<li class="level3"><div class="li"> Local data storage</div>
+</li>
+<li class="level3"><div class="li"> Parameter passing </div>
+</li>
+<li class="level3"><div class="li"> Pointer to the current instance </div>
+</li>
+<li class="level3"><div class="li"> Evaluation stack </div>
+</li>
+<li class="level3"><div class="li"> Context of the enclosing subroutine</div>
+</li>
+<li class="level3"><div class="li"> Other return state information </div>
+</li>
+</ul>
+
+ The stack is comprised of stack frames, each one of which corresponds to a call to a subroutine that has not yet terminated with a return. 
+ The stack frame at the top of the stack (the last one pushed on) belongs to the routine that is currently executing. 
+ Sack frames may be different sizes depending on the needs of the subroutines involved.
+
+ Following figure is a sample view of a stack.
+
+<p>
+<a href="../../img/figure11_4.png" class="media" title="vulnerability_case_study:figure11_4.png"><img src="../../img/figure11_4.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> Stack buffer overruns depend on the fact that most C compilers store both return addresses and local variables on the same stack. </div>
+</li>
+<li class="level1"><div class="li"> When this Is the case, an unbounded local variable can be used to overwrite the stack and create problems like substituting an address to an attacker&#039;s code or a command window in place of the subroutine&#039;s legitimate return address.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit4" id="heap_buffer_overruns">Heap Buffer Overruns</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> Heap is an area of memory, where dynamic memory allocation and deallocation is made at runtime by the C malloc() and calloc() functions, and the C++ new operator.</div>
+</li>
+<li class="level1"><div class="li"> When the heap is corrupted by a heap-based buffer overrun, the results can be unpredictable, as some of the linked list structure is typically overwritten in the process of the overrun. A sample view of the heap is shown in following figure. </div>
+</li>
+</ul>
+
+<p>
+<a href="../../img/figure11_45png.png" class="media" title="vulnerability_case_study:figure11_45png.png"><img src="../../img/figure11_45png.png" class="media" alt="" width="300" /></a>
+</p>
+<ul>
+<li class="level1"><div class="li"> The number of vulnerabilities involving heap buffer overruns is expected to grow, as more and more steps are taken to protect the stack. and attackers  turn to heap overruns instead.</div>
+</li>
+<li class="level1"><div class="li"> There is still a belief that not much can be done with heap buffer overruns because of the inherently dynamic nature of its storage structure, and this leads to heap buffer overruns not being subjected to scrutiny as they should be. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit5" id="anatomy_of_an_exploit">Anatomy of an Exploit</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> Most exploits of buffer overruns start with first knowing that buffer overrun vulnerability exists.</div>
+</li>
+<li class="level1"><div class="li"> Once the vulnerability is known, the attacker needs to carefully craft, String to exploit the buffer overrun.</div>
+</li>
+<li class="level1"><div class="li"> Once the attacker finds out how long a string is required to achieve the desired effect, they have an exploit of the vulnerability. Now, they can combine this exploit with other codes to create malicious software to distribute or install.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit6" id="real-world_examples">Real-World Examples</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> <strong>Buffer Overrun</strong></div>
+<ul>
+<li class="level3"><div class="li"> Example of a buffer overrun happened on November 3, 1988, now often known as “Black Thursday.” A 99-line bootstrap program plus a large object file, both in C, infected Sun Microsystems&#039; Sun 3 systems and VAX Tm computers running variants of 4 BSD (Berkeley Software Distribution) Unix.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> One of the exploits used was a buffer overrun of the fingered program&#039;s input buffer. Fingered (a background process or daemon) was using the C gets call that takes input to a buffer without any bounds check. </div>
+</li>
+<li class="level1"><div class="li"> In this case, a string of 536 bytes was passed to fingered, which overflowed as input buffer and overwrote parts of the stack. </div>
+</li>
+<li class="level1"><div class="li"> This string was specifically designed so the return stack frame for main was then a pointer into the buffer on the stack</div>
+</li>
+<li class="level1"><div class="li"> There were instructions written into the passed string at that location, which were then executed when main attempted to return. </div>
+</li>
+<li class="level1"><div class="li"> On VAXen. this meant the worm was connected to a remote shell via the transmission control protocol (TCP) connection, and the worm proceeded to infect the system. </div>
+</li>
+<li class="level1"><div class="li"> On Sun, this resulted in a core file error because the code was in place to corrupt a Sun version of fingered. </div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit7" id="stack_buffer_overrun_stack_smashing">Stack Buffer Overrun/Stack Smashing</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> The first variant of Win32/Blaster (also called the  Win3/Msblast worm) appeared on August 11, 2003.</div>
+</li>
+<li class="level1"><div class="li"> Microsoft released a security bulletin about the vulnerability exploited by this worm on July 16,2003.</div>
+</li>
+<li class="level1"><div class="li"> This worm is notable because it was the first occurrence of a Windows command shell attack by a worm and because of the sheer volume of vulnerable machines despite the preexisting security  bulletin.</div>
+</li>
+<li class="level1"><div class="li"> It also attempted to cause a huge DDoS (distributed denial-of service) attack on the Windows update servers to prevent users from downloading the security patch.</div>
+</li>
+<li class="level1"><div class="li"> This worm attacked vulnerable systems running Windows NT, Windows XP. Windows 2000, and Windows Server 2003. </div>
+</li>
+<li class="level1"><div class="li"> Although the vulnerability existed in all these versions of Windows, the worm could only infect the systems running Windows 2000 and Windows XP. </div>
+</li>
+<li class="level1"><div class="li"> This worm scanned IP addresses and tried to connect to port 135 with a TCP connection, then used a security vulnerability in the Windows Distributed Component Object Model (DCOM) Remote Procedure Call&#039;s (RPCs) CoGetlnstanceFromFile function.</div>
+</li>
+<li class="level1"><div class="li"> This function has as unbounded input string called szName, which was designed to hold a 32-byte NetBIOS machine name. </div>
+</li>
+<li class="level1"><div class="li"> The worm would then pass in an overly long crated file name, cause a stack overflow, and then bind a cmd.exe command shell to port 4444/tcp.</div>
+</li>
+<li class="level1"><div class="li"> Newly created shell is given a command to cause it to download the worm file from the attacking host over port 69/udp using the Trivial File Transfer Protocol (tftp), which is supported by a default tftp client  on most Windows systems.</div>
+</li>
+<li class="level1"><div class="li"> Once the worm file (msblast.exe) is downloaded, the worm requests the remote system to execute the downloaded file. When the worm calls ExitProcess(), Windows XP systems will reboot and in Windows 2000 system there are a variety of side effects. </div>
+</li>
+<li class="level1"><div class="li"> The worm added a key to the registry(HKLM \ SOFTWARE \ Microsoft \ Windows \ CurrentVersion \ Run \ windows auto update)  to ensure that the worm is activated whenever Windows is started.</div>
+</li>
+<li class="level1"><div class="li"> Now the worm waits for an active network connection to start searching for more systems to attack.</div>
+</li>
+<li class="level1"><div class="li"> The worm also conducts a DDoS SYN-flooding attack against the Web site windowsupdate.com, which is an alias of the main Microsoft Windows update site, on a predetermined schedule.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit8" id="heap_buffer_overrun_heap_smashing">Heap Buffer Overrun/Heap Smashing</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> The Apache/mod_ssl (also called Smasher) worm appeared in September 2002 and affected Linux systems running Apache with the OpenSSL module (mod_s-s1) on Intel Architectures. </div>
+</li>
+<li class="level1"><div class="li"> This particular worm is notable, because it is the first widespread worm that utilized a heap buffer overrun or heap smashing attack.</div>
+</li>
+<li class="level1"><div class="li"> When this worm would find a system running Apache, it would check to see if the server had the cipher the worm was interested again. If that checked out as well, the worm would begin the first of the two buffer overruns to carry out its attack. </div>
+</li>
+<li class="level1"><div class="li"> The worm would hand the server a key argument longer than the 8-byte maximum size allowed. When the incoming data was parsed on receipt, the information was not bounds checked and was copied into an 8-byte fixed length buffer in a heap allocated SSL_SESSION.</div>
+</li>
+<li class="level1"><div class="li"> Because the structure of the heap-allocated SSL_SESSION is known, the buffer was carefully overflowed with miscellaneous data until it reached the session_id length  field in the SSL_SESSION buffer, and then overwrote the data in that field with a value of 0x70 (112). </div>
+</li>
+<li class="level1"><div class="li"> Then the worm terminated the connection with a “client finished&#039; message in order to have the server respond with its standard “server finished” message, which contains the session_id data. But, because the worm overrode the session_id_length with a much larger value, the server tells the worm the entire 112 bytes of the SSL_SESSION structure, starting at the session_id. </div>
+</li>
+<li class="level1"><div class="li"> Now that the worm has this information, it reuses the same attack vector again but this time it sets up shell code to run when the “client finished” message is received by the server.</div>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit9" id="test_techniques">Test Techniques</h2>
+<div class="level1">
+<ul>
+<li class="level1"><div class="li"> Testing for buffer overruns means testing every variable to see if it is hounded or not. The basic stages of buffer oven -un testing are the same for both black-box and white-box testing. </div>
+</li>
+<li class="level1"><div class="li"> Find and Document All Entry Points into the Product You Are Testing:</div>
+<ul>
+<li class="level3"><div class="li"> Be sure that all entries are examined, not just the UI (user interface) or application programming interfaces (APIs). It is common for software that was once written as a standalone program to have been include a public <abbr title="Application Programming Interface">API</abbr>, Web methods, or other ways of exposing the program&#039;s functionality to other uses.</div>
+</li>
+<li class="level3"><div class="li"> As the entry points are documented, make special note of any UW that may later be used to calculate a buffer allocation size. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Create an Attack That Targets Each Variable at Each Entry Point:</div>
+<ul>
+<li class="level3"><div class="li"> If a passed variable is used to calculate the size of a buffer, some common values that should be attempted are as follows:</div>
+<ul>
+<li class="level5"><div class="li"> 0</div>
+</li>
+<li class="level5"><div class="li"> 1</div>
+</li>
+<li class="level5"><div class="li"> Maximum size of datatype 1</div>
+</li>
+<li class="level5"><div class="li"> Maximum size of datatype </div>
+</li>
+<li class="level5"><div class="li"> Minimum size of datatype </div>
+</li>
+<li class="level5"><div class="li"> Minimum size of datatype + 1</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> For the strings, if the datatype is unknown, start with a string of 16,000 characters. If the input is supposed to conform to a particular format, each segment of the string should be tried with the test string separately and then in combination. For example, if you were submitting an e-mail address, you might try: </div>
+<ul>
+<li class="level5"><div class="li"> &lt;test string&gt;@email.com </div>
+</li>
+<li class="level5"><div class="li"> &lt;test string&gt;.me@email.com</div>
+</li>
+<li class="level5"><div class="li"> Me.&lt;test string&gt;@email.com </div>
+</li>
+<li class="level5"><div class="li"> Me.me@&lt;test string&gt;.com </div>
+</li>
+<li class="level5"><div class="li"> Me.me@email.&lt;test string&gt; </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Pass the Attack Data to Each Entry Point:</div>
+<ul>
+<li class="level3"><div class="li"> Manual testing is usually possible but often time consuming and rather monotonous. This type of testing is a great place for test case automation.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Look for Any Crashes or Unexpected Behavior:</div>
+<ul>
+<li class="level3"><div class="li"> Carefully examine any error messages for clues that will indicate what k–happening behind the scenes. Creating separate tests for each variable at each entry point will be helpful in tracking down the particular variable that is unbounded or improperly bounded. </div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> Black Box</div>
+<ul>
+<li class="level3"><div class="li"> Use a trial-and-error approach to discover the data details like format and length. If there is a specification, then that can be used to determine the expected data details, but the actual boundaries must be tested for.</div>
+</li>
+<li class="level3"><div class="li"> Just because the specification says something does not mean it exists that way.</div>
+</li>
+</ul>
+</li>
+<li class="level1"><div class="li"> White Box</div>
+<ul>
+<li class="level3"><div class="li"> In white-box testing, all variables need to be traced back to where they enter the system, and followed through the system from there. Any time the variable is manipulated or has memory allocated for it, the code must be carefully examined for any problems. </div>
+</li>
+<li class="level3"><div class="li">    Run the test under a debugger. This makes it easy to examine items such as what is on the heap or stack, or what is in the registers.</div>
+</li>
+<li class="level3"><div class="li"> If  a portion of the test string appears on the stack, you may have found a stack overrun. </div>
+</li>
+<li class="level3"><div class="li"> If a portion of the appears on the heap, you may have a heap overrun.</div>
+</li>
+<li class="level3"><div class="li"> If a portion of the test string appears in the process register, you may have a buffer overrun  and it is exploitable.</div>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+<h2 class="sectionedit10" id="external_links">External Links</h2>
+<div class="level2">
+<ul>
+<li class="level1"><div class="li"> <a href="https://www.owasp.org/index.php/Buffer_Overflow" class="urlextern" title="https://www.owasp.org/index.php/Buffer_Overflow">https://www.owasp.org/index.php/Buffer_Overflow</a></div>
+</li>
+</ul>
+
+</div>
+
+
+
+ <div class="lavenderBox"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1">
+              <div class="header">Panel title</div>
+            </a>
+            <div class="subtitle linklist"><a href="https://www.hackers-arise.com/post/2018/09/24/network-forensics-wireshark-basics-part-1"></a><a
+                href="#">Lorem</a>
+              <a href="#">Ipsum</a> <a href="#">Dolorestitas</a> </div>
+            <div class="linklist"> <a href="#">Percipit </a> <a href="#">Mnesarchum
+                </a> <a href="#">Molestie </a> <a href="#">Phaedrum </a> <a
+                href="#">Luptatum
+                constituam </a> <a href="#">Habeo adipisci </a> <a href="#">Inani
+                zril </a> <a href="#">Forensibus sea </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+                suscipit </a> <a href="#">Has et partem </a><a href="#">Percipit
+                </a> <a href="#">Mnesarchum </a> <a href="#">Molestie </a> <a
+                href="#">Phaedrum
+                </a> <a href="#">Luptatum constituam </a> <a href="#">Habeo
+                adipisci </a> <a href="#">Inani zril </a> <a href="#">Vel
+                nisl albucius </a> <a href="#">Habeo adipisci </a> <a href="#">Minimum
+                corrumpit </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> <a href="#">Regione suscipit </a> <a href="#">Percipit
+                maiestatis </a> </div>
+            <div class="subtitle">Subtitle</div>
+          </div>
+          <div class="categories"> <a href="#">Minimum corrumpit </a> <a href="#">Regione
+              suscipit </a> <a href="#">Has et partem </a> </div>
+        </div>
+        <div class="pagefooter"> This page was last edited on 29.07.2017 |
+          Template by <a href="http://html5-templates.com/" target="_blank" rel="nofollow">HTML5
+            Templates</a>
+          <!-- Please leave this link unchanged -->
+          <div class="footerlinks"> <a href="#">Privacy policy</a> <a href="#">About</a>
+            <a href="#">Terms and conditions</a> <a href="#">Cookie statement</a>
+            <a href="#">Developers</a> </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../../script.js"></script>
+  </body>
+</html>
